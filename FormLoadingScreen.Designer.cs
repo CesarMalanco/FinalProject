@@ -74,7 +74,6 @@
             labelPercentage.Size = new Size(17, 21);
             labelPercentage.TabIndex = 2;
             labelPercentage.Text = "0";
-            labelPercentage.Click += labelPercentage_Click;
             // 
             // pictureBox1
             // 

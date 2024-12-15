@@ -20,16 +20,11 @@ namespace WinFormsFinalProject
             if (progressBarLoadingScreen.Value > 99) // Stops at 100 %
             {
                 timer1.Enabled = false; // Stops timer
-                FormCover cover = new FormCover(); // Create instance for the cover
+                FormCover cover = new FormCover(); // Creates instance for the cover
                 this.Hide(); // Hide loading screen
                 cover.ShowDialog(); // Show cover
                 this.Close(); // Close loading screen
             }
-        }
-
-        private void labelPercentage_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
