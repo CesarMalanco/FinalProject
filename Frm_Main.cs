@@ -1,3 +1,7 @@
+using MySql.Data.MySqlClient;
+using MySqlX.XDevAPI;
+using System.Windows.Forms;
+
 namespace WinFormsFinalProyect
 {
     public partial class Frm_Main : Form
@@ -92,6 +96,11 @@ namespace WinFormsFinalProyect
         {
             AbrirFormInPanel(new Frm_Grafica());
             PanelPrincipal.Visible = false;
+        }
+
+        private void PanelPrincipal_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

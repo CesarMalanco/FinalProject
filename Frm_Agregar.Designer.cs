@@ -35,13 +35,13 @@
             PnlAddData = new Panel();
             PnlAddPage = new Panel();
             tableLayoutPanel2 = new TableLayoutPanel();
-            textBox4 = new TextBox();
+            TextBoxDescription = new TextBox();
             label6 = new Label();
-            textBox3 = new TextBox();
+            TextBoxStock = new TextBox();
             label5 = new Label();
-            textBox2 = new TextBox();
+            TextBoxPrecio = new TextBox();
             label4 = new Label();
-            textBox1 = new TextBox();
+            TextBoxTitulo = new TextBox();
             label3 = new Label();
             label2 = new Label();
             Pic_photo = new PictureBox();
@@ -140,13 +140,13 @@
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.33333F));
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.33334F));
-            tableLayoutPanel2.Controls.Add(textBox4, 0, 11);
+            tableLayoutPanel2.Controls.Add(TextBoxDescription, 0, 11);
             tableLayoutPanel2.Controls.Add(label6, 0, 10);
-            tableLayoutPanel2.Controls.Add(textBox3, 0, 9);
+            tableLayoutPanel2.Controls.Add(TextBoxStock, 0, 9);
             tableLayoutPanel2.Controls.Add(label5, 0, 8);
-            tableLayoutPanel2.Controls.Add(textBox2, 0, 7);
+            tableLayoutPanel2.Controls.Add(TextBoxPrecio, 0, 7);
             tableLayoutPanel2.Controls.Add(label4, 0, 6);
-            tableLayoutPanel2.Controls.Add(textBox1, 0, 5);
+            tableLayoutPanel2.Controls.Add(TextBoxTitulo, 0, 5);
             tableLayoutPanel2.Controls.Add(label3, 0, 4);
             tableLayoutPanel2.Controls.Add(label2, 0, 0);
             tableLayoutPanel2.Controls.Add(Pic_photo, 2, 0);
@@ -178,17 +178,17 @@
             tableLayoutPanel2.Size = new Size(280, 468);
             tableLayoutPanel2.TabIndex = 0;
             // 
-            // textBox4
+            // TextBoxDescription
             // 
-            textBox4.BorderStyle = BorderStyle.None;
-            tableLayoutPanel2.SetColumnSpan(textBox4, 3);
-            textBox4.Dock = DockStyle.Fill;
-            textBox4.Location = new Point(10, 335);
-            textBox4.Margin = new Padding(5, 0, 5, 0);
-            textBox4.Multiline = true;
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(260, 100);
-            textBox4.TabIndex = 18;
+            TextBoxDescription.BorderStyle = BorderStyle.None;
+            tableLayoutPanel2.SetColumnSpan(TextBoxDescription, 3);
+            TextBoxDescription.Dock = DockStyle.Fill;
+            TextBoxDescription.Location = new Point(10, 335);
+            TextBoxDescription.Margin = new Padding(5, 0, 5, 0);
+            TextBoxDescription.Multiline = true;
+            TextBoxDescription.Name = "TextBoxDescription";
+            TextBoxDescription.Size = new Size(260, 100);
+            TextBoxDescription.TabIndex = 18;
             // 
             // label6
             // 
@@ -204,17 +204,17 @@
             label6.Text = "Descripción";
             label6.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // textBox3
+            // TextBoxStock
             // 
-            textBox3.BorderStyle = BorderStyle.None;
-            tableLayoutPanel2.SetColumnSpan(textBox3, 3);
-            textBox3.Dock = DockStyle.Fill;
-            textBox3.Location = new Point(10, 275);
-            textBox3.Margin = new Padding(5, 0, 5, 0);
-            textBox3.Multiline = true;
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(260, 30);
-            textBox3.TabIndex = 16;
+            TextBoxStock.BorderStyle = BorderStyle.None;
+            tableLayoutPanel2.SetColumnSpan(TextBoxStock, 3);
+            TextBoxStock.Dock = DockStyle.Fill;
+            TextBoxStock.Location = new Point(10, 275);
+            TextBoxStock.Margin = new Padding(5, 0, 5, 0);
+            TextBoxStock.Multiline = true;
+            TextBoxStock.Name = "TextBoxStock";
+            TextBoxStock.Size = new Size(260, 30);
+            TextBoxStock.TabIndex = 16;
             // 
             // label5
             // 
@@ -230,17 +230,17 @@
             label5.Text = "Existencias";
             label5.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // textBox2
+            // TextBoxPrecio
             // 
-            textBox2.BorderStyle = BorderStyle.None;
-            tableLayoutPanel2.SetColumnSpan(textBox2, 3);
-            textBox2.Dock = DockStyle.Fill;
-            textBox2.Location = new Point(10, 215);
-            textBox2.Margin = new Padding(5, 0, 5, 0);
-            textBox2.Multiline = true;
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(260, 30);
-            textBox2.TabIndex = 14;
+            TextBoxPrecio.BorderStyle = BorderStyle.None;
+            tableLayoutPanel2.SetColumnSpan(TextBoxPrecio, 3);
+            TextBoxPrecio.Dock = DockStyle.Fill;
+            TextBoxPrecio.Location = new Point(10, 215);
+            TextBoxPrecio.Margin = new Padding(5, 0, 5, 0);
+            TextBoxPrecio.Multiline = true;
+            TextBoxPrecio.Name = "TextBoxPrecio";
+            TextBoxPrecio.Size = new Size(260, 30);
+            TextBoxPrecio.TabIndex = 14;
             // 
             // label4
             // 
@@ -256,17 +256,17 @@
             label4.Text = "Precio";
             label4.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // textBox1
+            // TextBoxTitulo
             // 
-            textBox1.BorderStyle = BorderStyle.None;
-            tableLayoutPanel2.SetColumnSpan(textBox1, 3);
-            textBox1.Dock = DockStyle.Fill;
-            textBox1.Location = new Point(10, 155);
-            textBox1.Margin = new Padding(5, 0, 5, 0);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(260, 30);
-            textBox1.TabIndex = 12;
+            TextBoxTitulo.BorderStyle = BorderStyle.None;
+            tableLayoutPanel2.SetColumnSpan(TextBoxTitulo, 3);
+            TextBoxTitulo.Dock = DockStyle.Fill;
+            TextBoxTitulo.Location = new Point(10, 155);
+            TextBoxTitulo.Margin = new Padding(5, 0, 5, 0);
+            TextBoxTitulo.Multiline = true;
+            TextBoxTitulo.Name = "TextBoxTitulo";
+            TextBoxTitulo.Size = new Size(260, 30);
+            TextBoxTitulo.TabIndex = 12;
             // 
             // label3
             // 
@@ -279,8 +279,9 @@
             label3.Name = "label3";
             label3.Size = new Size(174, 30);
             label3.TabIndex = 11;
-            label3.Text = "Imagen";
+            label3.Text = "Título";
             label3.TextAlign = ContentAlignment.MiddleLeft;
+            label3.Click += label3_Click;
             // 
             // label2
             // 
@@ -316,6 +317,7 @@
             TextBoxID.Name = "TextBoxID";
             TextBoxID.Size = new Size(83, 24);
             TextBoxID.TabIndex = 9;
+            TextBoxID.TextChanged += TextBoxID_TextChanged;
             // 
             // panel2
             // 
@@ -378,8 +380,9 @@
             label1.Name = "label1";
             label1.Size = new Size(143, 26);
             label1.TabIndex = 4;
-            label1.Text = "Ingreso de Datos";
+            label1.Text = "Ingresar Datos";
             label1.TextAlign = ContentAlignment.MiddleRight;
+            label1.Click += label1_Click;
             // 
             // button2
             // 
@@ -391,10 +394,11 @@
             button2.ForeColor = SystemColors.Control;
             button2.Location = new Point(55, 0);
             button2.Name = "button2";
-            button2.Size = new Size(55, 52);
+            button2.Size = new Size(84, 52);
             button2.TabIndex = 3;
-            button2.Text = "ok";
+            button2.Text = "Agregar";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // BtnCancel
             // 
@@ -455,13 +459,13 @@
         private Panel PnlAddData;
         private Panel PnlAddPage;
         private TableLayoutPanel tableLayoutPanel2;
-        private TextBox textBox4;
+        private TextBox TextBoxDescription;
         private Label label6;
-        private TextBox textBox3;
+        private TextBox TextBoxStock;
         private Label label5;
-        private TextBox textBox2;
+        private TextBox TextBoxPrecio;
         private Label label4;
-        private TextBox textBox1;
+        private TextBox TextBoxTitulo;
         private Label label3;
         private Label label2;
         private PictureBox Pic_photo;

@@ -86,6 +86,7 @@
             Contenedor_Peliculas.Name = "Contenedor_Peliculas";
             Contenedor_Peliculas.Size = new Size(496, 526);
             Contenedor_Peliculas.TabIndex = 6;
+            Contenedor_Peliculas.Paint += Contenedor_Peliculas_Paint;
             // 
             // tableLayoutPanel1
             // 
@@ -346,6 +347,7 @@
             tableLayoutPanel3.SetRowSpan(textBox4, 4);
             textBox4.Size = new Size(275, 248);
             textBox4.TabIndex = 19;
+            textBox4.TextChanged += textBox4_TextChanged;
             // 
             // label7
             // 
@@ -358,6 +360,7 @@
             label7.TabIndex = 14;
             label7.Text = "Descripción";
             label7.TextAlign = ContentAlignment.MiddleLeft;
+            label7.Click += label7_Click;
             // 
             // textBox3
             // 
@@ -419,6 +422,7 @@
             textBox1.ReadOnly = true;
             textBox1.Size = new Size(183, 24);
             textBox1.TabIndex = 9;
+            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // panel4
             // 

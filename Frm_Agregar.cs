@@ -5,6 +5,8 @@ namespace WinFormsFinalProyect
 {
     public partial class Frm_Agregar : Form
     {
+        List<Users> users;
+        List<Products> products;
         private bool isOpening; // Para controlar si se está abriendo o cerrando el panel
 
         public Frm_Agregar()
@@ -96,6 +98,44 @@ namespace WinFormsFinalProyect
             this.Close();
         }
 
-        
+        private void TextBoxID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int id;
+            string name;
+            string about;
+            float precio;
+            int stock;
+
+            id = Convert.ToInt32(this.TextBoxID.Text);
+            name = this.TextBoxTitulo.Text;
+            about = this.TextBoxDescription.Text;
+            precio = float.Parse(this.TextBoxPrecio.Text);
+            stock = Convert.ToInt32(this.TextBoxStock.Text);
+
+            AdmonDB obj = new AdmonDB();
+            obj.insertarProducto(id, name, about, precio, stock);
+            obj.Disconnect();
+
+            this.TextBoxID.Clear();
+            this.TextBoxTitulo.Clear();
+            this.TextBoxDescription.Clear();
+            this.TextBoxPrecio.Clear();
+            this.TextBoxStock.Clear();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

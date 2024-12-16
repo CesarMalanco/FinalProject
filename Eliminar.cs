@@ -21,7 +21,7 @@ namespace WinFormsFinalProyect
             PnlAddData.Visible = false;
             Pnl_Info.Width = 0; // El panel Pnl_Info comienza cerrado
             Pnl_Info.Visible = false; // Inicialmente oculto
-            
+
         }
 
         private void Timer2_Tick(object sender, EventArgs e)
@@ -121,6 +121,26 @@ namespace WinFormsFinalProyect
         {
             isOpening = false;
             timer1.Start();
+        }
+
+        private void Contenedor_Peliculas_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
