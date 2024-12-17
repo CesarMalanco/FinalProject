@@ -23,18 +23,18 @@ namespace WinFormsFinalProject
         private void btnLogin_Click(object sender, EventArgs e)
         {
             // Store textBox's content in a class attribute
-            this.username = txtUsername.Text; 
+            this.username = txtUsername.Text;
             this.password = txtPassword.Text;
-            
+
             // FormAdminPage adminPage = new FormAdminPage();
             // this.Hide();
             // adminPage.ShowDialog();
 
             // ESTA PARTE ESTA EN EDICION 
             //if (this.username == "" || this.password == "") // If user tries to login without typing an account
-                //MessageBox.Show("Enter username and password");
+            //MessageBox.Show("Enter username and password");
             //else
-               // MessageBox.Show("Welcome, " + username + "!"); // Welcome message
+            // MessageBox.Show("Welcome, " + username + "!"); // Welcome message
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -43,7 +43,7 @@ namespace WinFormsFinalProject
         }
 
         private void lblLP_Clear_Click(object sender, EventArgs e)
-        {   
+        {
             // Resets username
             txtUsername.Text = "Username"; // Clears username field by reseting it
             txtUsername.ForeColor = Color.Gray; // Sets color gray back
@@ -98,6 +98,14 @@ namespace WinFormsFinalProject
                 txtPassword.Text = "Password";  // Resets default text
                 txtPassword.ForeColor = Color.Gray;  // From black to gray
             }
+        }
+
+        private void btnGuest_Click(object sender, EventArgs e) // Guest account
+        {
+            this.username = "GUEST";
+            FormMainPage mainPage = new FormMainPage(username); // Create an instance for Main Page
+            this.Hide(); // Hide Login Page
+            mainPage.ShowDialog(); // Show Main Page   
         }
     }
 }

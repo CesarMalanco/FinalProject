@@ -40,10 +40,14 @@
             pictureBoxLP_Username = new PictureBox();
             pictureBoxLP_Password = new PictureBox();
             lblLP_Clear = new Label();
+            btnGuest = new Button();
+            panel3 = new Panel();
+            pictureBoxGuestPic = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLP_Title).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLP_Logo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLP_Username).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLP_Password).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxGuestPic).BeginInit();
             SuspendLayout();
             // 
             // txtUsername
@@ -83,6 +87,7 @@
             // 
             // btnExit
             // 
+            btnExit.FlatStyle = FlatStyle.Popup;
             btnExit.Location = new Point(707, 377);
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(66, 61);
@@ -134,9 +139,11 @@
             // 
             // pictureBoxLP_Username
             // 
+            pictureBoxLP_Username.Image = Properties.Resources.userIcon;
             pictureBoxLP_Username.Location = new Point(460, 125);
             pictureBoxLP_Username.Name = "pictureBoxLP_Username";
             pictureBoxLP_Username.Size = new Size(41, 37);
+            pictureBoxLP_Username.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBoxLP_Username.TabIndex = 11;
             pictureBoxLP_Username.TabStop = false;
             // 
@@ -158,12 +165,40 @@
             lblLP_Clear.Text = "Clear Fields";
             lblLP_Clear.Click += lblLP_Clear_Click;
             // 
+            // btnGuest
+            // 
+            btnGuest.Location = new Point(543, 324);
+            btnGuest.Name = "btnGuest";
+            btnGuest.Size = new Size(106, 23);
+            btnGuest.TabIndex = 14;
+            btnGuest.Text = "Enter as guest";
+            btnGuest.UseVisualStyleBackColor = true;
+            btnGuest.Click += btnGuest_Click;
+            // 
+            // panel3
+            // 
+            panel3.BackColor = Color.Crimson;
+            panel3.Location = new Point(0, 0);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(387, 450);
+            panel3.TabIndex = 15;
+            // 
+            // pictureBoxGuestPic
+            // 
+            pictureBoxGuestPic.Location = new Point(507, 322);
+            pictureBoxGuestPic.Name = "pictureBoxGuestPic";
+            pictureBoxGuestPic.Size = new Size(30, 28);
+            pictureBoxGuestPic.TabIndex = 16;
+            pictureBoxGuestPic.TabStop = false;
+            // 
             // FormLoginPage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(800, 450);
+            Controls.Add(pictureBoxGuestPic);
+            Controls.Add(btnGuest);
             Controls.Add(lblLP_Clear);
             Controls.Add(pictureBoxLP_Password);
             Controls.Add(pictureBoxLP_Username);
@@ -176,6 +211,7 @@
             Controls.Add(btnLogin);
             Controls.Add(txtPassword);
             Controls.Add(txtUsername);
+            Controls.Add(panel3);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FormLoginPage";
             Text = "Login Page";
@@ -184,6 +220,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBoxLP_Logo).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLP_Username).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLP_Password).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxGuestPic).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -201,5 +238,8 @@
         private PictureBox pictureBoxLP_Username;
         private PictureBox pictureBoxLP_Password;
         private Label lblLP_Clear;
+        private Button btnGuest;
+        private Panel panel3;
+        private PictureBox pictureBoxGuestPic;
     }
 }

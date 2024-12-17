@@ -52,16 +52,16 @@
             lblCover_TeamMembers.Font = new Font("Sitka Banner", 12F);
             lblCover_TeamMembers.Location = new Point(312, 161);
             lblCover_TeamMembers.Name = "lblCover_TeamMembers";
-            lblCover_TeamMembers.Size = new Size(223, 101);
+            lblCover_TeamMembers.Size = new Size(223, 153);
             lblCover_TeamMembers.TabIndex = 2;
             lblCover_TeamMembers.Text = "Integrantes:\nMariana Isabel Alvarado de la Huerta.\nDanna Cristina Castro Hernández.\nDarely Quezada Guerrero\nCelia Fernanda Vela Uribe.\nCésar Andrés Zuleta Malanco.";
             // 
             // lblCover_Teacher
             // 
             lblCover_Teacher.Font = new Font("Sitka Banner", 12F);
-            lblCover_Teacher.Location = new Point(312, 115);
+            lblCover_Teacher.Location = new Point(312, 105);
             lblCover_Teacher.Name = "lblCover_Teacher";
-            lblCover_Teacher.Size = new Size(196, 22);
+            lblCover_Teacher.Size = new Size(196, 46);
             lblCover_Teacher.TabIndex = 3;
             lblCover_Teacher.Text = "PROF: Dr. Georgina Salazar Partida";
             // 
@@ -69,7 +69,7 @@
             // 
             lblCover_Date.AutoSize = true;
             lblCover_Date.Font = new Font("Sitka Banner", 12F);
-            lblCover_Date.Location = new Point(312, 291);
+            lblCover_Date.Location = new Point(321, 340);
             lblCover_Date.Name = "lblCover_Date";
             lblCover_Date.Size = new Size(169, 23);
             lblCover_Date.TabIndex = 4;
