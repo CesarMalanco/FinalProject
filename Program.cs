@@ -1,6 +1,7 @@
 using Forms_individuales_proyecto;
+using WinFormsFinalProject;
 
-namespace WinFormsFinalProject
+namespace WinFormsFinalProyect
 {
     internal static class Program
     {
@@ -14,7 +15,7 @@ namespace WinFormsFinalProject
             // see https://aka.ms/applicationconfiguration.
 
             //ApplicationConfiguration.Initialize();
-            Application.Run(new FormLoadingScreen());
+            Application.Run(new FormLoadingScreen);
 
         }
     }

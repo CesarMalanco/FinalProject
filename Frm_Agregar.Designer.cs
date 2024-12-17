@@ -35,13 +35,14 @@
             PnlAddData = new Panel();
             PnlAddPage = new Panel();
             tableLayoutPanel2 = new TableLayoutPanel();
-            textBox4 = new TextBox();
+            label7 = new Label();
+            TextBoxDescription = new TextBox();
             label6 = new Label();
-            textBox3 = new TextBox();
+            TextBoxStock = new TextBox();
             label5 = new Label();
-            textBox2 = new TextBox();
+            TextBoxPrecio = new TextBox();
             label4 = new Label();
-            textBox1 = new TextBox();
+            TextBoxTitulo = new TextBox();
             label3 = new Label();
             label2 = new Label();
             Pic_photo = new PictureBox();
@@ -49,12 +50,15 @@
             panel2 = new Panel();
             Btn_Delete = new Button();
             Btn_Open = new Button();
+            TextBoxImagen = new TextBox();
             PnlAddTop = new Panel();
             label1 = new Label();
             button2 = new Button();
             BtnCancel = new Button();
             Contenedor_Peliculas = new FlowLayoutPanel();
+            gridA = new DataGridView();
             timer1 = new System.Windows.Forms.Timer(components);
+            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)Btn_Close_Page).BeginInit();
             PnlAddData.SuspendLayout();
@@ -63,6 +67,8 @@
             ((System.ComponentModel.ISupportInitialize)Pic_photo).BeginInit();
             panel2.SuspendLayout();
             PnlAddTop.SuspendLayout();
+            Contenedor_Peliculas.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)gridA).BeginInit();
             SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -80,6 +86,7 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tableLayoutPanel1.Size = new Size(824, 60);
             tableLayoutPanel1.TabIndex = 1;
+            tableLayoutPanel1.Paint += tableLayoutPanel1_Paint;
             // 
             // Btn_Close_Page
             // 
@@ -140,24 +147,26 @@
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.33333F));
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.33334F));
-            tableLayoutPanel2.Controls.Add(textBox4, 0, 11);
+            tableLayoutPanel2.Controls.Add(label7, 0, 2);
+            tableLayoutPanel2.Controls.Add(TextBoxDescription, 0, 11);
             tableLayoutPanel2.Controls.Add(label6, 0, 10);
-            tableLayoutPanel2.Controls.Add(textBox3, 0, 9);
+            tableLayoutPanel2.Controls.Add(TextBoxStock, 0, 9);
             tableLayoutPanel2.Controls.Add(label5, 0, 8);
-            tableLayoutPanel2.Controls.Add(textBox2, 0, 7);
+            tableLayoutPanel2.Controls.Add(TextBoxPrecio, 0, 7);
             tableLayoutPanel2.Controls.Add(label4, 0, 6);
-            tableLayoutPanel2.Controls.Add(textBox1, 0, 5);
+            tableLayoutPanel2.Controls.Add(TextBoxTitulo, 0, 5);
             tableLayoutPanel2.Controls.Add(label3, 0, 4);
             tableLayoutPanel2.Controls.Add(label2, 0, 0);
             tableLayoutPanel2.Controls.Add(Pic_photo, 2, 0);
             tableLayoutPanel2.Controls.Add(TextBoxID, 0, 1);
             tableLayoutPanel2.Controls.Add(panel2, 2, 3);
+            tableLayoutPanel2.Controls.Add(TextBoxImagen, 0, 3);
             tableLayoutPanel2.Dock = DockStyle.Fill;
             tableLayoutPanel2.Location = new Point(10, 5);
             tableLayoutPanel2.Margin = new Padding(0);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.Padding = new Padding(5);
-            tableLayoutPanel2.RowCount = 17;
+            tableLayoutPanel2.RowCount = 19;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
@@ -175,20 +184,36 @@
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
             tableLayoutPanel2.Size = new Size(280, 468);
             tableLayoutPanel2.TabIndex = 0;
             // 
-            // textBox4
+            // label7
             // 
-            textBox4.BorderStyle = BorderStyle.None;
-            tableLayoutPanel2.SetColumnSpan(textBox4, 3);
-            textBox4.Dock = DockStyle.Fill;
-            textBox4.Location = new Point(10, 335);
-            textBox4.Margin = new Padding(5, 0, 5, 0);
-            textBox4.Multiline = true;
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(260, 100);
-            textBox4.TabIndex = 18;
+            tableLayoutPanel2.SetColumnSpan(label7, 2);
+            label7.Dock = DockStyle.Fill;
+            label7.Font = new Font("Georgia", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label7.ForeColor = SystemColors.Control;
+            label7.Location = new Point(10, 65);
+            label7.Margin = new Padding(5, 0, 0, 0);
+            label7.Name = "label7";
+            label7.Size = new Size(174, 30);
+            label7.TabIndex = 19;
+            label7.Text = "Imagen";
+            label7.TextAlign = ContentAlignment.MiddleLeft;
+            label7.Click += label7_Click;
+            // 
+            // TextBoxDescription
+            // 
+            TextBoxDescription.BorderStyle = BorderStyle.None;
+            tableLayoutPanel2.SetColumnSpan(TextBoxDescription, 3);
+            TextBoxDescription.Location = new Point(10, 335);
+            TextBoxDescription.Margin = new Padding(5, 0, 5, 0);
+            TextBoxDescription.Multiline = true;
+            TextBoxDescription.Name = "TextBoxDescription";
+            TextBoxDescription.Size = new Size(260, 100);
+            TextBoxDescription.TabIndex = 18;
             // 
             // label6
             // 
@@ -204,17 +229,17 @@
             label6.Text = "Descripción";
             label6.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // textBox3
+            // TextBoxStock
             // 
-            textBox3.BorderStyle = BorderStyle.None;
-            tableLayoutPanel2.SetColumnSpan(textBox3, 3);
-            textBox3.Dock = DockStyle.Fill;
-            textBox3.Location = new Point(10, 275);
-            textBox3.Margin = new Padding(5, 0, 5, 0);
-            textBox3.Multiline = true;
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(260, 30);
-            textBox3.TabIndex = 16;
+            TextBoxStock.BorderStyle = BorderStyle.None;
+            tableLayoutPanel2.SetColumnSpan(TextBoxStock, 3);
+            TextBoxStock.Dock = DockStyle.Fill;
+            TextBoxStock.Location = new Point(10, 275);
+            TextBoxStock.Margin = new Padding(5, 0, 5, 0);
+            TextBoxStock.Multiline = true;
+            TextBoxStock.Name = "TextBoxStock";
+            TextBoxStock.Size = new Size(260, 30);
+            TextBoxStock.TabIndex = 16;
             // 
             // label5
             // 
@@ -230,17 +255,17 @@
             label5.Text = "Existencias";
             label5.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // textBox2
+            // TextBoxPrecio
             // 
-            textBox2.BorderStyle = BorderStyle.None;
-            tableLayoutPanel2.SetColumnSpan(textBox2, 3);
-            textBox2.Dock = DockStyle.Fill;
-            textBox2.Location = new Point(10, 215);
-            textBox2.Margin = new Padding(5, 0, 5, 0);
-            textBox2.Multiline = true;
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(260, 30);
-            textBox2.TabIndex = 14;
+            TextBoxPrecio.BorderStyle = BorderStyle.None;
+            tableLayoutPanel2.SetColumnSpan(TextBoxPrecio, 3);
+            TextBoxPrecio.Dock = DockStyle.Fill;
+            TextBoxPrecio.Location = new Point(10, 215);
+            TextBoxPrecio.Margin = new Padding(5, 0, 5, 0);
+            TextBoxPrecio.Multiline = true;
+            TextBoxPrecio.Name = "TextBoxPrecio";
+            TextBoxPrecio.Size = new Size(260, 30);
+            TextBoxPrecio.TabIndex = 14;
             // 
             // label4
             // 
@@ -256,17 +281,18 @@
             label4.Text = "Precio";
             label4.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // textBox1
+            // TextBoxTitulo
             // 
-            textBox1.BorderStyle = BorderStyle.None;
-            tableLayoutPanel2.SetColumnSpan(textBox1, 3);
-            textBox1.Dock = DockStyle.Fill;
-            textBox1.Location = new Point(10, 155);
-            textBox1.Margin = new Padding(5, 0, 5, 0);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(260, 30);
-            textBox1.TabIndex = 12;
+            TextBoxTitulo.BorderStyle = BorderStyle.None;
+            tableLayoutPanel2.SetColumnSpan(TextBoxTitulo, 3);
+            TextBoxTitulo.Dock = DockStyle.Fill;
+            TextBoxTitulo.Location = new Point(10, 155);
+            TextBoxTitulo.Margin = new Padding(5, 0, 5, 0);
+            TextBoxTitulo.Multiline = true;
+            TextBoxTitulo.Name = "TextBoxTitulo";
+            TextBoxTitulo.Size = new Size(260, 30);
+            TextBoxTitulo.TabIndex = 12;
+            TextBoxTitulo.TextChanged += TextBoxTitulo_TextChanged;
             // 
             // label3
             // 
@@ -279,8 +305,9 @@
             label3.Name = "label3";
             label3.Size = new Size(174, 30);
             label3.TabIndex = 11;
-            label3.Text = "Imagen";
+            label3.Text = "Título";
             label3.TextAlign = ContentAlignment.MiddleLeft;
+            label3.Click += label3_Click;
             // 
             // label2
             // 
@@ -316,6 +343,7 @@
             TextBoxID.Name = "TextBoxID";
             TextBoxID.Size = new Size(83, 24);
             TextBoxID.TabIndex = 9;
+            TextBoxID.TextChanged += TextBoxID_TextChanged;
             // 
             // panel2
             // 
@@ -359,6 +387,13 @@
             Btn_Open.UseVisualStyleBackColor = false;
             Btn_Open.Click += Btn_Open_Click;
             // 
+            // TextBoxImagen
+            // 
+            TextBoxImagen.Location = new Point(8, 98);
+            TextBoxImagen.Name = "TextBoxImagen";
+            TextBoxImagen.Size = new Size(83, 27);
+            TextBoxImagen.TabIndex = 20;
+            // 
             // PnlAddTop
             // 
             PnlAddTop.Controls.Add(label1);
@@ -378,8 +413,9 @@
             label1.Name = "label1";
             label1.Size = new Size(143, 26);
             label1.TabIndex = 4;
-            label1.Text = "Ingreso de Datos";
+            label1.Text = "Ingresar Datos";
             label1.TextAlign = ContentAlignment.MiddleRight;
+            label1.Click += label1_Click;
             // 
             // button2
             // 
@@ -391,10 +427,11 @@
             button2.ForeColor = SystemColors.Control;
             button2.Location = new Point(55, 0);
             button2.Name = "button2";
-            button2.Size = new Size(55, 52);
+            button2.Size = new Size(84, 52);
             button2.TabIndex = 3;
-            button2.Text = "ok";
+            button2.Text = "Agregar";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // BtnCancel
             // 
@@ -414,11 +451,25 @@
             // 
             // Contenedor_Peliculas
             // 
-            Contenedor_Peliculas.BackColor = SystemColors.Info;
+            Contenedor_Peliculas.BackColor = SystemColors.ControlLight;
+            Contenedor_Peliculas.Controls.Add(gridA);
             Contenedor_Peliculas.Location = new Point(5, 71);
             Contenedor_Peliculas.Name = "Contenedor_Peliculas";
             Contenedor_Peliculas.Size = new Size(819, 519);
             Contenedor_Peliculas.TabIndex = 5;
+            Contenedor_Peliculas.Paint += Contenedor_Peliculas_Paint;
+            // 
+            // gridA
+            // 
+            gridA.BackgroundColor = SystemColors.Info;
+            gridA.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            gridA.Location = new Point(3, 3);
+            gridA.Name = "gridA";
+            gridA.RowHeadersWidth = 51;
+            gridA.RowTemplate.Height = 29;
+            gridA.Size = new Size(518, 516);
+            gridA.TabIndex = 0;
+            gridA.CellContentClick += gridA_CellContentClick_1;
             // 
             // timer1
             // 
@@ -437,6 +488,7 @@
             Name = "Frm_Agregar";
             Padding = new Padding(5, 5, 0, 5);
             Text = "Frm_Agregar";
+            Load += Frm_Agregar_Load_1;
             tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)Btn_Close_Page).EndInit();
             PnlAddData.ResumeLayout(false);
@@ -446,6 +498,8 @@
             ((System.ComponentModel.ISupportInitialize)Pic_photo).EndInit();
             panel2.ResumeLayout(false);
             PnlAddTop.ResumeLayout(false);
+            Contenedor_Peliculas.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)gridA).EndInit();
             ResumeLayout(false);
         }
 
@@ -455,13 +509,13 @@
         private Panel PnlAddData;
         private Panel PnlAddPage;
         private TableLayoutPanel tableLayoutPanel2;
-        private TextBox textBox4;
+        private TextBox TextBoxDescription;
         private Label label6;
-        private TextBox textBox3;
+        private TextBox TextBoxStock;
         private Label label5;
-        private TextBox textBox2;
+        private TextBox TextBoxPrecio;
         private Label label4;
-        private TextBox textBox1;
+        private TextBox TextBoxTitulo;
         private Label label3;
         private Label label2;
         private PictureBox Pic_photo;
@@ -477,5 +531,9 @@
         private System.Windows.Forms.Timer timer1;
         private PictureBox Btn_Close_Page;
         private Button Btn_Agregar;
+        private Label label7;
+        private TextBox TextBoxImagen;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private DataGridView gridA;
     }
 }

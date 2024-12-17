@@ -30,6 +30,24 @@
         {
             components = new System.ComponentModel.Container();
             Contenedor_Peliculas = new FlowLayoutPanel();
+            gridB = new DataGridView();
+            Pnl_Info = new Panel();
+            panel3 = new Panel();
+            tableLayoutPanel3 = new TableLayoutPanel();
+            textBoxDescripcion_E = new TextBox();
+            label7 = new Label();
+            textBoxStock_E = new TextBox();
+            textBoxPrecio_E = new TextBox();
+            label3 = new Label();
+            pictureBox1 = new PictureBox();
+            textBoxTitulo_E = new TextBox();
+            panel4 = new Panel();
+            label6 = new Label();
+            label5 = new Label();
+            panel5 = new Panel();
+            button2 = new Button();
+            label4 = new Label();
+            Btn_Cancel = new Button();
             tableLayoutPanel1 = new TableLayoutPanel();
             Btn_Eliminar = new Button();
             Btn_Close_Page = new PictureBox();
@@ -38,31 +56,22 @@
             tableLayoutPanel2 = new TableLayoutPanel();
             label2 = new Label();
             Pic_photo = new PictureBox();
-            TextBoxID = new TextBox();
+            TextBoxID_Eliminar = new TextBox();
             panel2 = new Panel();
             Btn_Buscar = new Button();
             PnlAddTop = new Panel();
             label1 = new Label();
-            Pnl_Info = new Panel();
-            panel3 = new Panel();
-            tableLayoutPanel3 = new TableLayoutPanel();
-            textBox4 = new TextBox();
-            label7 = new Label();
-            textBox3 = new TextBox();
-            textBox2 = new TextBox();
-            label3 = new Label();
-            pictureBox1 = new PictureBox();
-            textBox1 = new TextBox();
-            panel4 = new Panel();
-            label6 = new Label();
-            label5 = new Label();
-            panel5 = new Panel();
-            button2 = new Button();
-            label4 = new Label();
-            Btn_Cancel = new Button();
             timer1 = new System.Windows.Forms.Timer(components);
             panel1 = new Panel();
             timer2 = new System.Windows.Forms.Timer(components);
+            Contenedor_Peliculas.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)gridB).BeginInit();
+            Pnl_Info.SuspendLayout();
+            panel3.SuspendLayout();
+            tableLayoutPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel4.SuspendLayout();
+            panel5.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)Btn_Close_Page).BeginInit();
             PnlAddData.SuspendLayout();
@@ -70,22 +79,266 @@
             tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)Pic_photo).BeginInit();
             PnlAddTop.SuspendLayout();
-            Pnl_Info.SuspendLayout();
-            panel3.SuspendLayout();
-            tableLayoutPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            panel4.SuspendLayout();
-            panel5.SuspendLayout();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // Contenedor_Peliculas
             // 
             Contenedor_Peliculas.BackColor = SystemColors.Info;
+            Contenedor_Peliculas.Controls.Add(gridB);
             Contenedor_Peliculas.Location = new Point(12, 69);
             Contenedor_Peliculas.Name = "Contenedor_Peliculas";
             Contenedor_Peliculas.Size = new Size(496, 526);
             Contenedor_Peliculas.TabIndex = 6;
+            Contenedor_Peliculas.Paint += Contenedor_Peliculas_Paint;
+            // 
+            // gridB
+            // 
+            gridB.BackgroundColor = SystemColors.Info;
+            gridB.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            gridB.Location = new Point(3, 3);
+            gridB.Name = "gridB";
+            gridB.RowHeadersWidth = 51;
+            gridB.RowTemplate.Height = 29;
+            gridB.Size = new Size(493, 518);
+            gridB.TabIndex = 0;
+            gridB.CellContentClick += dataGridView1_CellContentClick;
+            // 
+            // Pnl_Info
+            // 
+            Pnl_Info.AutoScroll = true;
+            Pnl_Info.BackColor = Color.DarkRed;
+            Pnl_Info.Controls.Add(panel3);
+            Pnl_Info.Controls.Add(panel5);
+            Pnl_Info.Dock = DockStyle.Right;
+            Pnl_Info.Location = new Point(514, 65);
+            Pnl_Info.Name = "Pnl_Info";
+            Pnl_Info.Size = new Size(315, 530);
+            Pnl_Info.TabIndex = 9;
+            Pnl_Info.Visible = false;
+            // 
+            // panel3
+            // 
+            panel3.Controls.Add(tableLayoutPanel3);
+            panel3.Dock = DockStyle.Fill;
+            panel3.Location = new Point(0, 52);
+            panel3.Margin = new Padding(0);
+            panel3.Name = "panel3";
+            panel3.Padding = new Padding(10, 5, 10, 5);
+            panel3.Size = new Size(315, 478);
+            panel3.TabIndex = 3;
+            // 
+            // tableLayoutPanel3
+            // 
+            tableLayoutPanel3.AutoScroll = true;
+            tableLayoutPanel3.ColumnCount = 3;
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.33333F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.33334F));
+            tableLayoutPanel3.Controls.Add(textBoxDescripcion_E, 0, 7);
+            tableLayoutPanel3.Controls.Add(label7, 0, 6);
+            tableLayoutPanel3.Controls.Add(textBoxStock_E, 0, 5);
+            tableLayoutPanel3.Controls.Add(textBoxPrecio_E, 0, 3);
+            tableLayoutPanel3.Controls.Add(label3, 0, 0);
+            tableLayoutPanel3.Controls.Add(pictureBox1, 2, 0);
+            tableLayoutPanel3.Controls.Add(textBoxTitulo_E, 0, 1);
+            tableLayoutPanel3.Controls.Add(panel4, 2, 3);
+            tableLayoutPanel3.Controls.Add(label5, 0, 2);
+            tableLayoutPanel3.Dock = DockStyle.Fill;
+            tableLayoutPanel3.Location = new Point(10, 5);
+            tableLayoutPanel3.Margin = new Padding(0);
+            tableLayoutPanel3.Name = "tableLayoutPanel3";
+            tableLayoutPanel3.Padding = new Padding(5);
+            tableLayoutPanel3.RowCount = 11;
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
+            tableLayoutPanel3.Size = new Size(295, 468);
+            tableLayoutPanel3.TabIndex = 0;
+            // 
+            // textBoxDescripcion_E
+            // 
+            textBoxDescripcion_E.BorderStyle = BorderStyle.None;
+            tableLayoutPanel3.SetColumnSpan(textBoxDescripcion_E, 3);
+            textBoxDescripcion_E.Dock = DockStyle.Fill;
+            textBoxDescripcion_E.Location = new Point(10, 215);
+            textBoxDescripcion_E.Margin = new Padding(5, 0, 5, 0);
+            textBoxDescripcion_E.Multiline = true;
+            textBoxDescripcion_E.Name = "textBoxDescripcion_E";
+            textBoxDescripcion_E.ReadOnly = true;
+            tableLayoutPanel3.SetRowSpan(textBoxDescripcion_E, 4);
+            textBoxDescripcion_E.Size = new Size(275, 248);
+            textBoxDescripcion_E.TabIndex = 19;
+            textBoxDescripcion_E.TextChanged += textBox4_TextChanged;
+            // 
+            // label7
+            // 
+            tableLayoutPanel3.SetColumnSpan(label7, 2);
+            label7.Font = new Font("Georgia", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
+            label7.ForeColor = SystemColors.Control;
+            label7.Location = new Point(8, 185);
+            label7.Name = "label7";
+            label7.Size = new Size(101, 30);
+            label7.TabIndex = 14;
+            label7.Text = "Descripción";
+            label7.TextAlign = ContentAlignment.MiddleLeft;
+            label7.Click += label7_Click;
+            // 
+            // textBoxStock_E
+            // 
+            textBoxStock_E.BorderStyle = BorderStyle.None;
+            tableLayoutPanel3.SetColumnSpan(textBoxStock_E, 3);
+            textBoxStock_E.Dock = DockStyle.Fill;
+            textBoxStock_E.Location = new Point(8, 158);
+            textBoxStock_E.Multiline = true;
+            textBoxStock_E.Name = "textBoxStock_E";
+            textBoxStock_E.ReadOnly = true;
+            textBoxStock_E.Size = new Size(279, 24);
+            textBoxStock_E.TabIndex = 14;
+            // 
+            // textBoxPrecio_E
+            // 
+            textBoxPrecio_E.BorderStyle = BorderStyle.None;
+            tableLayoutPanel3.SetColumnSpan(textBoxPrecio_E, 2);
+            textBoxPrecio_E.Dock = DockStyle.Fill;
+            textBoxPrecio_E.Location = new Point(8, 98);
+            textBoxPrecio_E.Multiline = true;
+            textBoxPrecio_E.Name = "textBoxPrecio_E";
+            textBoxPrecio_E.ReadOnly = true;
+            textBoxPrecio_E.Size = new Size(183, 24);
+            textBoxPrecio_E.TabIndex = 12;
+            // 
+            // label3
+            // 
+            label3.Dock = DockStyle.Fill;
+            label3.Font = new Font("Georgia", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.ForeColor = SystemColors.Control;
+            label3.Location = new Point(8, 5);
+            label3.Name = "label3";
+            label3.Size = new Size(88, 30);
+            label3.TabIndex = 8;
+            label3.Text = "Título";
+            label3.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.Image = Properties.Resources.icon_ejemplo;
+            pictureBox1.Location = new Point(221, 8);
+            pictureBox1.Name = "pictureBox1";
+            tableLayoutPanel3.SetRowSpan(pictureBox1, 4);
+            pictureBox1.Size = new Size(66, 114);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 7;
+            pictureBox1.TabStop = false;
+            // 
+            // textBoxTitulo_E
+            // 
+            textBoxTitulo_E.BorderStyle = BorderStyle.None;
+            tableLayoutPanel3.SetColumnSpan(textBoxTitulo_E, 2);
+            textBoxTitulo_E.Dock = DockStyle.Fill;
+            textBoxTitulo_E.Location = new Point(8, 38);
+            textBoxTitulo_E.Multiline = true;
+            textBoxTitulo_E.Name = "textBoxTitulo_E";
+            textBoxTitulo_E.ReadOnly = true;
+            textBoxTitulo_E.Size = new Size(183, 24);
+            textBoxTitulo_E.TabIndex = 9;
+            textBoxTitulo_E.TextChanged += textBox1_TextChanged;
+            // 
+            // panel4
+            // 
+            panel4.Controls.Add(label6);
+            panel4.Dock = DockStyle.Fill;
+            panel4.Location = new Point(5, 125);
+            panel4.Margin = new Padding(0);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(94, 30);
+            panel4.TabIndex = 10;
+            // 
+            // label6
+            // 
+            label6.Font = new Font("Georgia", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
+            label6.ForeColor = SystemColors.Control;
+            label6.Location = new Point(0, 0);
+            label6.Name = "label6";
+            label6.Size = new Size(93, 30);
+            label6.TabIndex = 13;
+            label6.Text = "Existencias";
+            label6.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // label5
+            // 
+            label5.Font = new Font("Georgia", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label5.ForeColor = SystemColors.Control;
+            label5.Location = new Point(8, 65);
+            label5.Name = "label5";
+            label5.Size = new Size(65, 30);
+            label5.TabIndex = 11;
+            label5.Text = "Precio";
+            label5.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // panel5
+            // 
+            panel5.Controls.Add(button2);
+            panel5.Controls.Add(label4);
+            panel5.Controls.Add(Btn_Cancel);
+            panel5.Dock = DockStyle.Top;
+            panel5.Location = new Point(0, 0);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(315, 52);
+            panel5.TabIndex = 2;
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.DarkRed;
+            button2.Dock = DockStyle.Left;
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Nirmala UI", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
+            button2.ForeColor = SystemColors.Control;
+            button2.Location = new Point(55, 0);
+            button2.Name = "button2";
+            button2.Size = new Size(78, 52);
+            button2.TabIndex = 5;
+            button2.Text = "Eliminar";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
+            // 
+            // label4
+            // 
+            label4.Font = new Font("Microsoft YaHei UI", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.ForeColor = SystemColors.Control;
+            label4.Location = new Point(139, 14);
+            label4.Name = "label4";
+            label4.Size = new Size(149, 26);
+            label4.TabIndex = 4;
+            label4.Text = "Producto";
+            label4.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // Btn_Cancel
+            // 
+            Btn_Cancel.BackColor = Color.DarkRed;
+            Btn_Cancel.Dock = DockStyle.Left;
+            Btn_Cancel.FlatAppearance.BorderSize = 0;
+            Btn_Cancel.FlatStyle = FlatStyle.Flat;
+            Btn_Cancel.Font = new Font("Nirmala UI", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
+            Btn_Cancel.ForeColor = SystemColors.Control;
+            Btn_Cancel.Location = new Point(0, 0);
+            Btn_Cancel.Name = "Btn_Cancel";
+            Btn_Cancel.Size = new Size(55, 52);
+            Btn_Cancel.TabIndex = 2;
+            Btn_Cancel.Text = "x";
+            Btn_Cancel.UseVisualStyleBackColor = false;
+            Btn_Cancel.Click += Btn_Cancel_Click;
             // 
             // tableLayoutPanel1
             // 
@@ -163,7 +416,7 @@
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.33334F));
             tableLayoutPanel2.Controls.Add(label2, 0, 0);
             tableLayoutPanel2.Controls.Add(Pic_photo, 2, 0);
-            tableLayoutPanel2.Controls.Add(TextBoxID, 0, 1);
+            tableLayoutPanel2.Controls.Add(TextBoxID_Eliminar, 0, 1);
             tableLayoutPanel2.Controls.Add(panel2, 2, 3);
             tableLayoutPanel2.Controls.Add(Btn_Buscar, 0, 2);
             tableLayoutPanel2.Dock = DockStyle.Fill;
@@ -217,16 +470,17 @@
             Pic_photo.TabIndex = 7;
             Pic_photo.TabStop = false;
             // 
-            // TextBoxID
+            // TextBoxID_Eliminar
             // 
-            TextBoxID.BorderStyle = BorderStyle.None;
-            tableLayoutPanel2.SetColumnSpan(TextBoxID, 2);
-            TextBoxID.Dock = DockStyle.Fill;
-            TextBoxID.Location = new Point(8, 38);
-            TextBoxID.Multiline = true;
-            TextBoxID.Name = "TextBoxID";
-            TextBoxID.Size = new Size(183, 24);
-            TextBoxID.TabIndex = 9;
+            TextBoxID_Eliminar.BorderStyle = BorderStyle.None;
+            tableLayoutPanel2.SetColumnSpan(TextBoxID_Eliminar, 2);
+            TextBoxID_Eliminar.Dock = DockStyle.Fill;
+            TextBoxID_Eliminar.Location = new Point(8, 38);
+            TextBoxID_Eliminar.Multiline = true;
+            TextBoxID_Eliminar.Name = "TextBoxID_Eliminar";
+            TextBoxID_Eliminar.Size = new Size(183, 24);
+            TextBoxID_Eliminar.TabIndex = 9;
+            TextBoxID_Eliminar.TextChanged += TextBoxID_TextChanged;
             // 
             // panel2
             // 
@@ -272,238 +526,7 @@
             label1.TabIndex = 4;
             label1.Text = "Buscar ID";
             label1.TextAlign = ContentAlignment.MiddleLeft;
-            // 
-            // Pnl_Info
-            // 
-            Pnl_Info.AutoScroll = true;
-            Pnl_Info.BackColor = Color.DarkRed;
-            Pnl_Info.Controls.Add(panel3);
-            Pnl_Info.Controls.Add(panel5);
-            Pnl_Info.Dock = DockStyle.Right;
-            Pnl_Info.Location = new Point(514, 65);
-            Pnl_Info.Name = "Pnl_Info";
-            Pnl_Info.Size = new Size(315, 530);
-            Pnl_Info.TabIndex = 9;
-            Pnl_Info.Visible = false;
-            // 
-            // panel3
-            // 
-            panel3.Controls.Add(tableLayoutPanel3);
-            panel3.Dock = DockStyle.Fill;
-            panel3.Location = new Point(0, 52);
-            panel3.Margin = new Padding(0);
-            panel3.Name = "panel3";
-            panel3.Padding = new Padding(10, 5, 10, 5);
-            panel3.Size = new Size(315, 478);
-            panel3.TabIndex = 3;
-            // 
-            // tableLayoutPanel3
-            // 
-            tableLayoutPanel3.AutoScroll = true;
-            tableLayoutPanel3.ColumnCount = 3;
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.33333F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.33334F));
-            tableLayoutPanel3.Controls.Add(textBox4, 0, 7);
-            tableLayoutPanel3.Controls.Add(label7, 0, 6);
-            tableLayoutPanel3.Controls.Add(textBox3, 0, 5);
-            tableLayoutPanel3.Controls.Add(textBox2, 0, 3);
-            tableLayoutPanel3.Controls.Add(label3, 0, 0);
-            tableLayoutPanel3.Controls.Add(pictureBox1, 2, 0);
-            tableLayoutPanel3.Controls.Add(textBox1, 0, 1);
-            tableLayoutPanel3.Controls.Add(panel4, 2, 3);
-            tableLayoutPanel3.Controls.Add(label5, 0, 2);
-            tableLayoutPanel3.Dock = DockStyle.Fill;
-            tableLayoutPanel3.Location = new Point(10, 5);
-            tableLayoutPanel3.Margin = new Padding(0);
-            tableLayoutPanel3.Name = "tableLayoutPanel3";
-            tableLayoutPanel3.Padding = new Padding(5);
-            tableLayoutPanel3.RowCount = 11;
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tableLayoutPanel3.Size = new Size(295, 468);
-            tableLayoutPanel3.TabIndex = 0;
-            // 
-            // textBox4
-            // 
-            textBox4.BorderStyle = BorderStyle.None;
-            tableLayoutPanel3.SetColumnSpan(textBox4, 3);
-            textBox4.Dock = DockStyle.Fill;
-            textBox4.Location = new Point(10, 215);
-            textBox4.Margin = new Padding(5, 0, 5, 0);
-            textBox4.Multiline = true;
-            textBox4.Name = "textBox4";
-            textBox4.ReadOnly = true;
-            tableLayoutPanel3.SetRowSpan(textBox4, 4);
-            textBox4.Size = new Size(275, 248);
-            textBox4.TabIndex = 19;
-            // 
-            // label7
-            // 
-            tableLayoutPanel3.SetColumnSpan(label7, 2);
-            label7.Font = new Font("Georgia", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.ForeColor = SystemColors.Control;
-            label7.Location = new Point(8, 185);
-            label7.Name = "label7";
-            label7.Size = new Size(101, 30);
-            label7.TabIndex = 14;
-            label7.Text = "Descripción";
-            label7.TextAlign = ContentAlignment.MiddleLeft;
-            // 
-            // textBox3
-            // 
-            textBox3.BorderStyle = BorderStyle.None;
-            tableLayoutPanel3.SetColumnSpan(textBox3, 3);
-            textBox3.Dock = DockStyle.Fill;
-            textBox3.Location = new Point(8, 158);
-            textBox3.Multiline = true;
-            textBox3.Name = "textBox3";
-            textBox3.ReadOnly = true;
-            textBox3.Size = new Size(279, 24);
-            textBox3.TabIndex = 14;
-            // 
-            // textBox2
-            // 
-            textBox2.BorderStyle = BorderStyle.None;
-            tableLayoutPanel3.SetColumnSpan(textBox2, 2);
-            textBox2.Dock = DockStyle.Fill;
-            textBox2.Location = new Point(8, 98);
-            textBox2.Multiline = true;
-            textBox2.Name = "textBox2";
-            textBox2.ReadOnly = true;
-            textBox2.Size = new Size(183, 24);
-            textBox2.TabIndex = 12;
-            // 
-            // label3
-            // 
-            label3.Dock = DockStyle.Fill;
-            label3.Font = new Font("Georgia", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.ForeColor = SystemColors.Control;
-            label3.Location = new Point(8, 5);
-            label3.Name = "label3";
-            label3.Size = new Size(88, 30);
-            label3.TabIndex = 8;
-            label3.Text = "Título";
-            label3.TextAlign = ContentAlignment.MiddleLeft;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            pictureBox1.BackColor = Color.Transparent;
-            pictureBox1.Image = Properties.Resources.icon_ejemplo;
-            pictureBox1.Location = new Point(221, 8);
-            pictureBox1.Name = "pictureBox1";
-            tableLayoutPanel3.SetRowSpan(pictureBox1, 4);
-            pictureBox1.Size = new Size(66, 114);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 7;
-            pictureBox1.TabStop = false;
-            // 
-            // textBox1
-            // 
-            textBox1.BorderStyle = BorderStyle.None;
-            tableLayoutPanel3.SetColumnSpan(textBox1, 2);
-            textBox1.Dock = DockStyle.Fill;
-            textBox1.Location = new Point(8, 38);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.ReadOnly = true;
-            textBox1.Size = new Size(183, 24);
-            textBox1.TabIndex = 9;
-            // 
-            // panel4
-            // 
-            panel4.Controls.Add(label6);
-            panel4.Dock = DockStyle.Fill;
-            panel4.Location = new Point(5, 125);
-            panel4.Margin = new Padding(0);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(94, 30);
-            panel4.TabIndex = 10;
-            // 
-            // label6
-            // 
-            label6.Font = new Font("Georgia", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
-            label6.ForeColor = SystemColors.Control;
-            label6.Location = new Point(0, 0);
-            label6.Name = "label6";
-            label6.Size = new Size(93, 30);
-            label6.TabIndex = 13;
-            label6.Text = "Existencias";
-            label6.TextAlign = ContentAlignment.MiddleLeft;
-            // 
-            // label5
-            // 
-            label5.Font = new Font("Georgia", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.ForeColor = SystemColors.Control;
-            label5.Location = new Point(8, 65);
-            label5.Name = "label5";
-            label5.Size = new Size(65, 30);
-            label5.TabIndex = 11;
-            label5.Text = "Precio";
-            label5.TextAlign = ContentAlignment.MiddleLeft;
-            // 
-            // panel5
-            // 
-            panel5.Controls.Add(button2);
-            panel5.Controls.Add(label4);
-            panel5.Controls.Add(Btn_Cancel);
-            panel5.Dock = DockStyle.Top;
-            panel5.Location = new Point(0, 0);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(315, 52);
-            panel5.TabIndex = 2;
-            // 
-            // button2
-            // 
-            button2.BackColor = Color.DarkRed;
-            button2.Dock = DockStyle.Left;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Nirmala UI", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
-            button2.ForeColor = SystemColors.Control;
-            button2.Location = new Point(55, 0);
-            button2.Name = "button2";
-            button2.Size = new Size(78, 52);
-            button2.TabIndex = 5;
-            button2.Text = "Eliminar";
-            button2.UseVisualStyleBackColor = false;
-            // 
-            // label4
-            // 
-            label4.Font = new Font("Microsoft YaHei UI", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.ForeColor = SystemColors.Control;
-            label4.Location = new Point(139, 14);
-            label4.Name = "label4";
-            label4.Size = new Size(149, 26);
-            label4.TabIndex = 4;
-            label4.Text = "Producto";
-            label4.TextAlign = ContentAlignment.MiddleRight;
-            // 
-            // Btn_Cancel
-            // 
-            Btn_Cancel.BackColor = Color.DarkRed;
-            Btn_Cancel.Dock = DockStyle.Left;
-            Btn_Cancel.FlatAppearance.BorderSize = 0;
-            Btn_Cancel.FlatStyle = FlatStyle.Flat;
-            Btn_Cancel.Font = new Font("Nirmala UI", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
-            Btn_Cancel.ForeColor = SystemColors.Control;
-            Btn_Cancel.Location = new Point(0, 0);
-            Btn_Cancel.Name = "Btn_Cancel";
-            Btn_Cancel.Size = new Size(55, 52);
-            Btn_Cancel.TabIndex = 2;
-            Btn_Cancel.Text = "x";
-            Btn_Cancel.UseVisualStyleBackColor = false;
-            Btn_Cancel.Click += Btn_Cancel_Click;
+            label1.Click += label1_Click;
             // 
             // timer1
             // 
@@ -532,6 +555,15 @@
             Padding = new Padding(5, 5, 0, 5);
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Eliminar";
+            Contenedor_Peliculas.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)gridB).EndInit();
+            Pnl_Info.ResumeLayout(false);
+            panel3.ResumeLayout(false);
+            tableLayoutPanel3.ResumeLayout(false);
+            tableLayoutPanel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel4.ResumeLayout(false);
+            panel5.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)Btn_Close_Page).EndInit();
             PnlAddData.ResumeLayout(false);
@@ -540,13 +572,6 @@
             tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)Pic_photo).EndInit();
             PnlAddTop.ResumeLayout(false);
-            Pnl_Info.ResumeLayout(false);
-            panel3.ResumeLayout(false);
-            tableLayoutPanel3.ResumeLayout(false);
-            tableLayoutPanel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            panel4.ResumeLayout(false);
-            panel5.ResumeLayout(false);
             panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -561,7 +586,7 @@
         private TableLayoutPanel tableLayoutPanel2;
         private Label label2;
         private PictureBox Pic_photo;
-        private TextBox TextBoxID;
+        private TextBox TextBoxID_Eliminar;
         private Panel panel2;
         private Panel PnlAddTop;
         private Label label1;
@@ -572,20 +597,21 @@
         private TableLayoutPanel tableLayoutPanel3;
         private Label label3;
         private PictureBox pictureBox1;
-        private TextBox textBox1;
+        private TextBox textBoxTitulo_E;
         private Panel panel4;
         private Panel panel5;
         private Label label4;
         private Button Btn_Cancel;
-        private TextBox textBox3;
-        private TextBox textBox2;
+        private TextBox textBoxStock_E;
+        private TextBox textBoxPrecio_E;
         private Label label5;
         private Label label6;
         private Label label7;
-        private TextBox textBox4;
+        private TextBox textBoxDescripcion_E;
         private Button button2;
         private System.Windows.Forms.Timer timer1;
         private Panel panel1;
         private System.Windows.Forms.Timer timer2;
+        private DataGridView gridB;
     }
 }

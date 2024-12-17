@@ -1,4 +1,7 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
+using System.Data;
+using System.Runtime.Intrinsics.X86;
 using System.Windows.Forms;
 
 namespace WinFormsFinalProyect
@@ -11,6 +14,7 @@ namespace WinFormsFinalProyect
         public Eliminar()
         {
             InitializeComponent();
+            fill_table2();
         }
 
         private void Frm_Eliminar_Load(object sender, EventArgs e)
@@ -21,7 +25,6 @@ namespace WinFormsFinalProyect
             PnlAddData.Visible = false;
             Pnl_Info.Width = 0; // El panel Pnl_Info comienza cerrado
             Pnl_Info.Visible = false; // Inicialmente oculto
-            
         }
 
         private void Timer2_Tick(object sender, EventArgs e)
@@ -105,11 +108,51 @@ namespace WinFormsFinalProyect
 
         private void Btn_Buscar_Click(object sender, EventArgs e)
         {
-            isOpening = true;
-            PnlAddData.Visible = false; // Ocultar PnlAddData inmediatamente al presionar el botón
-            Pnl_Info.Visible = true; // Mostrar Pnl_Info
-            timer1.Start(); // Iniciar la animación de Pnl_Info
+            if (string.IsNullOrWhiteSpace(this.TextBoxID_Eliminar.Text))
+            {
+                MessageBox.Show("Por favor, ingrese un ID para buscar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            try
+            {
+                int id = Convert.ToInt32(this.TextBoxID_Eliminar.Text);
+
+                AdmonDB obj = new AdmonDB();
+                obj.Connect();
+
+                Products aux = obj.consultaProductos(id);
+
+                if (aux == null)
+                {
+                    MessageBox.Show("El ID ingresado no existe en la base de datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.TextBoxID_Eliminar.Clear();
+                }
+                else
+                {
+                    isOpening = true;
+                    PnlAddData.Visible = false; // Ocultar PnlAddData inmediatamente al presionar el botón
+                    Pnl_Info.Visible = true; // Mostrar Pnl_Info
+                    timer1.Start(); // Iniciar la animación de Pnl_Info
+
+                    this.textBoxTitulo_E.Text = aux.Name;
+                    this.textBoxPrecio_E.Text = Convert.ToString(aux.Precio);
+                    this.textBoxStock_E.Text = Convert.ToString(aux.Stock);
+                    this.textBoxDescripcion_E.Text = aux.About;
+                }
+
+                obj.Disconnect();
+            }
+            catch (FormatException ex)
+            {
+                MessageBox.Show("El ID ingresado no es válido: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error al buscar el producto: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
 
 
         private void Btn_Close_Page_Click(object sender, EventArgs e)
@@ -121,6 +164,69 @@ namespace WinFormsFinalProyect
         {
             isOpening = false;
             timer1.Start();
+        }
+
+        private void Contenedor_Peliculas_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TextBoxID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            AdmonDB obj = new AdmonDB();
+            obj.eliminarProducto(Convert.ToInt32(this.TextBoxID_Eliminar.Text));
+            TextBoxID_Eliminar.Clear();
+            this.textBoxTitulo_E.Clear();
+            this.textBoxPrecio_E.Clear();
+            this.textBoxStock_E.Clear();
+            this.textBoxDescripcion_E.Clear();
+            obj.Disconnect();
+            fill_table2();
+        }
+
+        MySqlConnection conexion2 = new MySqlConnection("Server=localhost; Database=cine; User=root; Password=; SslMode=none;");
+
+        public void fill_table2()
+        {
+            string consulta2 = "SELECT * FROM products";
+            MySqlDataAdapter adapter2 = new MySqlDataAdapter(consulta2, conexion2);
+            DataTable dt2 = new DataTable();
+            adapter2.Fill(dt2);
+            gridB.DataSource = dt2;
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string consulta2 = "SELECT * FROM products";
+            MySqlDataAdapter adapter2 = new MySqlDataAdapter(consulta2, conexion2);
+            DataTable dt2 = new DataTable();
+            adapter2.Fill(dt2);
+            gridB.DataSource = dt2;
         }
     }
 }

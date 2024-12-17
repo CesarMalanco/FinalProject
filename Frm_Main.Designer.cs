@@ -92,7 +92,6 @@
             IconRestaurar.SizeMode = PictureBoxSizeMode.Zoom;
             IconRestaurar.TabIndex = 6;
             IconRestaurar.TabStop = false;
-            //IconRestaurar.Click += IconRestaurar_Click;
             // 
             // Btn_Minimizar
             // 
@@ -418,6 +417,7 @@
             PanelPrincipal.Name = "PanelPrincipal";
             PanelPrincipal.Size = new Size(829, 600);
             PanelPrincipal.TabIndex = 13;
+            PanelPrincipal.Paint += PanelPrincipal_Paint;
             // 
             // Timer_Hora
             // 

@@ -31,7 +31,6 @@
             components = new System.ComponentModel.Container();
             tableLayoutPanel1 = new TableLayoutPanel();
             Btn_Modificar = new Button();
-            Btn_Refrescar = new Button();
             Btn_Buscar = new Button();
             Btn_Eliminar = new Button();
             Btn_Agregar = new Button();
@@ -39,35 +38,33 @@
             PnlAddData = new Panel();
             PnlAddPage = new Panel();
             tableLayoutPanel2 = new TableLayoutPanel();
-            textBox4 = new TextBox();
+            TextBoxAbout_Sweet = new TextBox();
             label6 = new Label();
-            textBox3 = new TextBox();
+            TextBoxStock_Sweet = new TextBox();
             label5 = new Label();
-            textBox2 = new TextBox();
+            TextBoxPrice_Sweet = new TextBox();
             label4 = new Label();
-            textBox1 = new TextBox();
+            TextBoxName_Sweet = new TextBox();
             label3 = new Label();
             label2 = new Label();
             Pic_photo = new PictureBox();
-            TextBoxID = new TextBox();
+            TextBoxID_Sweet = new TextBox();
             panel2 = new Panel();
-            Btn_Delete = new Button();
-            Btn_Open = new Button();
             PnlAddTop = new Panel();
-            label1 = new Label();
-            button2 = new Button();
-            BtnCancel = new Button();
+            button_Ok = new Button();
             Timer1 = new System.Windows.Forms.Timer(components);
             Grid_Dulceria = new DataGridView();
+            gridSweets = new DataGridView();
+            buttonLimpiar = new Button();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)Btn_Close_Page).BeginInit();
             PnlAddData.SuspendLayout();
             PnlAddPage.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)Pic_photo).BeginInit();
-            panel2.SuspendLayout();
             PnlAddTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)Grid_Dulceria).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)gridSweets).BeginInit();
             SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -79,8 +76,8 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 90F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 90F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 90F));
+            tableLayoutPanel1.Controls.Add(buttonLimpiar, 4, 0);
             tableLayoutPanel1.Controls.Add(Btn_Modificar, 3, 0);
-            tableLayoutPanel1.Controls.Add(Btn_Refrescar, 4, 0);
             tableLayoutPanel1.Controls.Add(Btn_Buscar, 2, 0);
             tableLayoutPanel1.Controls.Add(Btn_Eliminar, 1, 0);
             tableLayoutPanel1.Controls.Add(Btn_Agregar, 0, 0);
@@ -109,21 +106,6 @@
             Btn_Modificar.Text = "Modificar";
             Btn_Modificar.UseVisualStyleBackColor = false;
             Btn_Modificar.Click += Btn_Modificar_Click;
-            // 
-            // Btn_Refrescar
-            // 
-            Btn_Refrescar.BackColor = Color.DarkRed;
-            Btn_Refrescar.Dock = DockStyle.Fill;
-            Btn_Refrescar.FlatAppearance.BorderSize = 0;
-            Btn_Refrescar.FlatStyle = FlatStyle.Flat;
-            Btn_Refrescar.Font = new Font("Nirmala UI", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
-            Btn_Refrescar.ForeColor = SystemColors.Control;
-            Btn_Refrescar.Location = new Point(365, 5);
-            Btn_Refrescar.Name = "Btn_Refrescar";
-            Btn_Refrescar.Size = new Size(84, 50);
-            Btn_Refrescar.TabIndex = 5;
-            Btn_Refrescar.Text = "Refrescar";
-            Btn_Refrescar.UseVisualStyleBackColor = false;
             // 
             // Btn_Buscar
             // 
@@ -196,13 +178,11 @@
             PnlAddData.Name = "PnlAddData";
             PnlAddData.Size = new Size(300, 530);
             PnlAddData.TabIndex = 1;
-            PnlAddData.Visible = false;
             // 
             // PnlAddPage
             // 
             PnlAddPage.AutoScroll = true;
             PnlAddPage.Controls.Add(tableLayoutPanel2);
-            PnlAddPage.Dock = DockStyle.Fill;
             PnlAddPage.Location = new Point(0, 52);
             PnlAddPage.Margin = new Padding(0);
             PnlAddPage.Name = "PnlAddPage";
@@ -216,17 +196,17 @@
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.33333F));
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.33334F));
-            tableLayoutPanel2.Controls.Add(textBox4, 0, 11);
+            tableLayoutPanel2.Controls.Add(TextBoxAbout_Sweet, 0, 11);
             tableLayoutPanel2.Controls.Add(label6, 0, 10);
-            tableLayoutPanel2.Controls.Add(textBox3, 0, 9);
+            tableLayoutPanel2.Controls.Add(TextBoxStock_Sweet, 0, 9);
             tableLayoutPanel2.Controls.Add(label5, 0, 8);
-            tableLayoutPanel2.Controls.Add(textBox2, 0, 7);
+            tableLayoutPanel2.Controls.Add(TextBoxPrice_Sweet, 0, 7);
             tableLayoutPanel2.Controls.Add(label4, 0, 6);
-            tableLayoutPanel2.Controls.Add(textBox1, 0, 5);
+            tableLayoutPanel2.Controls.Add(TextBoxName_Sweet, 0, 5);
             tableLayoutPanel2.Controls.Add(label3, 0, 4);
             tableLayoutPanel2.Controls.Add(label2, 0, 0);
             tableLayoutPanel2.Controls.Add(Pic_photo, 2, 0);
-            tableLayoutPanel2.Controls.Add(TextBoxID, 0, 1);
+            tableLayoutPanel2.Controls.Add(TextBoxID_Sweet, 0, 1);
             tableLayoutPanel2.Controls.Add(panel2, 2, 3);
             tableLayoutPanel2.Dock = DockStyle.Fill;
             tableLayoutPanel2.Location = new Point(10, 5);
@@ -254,17 +234,17 @@
             tableLayoutPanel2.Size = new Size(280, 468);
             tableLayoutPanel2.TabIndex = 0;
             // 
-            // textBox4
+            // TextBoxAbout_Sweet
             // 
-            textBox4.BorderStyle = BorderStyle.None;
-            tableLayoutPanel2.SetColumnSpan(textBox4, 3);
-            textBox4.Dock = DockStyle.Fill;
-            textBox4.Location = new Point(10, 335);
-            textBox4.Margin = new Padding(5, 0, 5, 0);
-            textBox4.Multiline = true;
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(260, 100);
-            textBox4.TabIndex = 18;
+            TextBoxAbout_Sweet.BorderStyle = BorderStyle.None;
+            tableLayoutPanel2.SetColumnSpan(TextBoxAbout_Sweet, 3);
+            TextBoxAbout_Sweet.Dock = DockStyle.Fill;
+            TextBoxAbout_Sweet.Location = new Point(10, 335);
+            TextBoxAbout_Sweet.Margin = new Padding(5, 0, 5, 0);
+            TextBoxAbout_Sweet.Multiline = true;
+            TextBoxAbout_Sweet.Name = "TextBoxAbout_Sweet";
+            TextBoxAbout_Sweet.Size = new Size(260, 100);
+            TextBoxAbout_Sweet.TabIndex = 18;
             // 
             // label6
             // 
@@ -280,17 +260,17 @@
             label6.Text = "Descripción";
             label6.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // textBox3
+            // TextBoxStock_Sweet
             // 
-            textBox3.BorderStyle = BorderStyle.None;
-            tableLayoutPanel2.SetColumnSpan(textBox3, 3);
-            textBox3.Dock = DockStyle.Fill;
-            textBox3.Location = new Point(10, 275);
-            textBox3.Margin = new Padding(5, 0, 5, 0);
-            textBox3.Multiline = true;
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(260, 30);
-            textBox3.TabIndex = 16;
+            TextBoxStock_Sweet.BorderStyle = BorderStyle.None;
+            tableLayoutPanel2.SetColumnSpan(TextBoxStock_Sweet, 3);
+            TextBoxStock_Sweet.Dock = DockStyle.Fill;
+            TextBoxStock_Sweet.Location = new Point(10, 275);
+            TextBoxStock_Sweet.Margin = new Padding(5, 0, 5, 0);
+            TextBoxStock_Sweet.Multiline = true;
+            TextBoxStock_Sweet.Name = "TextBoxStock_Sweet";
+            TextBoxStock_Sweet.Size = new Size(260, 30);
+            TextBoxStock_Sweet.TabIndex = 16;
             // 
             // label5
             // 
@@ -306,17 +286,17 @@
             label5.Text = "Existencias";
             label5.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // textBox2
+            // TextBoxPrice_Sweet
             // 
-            textBox2.BorderStyle = BorderStyle.None;
-            tableLayoutPanel2.SetColumnSpan(textBox2, 3);
-            textBox2.Dock = DockStyle.Fill;
-            textBox2.Location = new Point(10, 215);
-            textBox2.Margin = new Padding(5, 0, 5, 0);
-            textBox2.Multiline = true;
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(260, 30);
-            textBox2.TabIndex = 14;
+            TextBoxPrice_Sweet.BorderStyle = BorderStyle.None;
+            tableLayoutPanel2.SetColumnSpan(TextBoxPrice_Sweet, 3);
+            TextBoxPrice_Sweet.Dock = DockStyle.Fill;
+            TextBoxPrice_Sweet.Location = new Point(10, 215);
+            TextBoxPrice_Sweet.Margin = new Padding(5, 0, 5, 0);
+            TextBoxPrice_Sweet.Multiline = true;
+            TextBoxPrice_Sweet.Name = "TextBoxPrice_Sweet";
+            TextBoxPrice_Sweet.Size = new Size(260, 30);
+            TextBoxPrice_Sweet.TabIndex = 14;
             // 
             // label4
             // 
@@ -332,17 +312,17 @@
             label4.Text = "Precio";
             label4.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // textBox1
+            // TextBoxName_Sweet
             // 
-            textBox1.BorderStyle = BorderStyle.None;
-            tableLayoutPanel2.SetColumnSpan(textBox1, 3);
-            textBox1.Dock = DockStyle.Fill;
-            textBox1.Location = new Point(10, 155);
-            textBox1.Margin = new Padding(5, 0, 5, 0);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(260, 30);
-            textBox1.TabIndex = 12;
+            TextBoxName_Sweet.BorderStyle = BorderStyle.None;
+            tableLayoutPanel2.SetColumnSpan(TextBoxName_Sweet, 3);
+            TextBoxName_Sweet.Dock = DockStyle.Fill;
+            TextBoxName_Sweet.Location = new Point(10, 155);
+            TextBoxName_Sweet.Margin = new Padding(5, 0, 5, 0);
+            TextBoxName_Sweet.Multiline = true;
+            TextBoxName_Sweet.Name = "TextBoxName_Sweet";
+            TextBoxName_Sweet.Size = new Size(260, 30);
+            TextBoxName_Sweet.TabIndex = 12;
             // 
             // label3
             // 
@@ -355,7 +335,7 @@
             label3.Name = "label3";
             label3.Size = new Size(174, 30);
             label3.TabIndex = 11;
-            label3.Text = "Imagen";
+            label3.Text = "Nombre";
             label3.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label2
@@ -383,20 +363,18 @@
             Pic_photo.TabIndex = 7;
             Pic_photo.TabStop = false;
             // 
-            // TextBoxID
+            // TextBoxID_Sweet
             // 
-            TextBoxID.BorderStyle = BorderStyle.None;
-            TextBoxID.Dock = DockStyle.Fill;
-            TextBoxID.Location = new Point(8, 38);
-            TextBoxID.Multiline = true;
-            TextBoxID.Name = "TextBoxID";
-            TextBoxID.Size = new Size(83, 24);
-            TextBoxID.TabIndex = 9;
+            TextBoxID_Sweet.BorderStyle = BorderStyle.None;
+            TextBoxID_Sweet.Dock = DockStyle.Fill;
+            TextBoxID_Sweet.Location = new Point(8, 38);
+            TextBoxID_Sweet.Multiline = true;
+            TextBoxID_Sweet.Name = "TextBoxID_Sweet";
+            TextBoxID_Sweet.Size = new Size(83, 24);
+            TextBoxID_Sweet.TabIndex = 9;
             // 
             // panel2
             // 
-            panel2.Controls.Add(Btn_Delete);
-            panel2.Controls.Add(Btn_Open);
             panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(184, 95);
             panel2.Margin = new Padding(0);
@@ -404,89 +382,29 @@
             panel2.Size = new Size(91, 30);
             panel2.TabIndex = 10;
             // 
-            // Btn_Delete
-            // 
-            Btn_Delete.BackColor = Color.DarkRed;
-            Btn_Delete.FlatAppearance.BorderSize = 0;
-            Btn_Delete.FlatStyle = FlatStyle.Flat;
-            Btn_Delete.Font = new Font("Nirmala UI", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
-            Btn_Delete.ForeColor = SystemColors.Control;
-            Btn_Delete.Location = new Point(0, 0);
-            Btn_Delete.Name = "Btn_Delete";
-            Btn_Delete.Size = new Size(32, 30);
-            Btn_Delete.TabIndex = 5;
-            Btn_Delete.Text = "X";
-            Btn_Delete.UseVisualStyleBackColor = false;
-            Btn_Delete.Click += Btn_Delete_Click;
-            // 
-            // Btn_Open
-            // 
-            Btn_Open.BackColor = Color.DarkRed;
-            Btn_Open.Dock = DockStyle.Right;
-            Btn_Open.FlatAppearance.BorderSize = 0;
-            Btn_Open.FlatStyle = FlatStyle.Flat;
-            Btn_Open.Font = new Font("Nirmala UI", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
-            Btn_Open.ForeColor = SystemColors.Control;
-            Btn_Open.Location = new Point(38, 0);
-            Btn_Open.Name = "Btn_Open";
-            Btn_Open.Size = new Size(53, 30);
-            Btn_Open.TabIndex = 4;
-            Btn_Open.Text = "File";
-            Btn_Open.UseVisualStyleBackColor = false;
-            Btn_Open.Click += Btn_Open_Click;
-            // 
             // PnlAddTop
             // 
-            PnlAddTop.Controls.Add(label1);
-            PnlAddTop.Controls.Add(button2);
-            PnlAddTop.Controls.Add(BtnCancel);
+            PnlAddTop.Controls.Add(button_Ok);
             PnlAddTop.Dock = DockStyle.Top;
             PnlAddTop.Location = new Point(0, 0);
             PnlAddTop.Name = "PnlAddTop";
             PnlAddTop.Size = new Size(300, 52);
             PnlAddTop.TabIndex = 2;
             // 
-            // label1
+            // button_Ok
             // 
-            label1.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ForeColor = SystemColors.Control;
-            label1.Location = new Point(145, 14);
-            label1.Name = "label1";
-            label1.Size = new Size(143, 26);
-            label1.TabIndex = 4;
-            label1.Text = "Ingreso de Datos";
-            label1.TextAlign = ContentAlignment.MiddleRight;
-            // 
-            // button2
-            // 
-            button2.BackColor = Color.DarkRed;
-            button2.Dock = DockStyle.Left;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Nirmala UI", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
-            button2.ForeColor = SystemColors.Control;
-            button2.Location = new Point(55, 0);
-            button2.Name = "button2";
-            button2.Size = new Size(55, 52);
-            button2.TabIndex = 3;
-            button2.Text = "ok";
-            button2.UseVisualStyleBackColor = false;
-            // 
-            // BtnCancel
-            // 
-            BtnCancel.BackColor = Color.DarkRed;
-            BtnCancel.Dock = DockStyle.Left;
-            BtnCancel.FlatAppearance.BorderSize = 0;
-            BtnCancel.FlatStyle = FlatStyle.Flat;
-            BtnCancel.Font = new Font("Nirmala UI", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
-            BtnCancel.ForeColor = SystemColors.Control;
-            BtnCancel.Location = new Point(0, 0);
-            BtnCancel.Name = "BtnCancel";
-            BtnCancel.Size = new Size(55, 52);
-            BtnCancel.TabIndex = 2;
-            BtnCancel.Text = "x";
-            BtnCancel.UseVisualStyleBackColor = false;
-            BtnCancel.Click += BtnCancel_Click;
+            button_Ok.BackColor = Color.DarkRed;
+            button_Ok.Dock = DockStyle.Left;
+            button_Ok.FlatAppearance.BorderSize = 0;
+            button_Ok.Font = new Font("Nirmala UI", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
+            button_Ok.ForeColor = SystemColors.Control;
+            button_Ok.Location = new Point(0, 0);
+            button_Ok.Name = "button_Ok";
+            button_Ok.Size = new Size(78, 52);
+            button_Ok.TabIndex = 6;
+            button_Ok.Text = "Ok";
+            button_Ok.UseVisualStyleBackColor = false;
+            button_Ok.Click += button_Ok_Click;
             // 
             // Timer1
             // 
@@ -505,12 +423,41 @@
             Grid_Dulceria.Size = new Size(819, 529);
             Grid_Dulceria.TabIndex = 2;
             // 
+            // gridSweets
+            // 
+            gridSweets.BackgroundColor = SystemColors.Info;
+            gridSweets.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            gridSweets.Location = new Point(5, 66);
+            gridSweets.Name = "gridSweets";
+            gridSweets.RowHeadersWidth = 51;
+            gridSweets.RowTemplate.Height = 29;
+            gridSweets.Size = new Size(516, 529);
+            gridSweets.TabIndex = 3;
+            gridSweets.CellContentClick += gridSweets_CellContentClick;
+            // 
+            // buttonLimpiar
+            // 
+            buttonLimpiar.BackColor = Color.DarkRed;
+            buttonLimpiar.Dock = DockStyle.Fill;
+            buttonLimpiar.FlatAppearance.BorderSize = 0;
+            buttonLimpiar.FlatStyle = FlatStyle.Flat;
+            buttonLimpiar.Font = new Font("Nirmala UI", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonLimpiar.ForeColor = SystemColors.Control;
+            buttonLimpiar.Location = new Point(365, 5);
+            buttonLimpiar.Name = "buttonLimpiar";
+            buttonLimpiar.Size = new Size(84, 50);
+            buttonLimpiar.TabIndex = 8;
+            buttonLimpiar.Text = "Limpiar";
+            buttonLimpiar.UseVisualStyleBackColor = false;
+            buttonLimpiar.Click += buttonLimpiar_Click;
+            // 
             // Frm_Dulceria
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
             ClientSize = new Size(829, 600);
+            Controls.Add(gridSweets);
             Controls.Add(PnlAddData);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(Grid_Dulceria);
@@ -520,6 +467,7 @@
             Padding = new Padding(5);
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Frm_Dulceria";
+            Load += Frm_Dulceria_Load_1;
             tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)Btn_Close_Page).EndInit();
             PnlAddData.ResumeLayout(false);
@@ -527,43 +475,40 @@
             tableLayoutPanel2.ResumeLayout(false);
             tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)Pic_photo).EndInit();
-            panel2.ResumeLayout(false);
             PnlAddTop.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)Grid_Dulceria).EndInit();
+            ((System.ComponentModel.ISupportInitialize)gridSweets).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
         private TableLayoutPanel tableLayoutPanel1;
-        private Button Btn_Refrescar;
-        private Button Btn_Delete;
         private Button Btn_Buscar;
         private Button Btn_Eliminar;
         private Button Btn_Agregar;
         private Button Btn_Modificar;
         private Panel PnlAddData;
         private Panel PnlAddTop;
-        private Button button2;
-        private Button BtnCancel;
         private Panel PnlAddPage;
         private TableLayoutPanel tableLayoutPanel2;
-        private Label label1;
         private PictureBox Pic_photo;
         private Label label2;
-        private TextBox TextBoxID;
+        private TextBox TextBoxID_Sweet;
         private Panel panel2;
-        private Button Btn_Open;
         private Label label3;
-        private TextBox textBox1;
-        private TextBox textBox3;
+        private TextBox TextBoxName_Sweet;
+        private TextBox TextBoxStock_Sweet;
         private Label label5;
-        private TextBox textBox2;
+        private TextBox TextBoxPrice_Sweet;
         private Label label4;
         private Label label6;
-        private TextBox textBox4;
+        private TextBox TextBoxAbout_Sweet;
         private PictureBox Btn_Close_Page;
         private System.Windows.Forms.Timer Timer1;
         private DataGridView Grid_Dulceria;
+        private DataGridView gridSweets;
+        private Button button_Ok;
+        private Button buttonLimpiar;
     }
 }
