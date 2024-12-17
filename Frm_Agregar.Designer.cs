@@ -35,6 +35,7 @@
             PnlAddData = new Panel();
             PnlAddPage = new Panel();
             tableLayoutPanel2 = new TableLayoutPanel();
+            label7 = new Label();
             TextBoxDescription = new TextBox();
             label6 = new Label();
             TextBoxStock = new TextBox();
@@ -49,12 +50,15 @@
             panel2 = new Panel();
             Btn_Delete = new Button();
             Btn_Open = new Button();
+            TextBoxImagen = new TextBox();
             PnlAddTop = new Panel();
             label1 = new Label();
             button2 = new Button();
             BtnCancel = new Button();
             Contenedor_Peliculas = new FlowLayoutPanel();
+            gridA = new DataGridView();
             timer1 = new System.Windows.Forms.Timer(components);
+            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)Btn_Close_Page).BeginInit();
             PnlAddData.SuspendLayout();
@@ -63,6 +67,8 @@
             ((System.ComponentModel.ISupportInitialize)Pic_photo).BeginInit();
             panel2.SuspendLayout();
             PnlAddTop.SuspendLayout();
+            Contenedor_Peliculas.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)gridA).BeginInit();
             SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -80,6 +86,7 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tableLayoutPanel1.Size = new Size(824, 60);
             tableLayoutPanel1.TabIndex = 1;
+            tableLayoutPanel1.Paint += tableLayoutPanel1_Paint;
             // 
             // Btn_Close_Page
             // 
@@ -140,6 +147,7 @@
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.33333F));
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.33334F));
+            tableLayoutPanel2.Controls.Add(label7, 0, 2);
             tableLayoutPanel2.Controls.Add(TextBoxDescription, 0, 11);
             tableLayoutPanel2.Controls.Add(label6, 0, 10);
             tableLayoutPanel2.Controls.Add(TextBoxStock, 0, 9);
@@ -152,12 +160,13 @@
             tableLayoutPanel2.Controls.Add(Pic_photo, 2, 0);
             tableLayoutPanel2.Controls.Add(TextBoxID, 0, 1);
             tableLayoutPanel2.Controls.Add(panel2, 2, 3);
+            tableLayoutPanel2.Controls.Add(TextBoxImagen, 0, 3);
             tableLayoutPanel2.Dock = DockStyle.Fill;
             tableLayoutPanel2.Location = new Point(10, 5);
             tableLayoutPanel2.Margin = new Padding(0);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.Padding = new Padding(5);
-            tableLayoutPanel2.RowCount = 17;
+            tableLayoutPanel2.RowCount = 19;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
@@ -175,14 +184,30 @@
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
             tableLayoutPanel2.Size = new Size(280, 468);
             tableLayoutPanel2.TabIndex = 0;
+            // 
+            // label7
+            // 
+            tableLayoutPanel2.SetColumnSpan(label7, 2);
+            label7.Dock = DockStyle.Fill;
+            label7.Font = new Font("Georgia", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label7.ForeColor = SystemColors.Control;
+            label7.Location = new Point(10, 65);
+            label7.Margin = new Padding(5, 0, 0, 0);
+            label7.Name = "label7";
+            label7.Size = new Size(174, 30);
+            label7.TabIndex = 19;
+            label7.Text = "Imagen";
+            label7.TextAlign = ContentAlignment.MiddleLeft;
+            label7.Click += label7_Click;
             // 
             // TextBoxDescription
             // 
             TextBoxDescription.BorderStyle = BorderStyle.None;
             tableLayoutPanel2.SetColumnSpan(TextBoxDescription, 3);
-            TextBoxDescription.Dock = DockStyle.Fill;
             TextBoxDescription.Location = new Point(10, 335);
             TextBoxDescription.Margin = new Padding(5, 0, 5, 0);
             TextBoxDescription.Multiline = true;
@@ -267,6 +292,7 @@
             TextBoxTitulo.Name = "TextBoxTitulo";
             TextBoxTitulo.Size = new Size(260, 30);
             TextBoxTitulo.TabIndex = 12;
+            TextBoxTitulo.TextChanged += TextBoxTitulo_TextChanged;
             // 
             // label3
             // 
@@ -361,6 +387,13 @@
             Btn_Open.UseVisualStyleBackColor = false;
             Btn_Open.Click += Btn_Open_Click;
             // 
+            // TextBoxImagen
+            // 
+            TextBoxImagen.Location = new Point(8, 98);
+            TextBoxImagen.Name = "TextBoxImagen";
+            TextBoxImagen.Size = new Size(83, 27);
+            TextBoxImagen.TabIndex = 20;
+            // 
             // PnlAddTop
             // 
             PnlAddTop.Controls.Add(label1);
@@ -418,11 +451,25 @@
             // 
             // Contenedor_Peliculas
             // 
-            Contenedor_Peliculas.BackColor = SystemColors.Info;
+            Contenedor_Peliculas.BackColor = SystemColors.ControlLight;
+            Contenedor_Peliculas.Controls.Add(gridA);
             Contenedor_Peliculas.Location = new Point(5, 71);
             Contenedor_Peliculas.Name = "Contenedor_Peliculas";
             Contenedor_Peliculas.Size = new Size(819, 519);
             Contenedor_Peliculas.TabIndex = 5;
+            Contenedor_Peliculas.Paint += Contenedor_Peliculas_Paint;
+            // 
+            // gridA
+            // 
+            gridA.BackgroundColor = SystemColors.Info;
+            gridA.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            gridA.Location = new Point(3, 3);
+            gridA.Name = "gridA";
+            gridA.RowHeadersWidth = 51;
+            gridA.RowTemplate.Height = 29;
+            gridA.Size = new Size(518, 516);
+            gridA.TabIndex = 0;
+            gridA.CellContentClick += gridA_CellContentClick_1;
             // 
             // timer1
             // 
@@ -441,6 +488,7 @@
             Name = "Frm_Agregar";
             Padding = new Padding(5, 5, 0, 5);
             Text = "Frm_Agregar";
+            Load += Frm_Agregar_Load_1;
             tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)Btn_Close_Page).EndInit();
             PnlAddData.ResumeLayout(false);
@@ -450,6 +498,8 @@
             ((System.ComponentModel.ISupportInitialize)Pic_photo).EndInit();
             panel2.ResumeLayout(false);
             PnlAddTop.ResumeLayout(false);
+            Contenedor_Peliculas.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)gridA).EndInit();
             ResumeLayout(false);
         }
 
@@ -481,5 +531,9 @@
         private System.Windows.Forms.Timer timer1;
         private PictureBox Btn_Close_Page;
         private Button Btn_Agregar;
+        private Label label7;
+        private TextBox TextBoxImagen;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private DataGridView gridA;
     }
 }
