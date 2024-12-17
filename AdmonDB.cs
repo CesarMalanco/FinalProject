@@ -26,7 +26,6 @@ namespace WinFormsFinalProyect
             {
                 connection = new MySqlConnection(cadena);
                 connection.Open();
-                MessageBox.Show("Conexión establecida exitosamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -39,7 +38,6 @@ namespace WinFormsFinalProyect
             if (connection != null && connection.State == System.Data.ConnectionState.Open)
             {
                 connection.Close();
-                MessageBox.Show("Conexión cerrada correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -48,25 +46,26 @@ namespace WinFormsFinalProyect
             this.Connect();
         }
 
-        public void insertarProducto(int idp, string name, string about, float precio, int stock)
+        public void insertarProducto(int idp, string name, string img, string about, float precio, int stock)
         {
             string query = "";
             try
             {
-                query = "INSERT INTO products (id,name,about,precio,stock) VALUES ("
+                query = "INSERT INTO products (id,name,img,about,precio,stock) VALUES ("
                   + "'" + idp + "',"
                   + "'" + name + "',"
+                  + "'" + img + "',"
                   + "'" + about + "',"
                   + "'" + precio + "', "
                   + "'" + stock + "')";
 
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 cmd.ExecuteNonQuery();
-                MessageBox.Show(query + "\nRegistro Agregado");
+                MessageBox.Show("Registro Agregado");
             }
             catch (Exception ex)
             {
-                MessageBox.Show(query + "\nClave duplicada" + ex.Message);
+                MessageBox.Show("ERROR: Clave duplicada");
                 this.Disconnect();
             }
         }
@@ -76,11 +75,11 @@ namespace WinFormsFinalProyect
             string query = "";
             try
             {
-                query = "DELETE FROM prendas WHERE id=" + idp + ";";
+                query = "DELETE FROM products WHERE id=" + idp + ";";
 
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 cmd.ExecuteNonQuery();
-                MessageBox.Show(query + "\nRegistro Eliminado");
+                MessageBox.Show("Registro Eliminado");
             }
             catch (Exception ex)
             {
@@ -89,10 +88,9 @@ namespace WinFormsFinalProyect
             }
         }
 
-        public List<Products> consultaProductos()
+        public Products consultaProductos(int id_search)
         {
-            List<Products> data = new List<Products>();
-            Products item;
+            Products item = null;
 
             int id;
             string name;
@@ -102,7 +100,7 @@ namespace WinFormsFinalProyect
 
             try
             {
-                string query = "SELECT * FROM products";
+                string query = "SELECT * FROM products where id=" + id_search + ";";
                 MySqlCommand command = new MySqlCommand(query, this.connection);
 
                 MySqlDataReader reader = command.ExecuteReader();
@@ -110,13 +108,12 @@ namespace WinFormsFinalProyect
                 {
                     // Ejemplo: mostrar los datos de las columnas
                     id = Convert.ToInt32(reader["id"]);
-                    name = Convert.ToString(reader["producto"]) ?? "";
+                    name = Convert.ToString(reader["name"]) ?? "";
                     about = Convert.ToString(reader["about"]) ?? "";
                     precio = Convert.ToSingle(reader["precio"]);
                     stock = Convert.ToInt32(reader["stock"]);
 
                     item = new Products(id, name, about, precio, stock);
-                    data.Add(item);
                 }
                 reader.Close();
             }
@@ -125,7 +122,100 @@ namespace WinFormsFinalProyect
                 MessageBox.Show("Error al leer la tabla de la base de datos: " + ex.Message);
                 this.Disconnect();
             }
-            return data;
+            return item;
+        }
+
+        public void insertarDulce(int idp, string name, int stock, string about, float price)
+        {
+            string query = "";
+            try
+            {
+                query = "INSERT INTO sweets (id,name,stock,about,price) VALUES ("
+                  + "'" + idp + "',"
+                  + "'" + name + "',"
+                  + "'" + stock + "',"
+                  + "'" + about + "',"
+                  + "'" + price + "')";
+
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Registro Agregado");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR: Clave duplicada");
+                this.Disconnect();
+            }
+        }
+        public void eliminarDulce(int idp)
+        {
+            string query = "";
+            try
+            {
+                query = "DELETE FROM sweets WHERE id=" + idp + ";";
+
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Registro Eliminado");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR: Clave duplicada");
+                this.Disconnect();
+            }
+        }
+
+        public Sweets consultarDulce(int id_search)
+        {
+            Sweets item = null;
+
+            int id;
+            string name;
+            int stock;
+            string about;
+            float price;
+
+            try
+            {
+                string query = "SELECT * FROM sweets where id=" + id_search + ";";
+                MySqlCommand command = new MySqlCommand(query, this.connection);
+
+                MySqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    // Ejemplo: mostrar los datos de las columnas
+                    id = Convert.ToInt32(reader["id"]);
+                    name = Convert.ToString(reader["name"]) ?? "";
+                    stock = Convert.ToInt32(reader["stock"]);
+                    about = Convert.ToString(reader["about"]) ?? "";
+                    price = Convert.ToSingle(reader["price"]);
+
+                    item = new Sweets(id, name, price, stock, about);
+                }
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al leer la tabla de la base de datos: " + ex.Message);
+                this.Disconnect();
+            }
+            return item;
+        }
+
+        public void modificarDulce(int idp, string name, int stock, string about, float price)
+        {
+            try
+            {
+                string query = "UPDATE sweets SET id=" + "'" + idp + "'" + ",name=" + "'" + name + "'" + ",stock=" + "'" + stock + "'" + ",about=" + "'" + about + "'" + ",price=" + "'" + price + "'" + "where id=" + idp + ";";
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Registro modificado");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Update error: " + ex.Message);
+                this.Disconnect();
+            }
         }
 
         public List<Users> consultaUsuarios()
@@ -166,6 +256,32 @@ namespace WinFormsFinalProyect
             }
 
             return data;
+        }
+
+        public List<string> consultarPeliculas()
+        {
+            List <string> movies = new List<string>();
+
+            string image;
+            try
+            {
+                string query = "SELECT * FROM products";
+                MySqlCommand command = new MySqlCommand(query, this.connection);
+                MySqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    image = Convert.ToString(reader["img"]) ?? "";
+                    movies.Add(image);
+                }
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al leer la tabla de la base de datos: " + ex.Message);
+                this.Disconnect();
+            }
+
+            return movies;
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
+using System.Data;
 using System.Windows.Forms;
 
 namespace WinFormsFinalProyect
@@ -21,8 +23,6 @@ namespace WinFormsFinalProyect
             PnlAddData.Visible = false;
             Contenedor_Peliculas.Width = 819; // Ancho total inicial del grid
         }
-
-
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -61,9 +61,6 @@ namespace WinFormsFinalProyect
                 }
             }
         }
-
-
-
 
         private void BtnCancel_Click(object sender, EventArgs e)
         {
@@ -105,28 +102,51 @@ namespace WinFormsFinalProyect
 
         private void button2_Click(object sender, EventArgs e)
         {
-            int id;
-            string name;
-            string about;
-            float precio;
-            int stock;
+            // Verificar que todos los TextBox tengan datos
+            if (string.IsNullOrWhiteSpace(this.TextBoxID.Text) ||
+                string.IsNullOrWhiteSpace(this.TextBoxTitulo.Text) ||
+                string.IsNullOrWhiteSpace(this.TextBoxDescription.Text) ||
+                string.IsNullOrWhiteSpace(this.TextBoxPrecio.Text) ||
+                string.IsNullOrWhiteSpace(this.TextBoxStock.Text) ||
+                string.IsNullOrWhiteSpace(this.TextBoxImagen.Text))
+            {
+                MessageBox.Show("Todos los campos deben estar llenos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
-            id = Convert.ToInt32(this.TextBoxID.Text);
-            name = this.TextBoxTitulo.Text;
-            about = this.TextBoxDescription.Text;
-            precio = float.Parse(this.TextBoxPrecio.Text);
-            stock = Convert.ToInt32(this.TextBoxStock.Text);
+            try
+            {
+                int id = Convert.ToInt32(this.TextBoxID.Text);
+                string name = this.TextBoxTitulo.Text;
+                string about = this.TextBoxDescription.Text;
+                float precio = float.Parse(this.TextBoxPrecio.Text);
+                int stock = Convert.ToInt32(this.TextBoxStock.Text);
+                string img = this.TextBoxImagen.Text;
 
-            AdmonDB obj = new AdmonDB();
-            obj.insertarProducto(id, name, about, precio, stock);
-            obj.Disconnect();
+                AdmonDB obj = new AdmonDB();
+                obj.Connect();
+                obj.insertarProducto(id, name, img, about, precio, stock);
+                obj.Disconnect();
 
-            this.TextBoxID.Clear();
-            this.TextBoxTitulo.Clear();
-            this.TextBoxDescription.Clear();
-            this.TextBoxPrecio.Clear();
-            this.TextBoxStock.Clear();
+                this.TextBoxID.Clear();
+                this.TextBoxTitulo.Clear();
+                this.TextBoxDescription.Clear();
+                this.TextBoxPrecio.Clear();
+                this.TextBoxStock.Clear();
+                this.TextBoxImagen.Clear();
+
+                fill_table();
+            }
+            catch (FormatException ex)
+            {
+                MessageBox.Show("Error en el formato de los datos: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error al agregar el producto: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
 
         private void label3_Click(object sender, EventArgs e)
         {
@@ -134,6 +154,61 @@ namespace WinFormsFinalProyect
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TextBoxTitulo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        MySqlConnection conexion = new MySqlConnection("Server=localhost; Database=cine; User=root; Password=; SslMode=none;");
+
+        public void fill_table()
+        {
+            string consulta = "SELECT * FROM products";
+            MySqlDataAdapter adapter1 = new MySqlDataAdapter(consulta, conexion);
+            DataTable dt = new DataTable();
+            adapter1.Fill(dt);
+            gridA.DataSource = dt;
+        }
+
+        private void Frm_Agregar_Load_1(object sender, EventArgs e)
+        {
+            string consulta = "SELECT * FROM products";
+            MySqlDataAdapter adapter1 = new MySqlDataAdapter(consulta, conexion);
+            DataTable dt = new DataTable();
+            adapter1.Fill(dt);
+            gridA.DataSource = dt;
+        }
+
+        private void gridA_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void Contenedor_Peliculas_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void gridA_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
 
         }
