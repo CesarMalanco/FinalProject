@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\andre\\OneDrive\\Escritorio\\WinFormsFinalProject\\WinFormsFinalProject\\WinFormsFinalProject.csproj": {}
+    "C:\\Users\\darel\\source\\repos\\FinalProject\\WinFormsFinalProject.csproj": {}
   },
   "projects": {
-    "C:\\Users\\andre\\OneDrive\\Escritorio\\WinFormsFinalProject\\WinFormsFinalProject\\WinFormsFinalProject.csproj": {
+    "C:\\Users\\darel\\source\\repos\\FinalProject\\WinFormsFinalProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\andre\\OneDrive\\Escritorio\\WinFormsFinalProject\\WinFormsFinalProject\\WinFormsFinalProject.csproj",
+        "projectUniqueName": "C:\\Users\\darel\\source\\repos\\FinalProject\\WinFormsFinalProject.csproj",
         "projectName": "WinFormsFinalProject",
-        "projectPath": "C:\\Users\\andre\\OneDrive\\Escritorio\\WinFormsFinalProject\\WinFormsFinalProject\\WinFormsFinalProject.csproj",
-        "packagesPath": "C:\\Users\\andre\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\andre\\OneDrive\\Escritorio\\WinFormsFinalProject\\WinFormsFinalProject\\obj\\",
+        "projectPath": "C:\\Users\\darel\\source\\repos\\FinalProject\\WinFormsFinalProject.csproj",
+        "packagesPath": "C:\\Users\\darel\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\darel\\source\\repos\\FinalProject\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\andre\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\darel\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

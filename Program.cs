@@ -1,3 +1,5 @@
+using Forms_individuales_proyecto;
+
 namespace WinFormsFinalProject
 {
     internal static class Program
@@ -10,8 +12,10 @@ namespace WinFormsFinalProject
         {
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
-            ApplicationConfiguration.Initialize();
-            Application.Run(new WinFormsFinalProyect.Frm_Main());
+
+            //ApplicationConfiguration.Initialize();
+            Application.Run(new FormLoadingScreen());
+
         }
     }
 }

@@ -1,10 +1,54 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\andre\\OneDrive\\Escritorio\\WinFormsFinalProject\\",
+  "WorkspaceRootPath": "C:\\Users\\darel\\source\\repos\\FinalProject\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E00292B7-12B6-4A5A-A75C-67FEB0C63720}|WinFormsFinalProject\\WinFormsFinalProject.csproj|c:\\users\\andre\\onedrive\\escritorio\\winformsfinalproject\\winformsfinalproject\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E00292B7-12B6-4A5A-A75C-67FEB0C63720}|WinFormsFinalProject\\WinFormsFinalProject.csproj|solutionrelative:winformsfinalproject\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\darel\\source\\repos\\FinalProject\\FormFood.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:FormFood.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\darel\\source\\repos\\FinalProject\\FormLoginPage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:FormLoginPage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\darel\\source\\repos\\FinalProject\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\darel\\source\\repos\\FinalProject\\FormLoginPage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:FormLoginPage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\darel\\source\\repos\\FinalProject\\FormMainPage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:FormMainPage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\darel\\source\\repos\\FinalProject\\FormMovies.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:FormMovies.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\darel\\source\\repos\\FinalProject\\formmainpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:formmainpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\darel\\source\\repos\\FinalProject\\FormMovie1.Designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:FormMovie1.Designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\darel\\source\\repos\\FinalProject\\Properties\\Resources.Designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Properties\\Resources.Designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\darel\\source\\repos\\FinalProject\\Properties\\Resources.resx||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Properties\\Resources.resx||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\darel\\source\\repos\\FinalProject\\formhome.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:formhome.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\darel\\source\\repos\\FinalProject\\formcover.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:formcover.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,19 +58,149 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Form1.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\andre\\OneDrive\\Escritorio\\WinFormsFinalProject\\WinFormsFinalProject\\Form1.cs",
-              "RelativeDocumentMoniker": "WinFormsFinalProject\\Form1.cs",
-              "ToolTip": "C:\\Users\\andre\\OneDrive\\Escritorio\\WinFormsFinalProject\\WinFormsFinalProject\\Form1.cs [Design]",
-              "RelativeToolTip": "WinFormsFinalProject\\Form1.cs [Design]",
+              "DocumentIndex": 1,
+              "Title": "FormLoginPage.cs",
+              "DocumentMoniker": "C:\\Users\\darel\\source\\repos\\FinalProject\\FormLoginPage.cs",
+              "RelativeDocumentMoniker": "FormLoginPage.cs",
+              "ToolTip": "C:\\Users\\darel\\source\\repos\\FinalProject\\FormLoginPage.cs",
+              "RelativeToolTip": "FormLoginPage.cs",
+              "ViewState": "AgIAAFMAAAAAAAAAAADwv2gAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-29T14:11:27.286Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-12-17T18:32:38.687Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FormFood.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\darel\\source\\repos\\FinalProject\\FormFood.cs",
+              "RelativeDocumentMoniker": "FormFood.cs",
+              "ToolTip": "C:\\Users\\darel\\source\\repos\\FinalProject\\FormFood.cs [Dise\u00F1o]",
+              "RelativeToolTip": "FormFood.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T18:32:38.896Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FormMainPage.cs",
+              "DocumentMoniker": "C:\\Users\\darel\\source\\repos\\FinalProject\\FormMainPage.cs",
+              "RelativeDocumentMoniker": "FormMainPage.cs",
+              "ToolTip": "C:\\Users\\darel\\source\\repos\\FinalProject\\FormMainPage.cs",
+              "RelativeToolTip": "FormMainPage.cs",
+              "ViewState": "AgIAALkAAAAAAAAAAAAWwMcAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T18:32:38.91Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "FormMovies.cs",
+              "DocumentMoniker": "C:\\Users\\darel\\source\\repos\\FinalProject\\FormMovies.cs",
+              "RelativeDocumentMoniker": "FormMovies.cs",
+              "ToolTip": "C:\\Users\\darel\\source\\repos\\FinalProject\\FormMovies.cs",
+              "RelativeToolTip": "FormMovies.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAANgAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T18:32:38.926Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\darel\\source\\repos\\FinalProject\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\darel\\source\\repos\\FinalProject\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T18:32:38.942Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FormLoginPage.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\darel\\source\\repos\\FinalProject\\FormLoginPage.cs",
+              "RelativeDocumentMoniker": "FormLoginPage.cs",
+              "ToolTip": "C:\\Users\\darel\\source\\repos\\FinalProject\\FormLoginPage.cs [Dise\u00F1o]",
+              "RelativeToolTip": "FormLoginPage.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T18:32:44.801Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "FormMainPage.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\darel\\source\\repos\\FinalProject\\FormMainPage.cs",
+              "RelativeDocumentMoniker": "FormMainPage.cs",
+              "ToolTip": "C:\\Users\\darel\\source\\repos\\FinalProject\\FormMainPage.cs [Dise\u00F1o]",
+              "RelativeToolTip": "FormMainPage.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T18:32:44.895Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "FormMovie1.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\darel\\source\\repos\\FinalProject\\FormMovie1.Designer.cs",
+              "RelativeDocumentMoniker": "FormMovie1.Designer.cs",
+              "ToolTip": "C:\\Users\\darel\\source\\repos\\FinalProject\\FormMovie1.Designer.cs",
+              "RelativeToolTip": "FormMovie1.Designer.cs",
+              "ViewState": "AgIAAF4AAAAAAAAAAAAowGkAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T18:32:44.9Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Resources.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\darel\\source\\repos\\FinalProject\\Properties\\Resources.Designer.cs",
+              "RelativeDocumentMoniker": "Properties\\Resources.Designer.cs",
+              "ToolTip": "C:\\Users\\darel\\source\\repos\\FinalProject\\Properties\\Resources.Designer.cs",
+              "RelativeToolTip": "Properties\\Resources.Designer.cs",
+              "ViewState": "AgIAAIwAAAAAAAAAAAAwwMYAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T18:32:44.91Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Resources.resx",
+              "DocumentMoniker": "C:\\Users\\darel\\source\\repos\\FinalProject\\Properties\\Resources.resx",
+              "RelativeDocumentMoniker": "Properties\\Resources.resx",
+              "ToolTip": "C:\\Users\\darel\\source\\repos\\FinalProject\\Properties\\Resources.resx",
+              "RelativeToolTip": "Properties\\Resources.resx",
+              "ViewState": "AgIAAI0AAAAAAAAAAAAAAJEAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2024-12-17T18:32:44.92Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "FormHome.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\darel\\source\\repos\\FinalProject\\FormHome.cs",
+              "RelativeDocumentMoniker": "FormHome.cs",
+              "ToolTip": "C:\\Users\\darel\\source\\repos\\FinalProject\\FormHome.cs [Dise\u00F1o]",
+              "RelativeToolTip": "FormHome.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T18:32:44.927Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "FormCover.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\darel\\source\\repos\\FinalProject\\FormCover.cs",
+              "RelativeDocumentMoniker": "FormCover.cs",
+              "ToolTip": "C:\\Users\\darel\\source\\repos\\FinalProject\\FormCover.cs [Dise\u00F1o]",
+              "RelativeToolTip": "FormCover.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T18:32:44.93Z"
             }
           ]
         }
