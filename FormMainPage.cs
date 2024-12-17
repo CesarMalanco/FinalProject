@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Forms_individuales_proyecto;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -201,6 +202,13 @@ namespace WinFormsFinalProject
             FormLoginPage loginPage = new FormLoginPage();// Crete instance for Login Page
             this.Hide(); // Hide this
             loginPage.ShowDialog(); // Show Login Page
+        }
+
+        private void btnSeeCart_Click(object sender, EventArgs e)
+        {
+            Frm_Carrito cart = new Frm_Carrito();
+            this.Hide();
+            cart.ShowDialog();
         }
     }
 }

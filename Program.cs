@@ -1,3 +1,5 @@
+using Forms_individuales_proyecto;
+
 namespace WinFormsFinalProject
 {
     internal static class Program

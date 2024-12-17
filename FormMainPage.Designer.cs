@@ -29,13 +29,17 @@
         private void InitializeComponent()
         {
             panelHead = new Panel();
+            btnLogOut = new Button();
             txtMP_User = new TextBox();
             btnMP_Movies = new Button();
             btnMP_Food = new Button();
             btnMP_Home = new Button();
             panelMP = new Panel();
-            btnLogOut = new Button();
+            panelCartButton = new Panel();
+            btnSeeCart = new Button();
             panelHead.SuspendLayout();
+            panelMP.SuspendLayout();
+            panelCartButton.SuspendLayout();
             SuspendLayout();
             // 
             // panelHead
@@ -50,6 +54,16 @@
             panelHead.Name = "panelHead";
             panelHead.Size = new Size(800, 79);
             panelHead.TabIndex = 0;
+            // 
+            // btnLogOut
+            // 
+            btnLogOut.Location = new Point(729, 27);
+            btnLogOut.Name = "btnLogOut";
+            btnLogOut.Size = new Size(59, 29);
+            btnLogOut.TabIndex = 5;
+            btnLogOut.Text = "Log out";
+            btnLogOut.UseVisualStyleBackColor = true;
+            btnLogOut.Click += btnLogOut_Click;
             // 
             // txtMP_User
             // 
@@ -102,21 +116,31 @@
             // panelMP
             // 
             panelMP.AutoScroll = true;
+            panelMP.Controls.Add(panelCartButton);
             panelMP.Dock = DockStyle.Bottom;
             panelMP.Location = new Point(0, 73);
             panelMP.Name = "panelMP";
             panelMP.Size = new Size(800, 377);
             panelMP.TabIndex = 1;
             // 
-            // btnLogOut
+            // panelCartButton
             // 
-            btnLogOut.Location = new Point(729, 27);
-            btnLogOut.Name = "btnLogOut";
-            btnLogOut.Size = new Size(59, 29);
-            btnLogOut.TabIndex = 5;
-            btnLogOut.Text = "Log out";
-            btnLogOut.UseVisualStyleBackColor = true;
-            btnLogOut.Click += btnLogOut_Click;
+            panelCartButton.BackColor = SystemColors.ActiveCaption;
+            panelCartButton.Controls.Add(btnSeeCart);
+            panelCartButton.Location = new Point(665, 309);
+            panelCartButton.Name = "panelCartButton";
+            panelCartButton.Size = new Size(115, 56);
+            panelCartButton.TabIndex = 0;
+            // 
+            // btnSeeCart
+            // 
+            btnSeeCart.Location = new Point(19, 16);
+            btnSeeCart.Name = "btnSeeCart";
+            btnSeeCart.Size = new Size(77, 37);
+            btnSeeCart.TabIndex = 0;
+            btnSeeCart.Text = "btnSeeCart";
+            btnSeeCart.UseVisualStyleBackColor = true;
+            btnSeeCart.Click += btnSeeCart_Click;
             // 
             // FormMainPage
             // 
@@ -131,6 +155,8 @@
             Text = "FormMainPage";
             panelHead.ResumeLayout(false);
             panelHead.PerformLayout();
+            panelMP.ResumeLayout(false);
+            panelCartButton.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -143,5 +169,7 @@
         public Panel panelMP;
         private TextBox txtMP_User;
         private Button btnLogOut;
+        private Panel panelCartButton;
+        private Button btnSeeCart;
     }
 }
