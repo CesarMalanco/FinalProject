@@ -32,12 +32,14 @@
             // 
             // FormHome
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(780, 631);
+            ClientSize = new Size(891, 841);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "FormHome";
             Text = "FormHome";
+            Load += FormHome_Load;
             ResumeLayout(false);
         }
 

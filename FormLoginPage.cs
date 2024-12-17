@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsFinalProyect;
 
 namespace WinFormsFinalProject
 {
@@ -35,6 +36,119 @@ namespace WinFormsFinalProject
             //MessageBox.Show("Enter username and password");
             //else
             // MessageBox.Show("Welcome, " + username + "!"); // Welcome message
+
+            if (username == "admin")
+            {
+                if (password == "admin2024")
+                {
+                    Frm_Main adminPage = new Frm_Main();
+                    this.Hide();
+                    adminPage.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Contraseña incorrecta", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.txtPassword.Clear();
+                }
+            }
+            else if (username == "isabelA")
+            {
+                if (password == "usuario2")
+                {
+                    this.username = "Isabel";
+                    FormMainPage mainPage = new FormMainPage(username); // Create an instance for Main Page
+                    this.Hide(); // Hide Login Page
+                    mainPage.ShowDialog(); // Show Main Page  
+                }
+                else
+                {
+                    MessageBox.Show("Contraseña incorrecta", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.txtPassword.Clear();
+                }
+            }
+            else if (username == "dannaC")
+            {
+                if (password == "usuario3")
+                {
+                    this.username = "Danna";
+                    FormMainPage mainPage = new FormMainPage(username); // Create an instance for Main Page
+                    this.Hide(); // Hide Login Page
+                    mainPage.ShowDialog(); // Show Main Page  
+                }
+                else
+                {
+                    MessageBox.Show("Contraseña incorrecta", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.txtPassword.Clear();
+                }
+            }
+            else if (username == "darelyQ")
+            {
+                if (password == "usuario4")
+                {
+                    this.username = "Darely";
+                    FormMainPage mainPage = new FormMainPage(username); // Create an instance for Main Page
+                    this.Hide(); // Hide Login Page
+                    mainPage.ShowDialog(); // Show Main Page  
+                }
+                else
+                {
+                    MessageBox.Show("Contraseña incorrecta", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.txtPassword.Clear();
+                }
+            }
+            else if (username == "ferV")
+            {
+                if (password == "usuario5")
+                {
+                    this.username = "Fer";
+                    FormMainPage mainPage = new FormMainPage(username); // Create an instance for Main Page
+                    this.Hide(); // Hide Login Page
+                    mainPage.ShowDialog(); // Show Main Page  
+                }
+                else
+                {
+                    MessageBox.Show("Contraseña incorrecta", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.txtPassword.Clear();
+                }
+            }
+            else if (username == "cesarZ")
+            {
+                if (password == "usuario6")
+                {
+                    this.username = "Cesar";
+                    FormMainPage mainPage = new FormMainPage(username); // Create an instance for Main Page
+                    this.Hide(); // Hide Login Page
+                    mainPage.ShowDialog(); // Show Main Page  
+                }
+                else
+                {
+                    MessageBox.Show("Contraseña incorrecta", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.txtPassword.Clear();
+                }
+            }
+            else if (username == "guest")
+            {
+                if (password == "guest2024")
+                {
+                    this.username = "Guest";
+                    FormMainPage mainPage = new FormMainPage(username); // Create an instance for Main Page
+                    this.Hide(); // Hide Login Page
+                    mainPage.ShowDialog(); // Show Main Page  
+                }
+                else
+                {
+                    MessageBox.Show("Contraseña incorrecta", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.txtPassword.Clear();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Usuario no válido", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.txtUsername.Clear();
+                this.txtPassword.Clear();
+                return;
+            }
+
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -102,10 +216,20 @@ namespace WinFormsFinalProject
 
         private void btnGuest_Click(object sender, EventArgs e) // Guest account
         {
-            this.username = "GUEST";
+            this.username = "Guest";
             FormMainPage mainPage = new FormMainPage(username); // Create an instance for Main Page
             this.Hide(); // Hide Login Page
             mainPage.ShowDialog(); // Show Main Page   
+        }
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

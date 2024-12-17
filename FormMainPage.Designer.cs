@@ -51,15 +51,17 @@
             panelHead.Controls.Add(btnMP_Food);
             panelHead.Controls.Add(btnMP_Home);
             panelHead.Location = new Point(0, 0);
+            panelHead.Margin = new Padding(3, 4, 3, 4);
             panelHead.Name = "panelHead";
-            panelHead.Size = new Size(800, 79);
+            panelHead.Size = new Size(914, 105);
             panelHead.TabIndex = 0;
             // 
             // btnLogOut
             // 
-            btnLogOut.Location = new Point(729, 27);
+            btnLogOut.Location = new Point(833, 36);
+            btnLogOut.Margin = new Padding(3, 4, 3, 4);
             btnLogOut.Name = "btnLogOut";
-            btnLogOut.Size = new Size(59, 29);
+            btnLogOut.Size = new Size(67, 39);
             btnLogOut.TabIndex = 5;
             btnLogOut.Text = "Log out";
             btnLogOut.UseVisualStyleBackColor = true;
@@ -70,20 +72,23 @@
             txtMP_User.BackColor = Color.Brown;
             txtMP_User.BorderStyle = BorderStyle.None;
             txtMP_User.Enabled = false;
-            txtMP_User.ForeColor = SystemColors.WindowText;
-            txtMP_User.Location = new Point(654, 34);
+            txtMP_User.ForeColor = SystemColors.ButtonHighlight;
+            txtMP_User.Location = new Point(747, 45);
+            txtMP_User.Margin = new Padding(3, 4, 3, 4);
             txtMP_User.Name = "txtMP_User";
             txtMP_User.ReadOnly = true;
-            txtMP_User.Size = new Size(69, 16);
+            txtMP_User.Size = new Size(79, 20);
             txtMP_User.TabIndex = 4;
+            txtMP_User.TextChanged += txtMP_User_TextChanged;
             // 
             // btnMP_Movies
             // 
             btnMP_Movies.FlatAppearance.BorderSize = 0;
             btnMP_Movies.FlatStyle = FlatStyle.Flat;
-            btnMP_Movies.Location = new Point(196, 44);
+            btnMP_Movies.Location = new Point(224, 59);
+            btnMP_Movies.Margin = new Padding(3, 4, 3, 4);
             btnMP_Movies.Name = "btnMP_Movies";
-            btnMP_Movies.Size = new Size(75, 23);
+            btnMP_Movies.Size = new Size(86, 31);
             btnMP_Movies.TabIndex = 3;
             btnMP_Movies.Text = "Cartelera";
             btnMP_Movies.UseVisualStyleBackColor = true;
@@ -93,9 +98,10 @@
             // 
             btnMP_Food.FlatAppearance.BorderSize = 0;
             btnMP_Food.FlatStyle = FlatStyle.Flat;
-            btnMP_Food.Location = new Point(345, 44);
+            btnMP_Food.Location = new Point(394, 59);
+            btnMP_Food.Margin = new Padding(3, 4, 3, 4);
             btnMP_Food.Name = "btnMP_Food";
-            btnMP_Food.Size = new Size(75, 23);
+            btnMP_Food.Size = new Size(86, 31);
             btnMP_Food.TabIndex = 2;
             btnMP_Food.Text = "Dulcería";
             btnMP_Food.UseVisualStyleBackColor = true;
@@ -105,9 +111,10 @@
             // 
             btnMP_Home.FlatAppearance.BorderSize = 0;
             btnMP_Home.FlatStyle = FlatStyle.Flat;
-            btnMP_Home.Location = new Point(52, 44);
+            btnMP_Home.Location = new Point(59, 59);
+            btnMP_Home.Margin = new Padding(3, 4, 3, 4);
             btnMP_Home.Name = "btnMP_Home";
-            btnMP_Home.Size = new Size(75, 23);
+            btnMP_Home.Size = new Size(86, 31);
             btnMP_Home.TabIndex = 1;
             btnMP_Home.Text = "Inicio";
             btnMP_Home.UseVisualStyleBackColor = true;
@@ -118,25 +125,28 @@
             panelMP.AutoScroll = true;
             panelMP.Controls.Add(panelCartButton);
             panelMP.Dock = DockStyle.Bottom;
-            panelMP.Location = new Point(0, 73);
+            panelMP.Location = new Point(0, 97);
+            panelMP.Margin = new Padding(3, 4, 3, 4);
             panelMP.Name = "panelMP";
-            panelMP.Size = new Size(800, 377);
+            panelMP.Size = new Size(914, 503);
             panelMP.TabIndex = 1;
             // 
             // panelCartButton
             // 
             panelCartButton.BackColor = SystemColors.ActiveCaption;
             panelCartButton.Controls.Add(btnSeeCart);
-            panelCartButton.Location = new Point(665, 309);
+            panelCartButton.Location = new Point(760, 412);
+            panelCartButton.Margin = new Padding(3, 4, 3, 4);
             panelCartButton.Name = "panelCartButton";
-            panelCartButton.Size = new Size(115, 56);
+            panelCartButton.Size = new Size(131, 75);
             panelCartButton.TabIndex = 0;
             // 
             // btnSeeCart
             // 
-            btnSeeCart.Location = new Point(19, 16);
+            btnSeeCart.Location = new Point(22, 21);
+            btnSeeCart.Margin = new Padding(3, 4, 3, 4);
             btnSeeCart.Name = "btnSeeCart";
-            btnSeeCart.Size = new Size(77, 37);
+            btnSeeCart.Size = new Size(88, 49);
             btnSeeCart.TabIndex = 0;
             btnSeeCart.Text = "btnSeeCart";
             btnSeeCart.UseVisualStyleBackColor = true;
@@ -144,12 +154,13 @@
             // 
             // FormMainPage
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(914, 600);
             Controls.Add(panelMP);
             Controls.Add(panelHead);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "FormMainPage";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FormMainPage";

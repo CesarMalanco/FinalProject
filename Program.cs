@@ -15,8 +15,8 @@ namespace WinFormsFinalProyect
             // see https://aka.ms/applicationconfiguration.
 
             //ApplicationConfiguration.Initialize();
-            Application.Run(new FormLoadingScreen);
-
+            /*Application.Run(new FormLoadingScreen());*/ //Este es el final
+            Application.Run(new FormLoginPage());
         }
     }
 }

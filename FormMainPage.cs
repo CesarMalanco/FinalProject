@@ -210,5 +210,10 @@ namespace WinFormsFinalProject
             this.Hide();
             cart.ShowDialog();
         }
+
+        private void txtMP_User_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

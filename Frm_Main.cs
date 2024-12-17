@@ -1,6 +1,8 @@
 using MySql.Data.MySqlClient;
 using MySqlX.XDevAPI;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using WinFormsFinalProject;
 
 namespace WinFormsFinalProyect
 {
@@ -39,7 +41,9 @@ namespace WinFormsFinalProyect
 
         private void button6_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            FormLoginPage mainPage = new FormLoginPage(); 
+            this.Hide(); 
+            mainPage.ShowDialog(); 
         }
 
         private void Btn_Cerrar_Click(object sender, EventArgs e)
