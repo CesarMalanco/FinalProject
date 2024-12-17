@@ -109,7 +109,7 @@
             // pictureBox_Movie4
             // 
             pictureBox_Movie4.Cursor = Cursors.Hand;
-            pictureBox_Movie4.Image = Properties.Resources.lalaLand;
+            pictureBox_Movie4.Image = WinFormsFinalProyect.Properties.Resources.lalaLand;
             pictureBox_Movie4.Location = new Point(32, 54);
             pictureBox_Movie4.Name = "pictureBox_Movie4";
             pictureBox_Movie4.Size = new Size(174, 236);

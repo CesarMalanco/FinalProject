@@ -109,7 +109,7 @@
             // pictureBox_Movie7
             // 
             pictureBox_Movie7.Cursor = Cursors.Hand;
-            pictureBox_Movie7.Image = Properties.Resources.prideAndPrej;
+            pictureBox_Movie7.Image = WinFormsFinalProyect.Properties.Resources.prideAndPrej;
             pictureBox_Movie7.Location = new Point(32, 54);
             pictureBox_Movie7.Name = "pictureBox_Movie7";
             pictureBox_Movie7.Size = new Size(174, 236);

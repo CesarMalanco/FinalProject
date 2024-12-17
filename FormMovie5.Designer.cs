@@ -109,7 +109,7 @@
             // pictureBox_Movie5
             // 
             pictureBox_Movie5.Cursor = Cursors.Hand;
-            pictureBox_Movie5.Image = Properties.Resources.goneGirl;
+            pictureBox_Movie5.Image = WinFormsFinalProyect.Properties.Resources.goneGirl;
             pictureBox_Movie5.Location = new Point(32, 54);
             pictureBox_Movie5.Name = "pictureBox_Movie5";
             pictureBox_Movie5.Size = new Size(174, 236);

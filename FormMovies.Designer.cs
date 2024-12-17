@@ -1,4 +1,5 @@
-﻿namespace WinFormsFinalProject
+﻿
+namespace WinFormsFinalProject
 {
     partial class FormMovies
     {
@@ -69,7 +70,7 @@
             // 
             pictureBoxSoldOut1.BackColor = Color.Transparent;
             pictureBoxSoldOut1.BorderStyle = BorderStyle.FixedSingle;
-            pictureBoxSoldOut1.Image = Properties.Resources.soldout;
+            pictureBoxSoldOut1.Image = WinFormsFinalProyect.Properties.Resources.soldout;
             pictureBoxSoldOut1.Location = new Point(72, 140);
             pictureBoxSoldOut1.Name = "pictureBoxSoldOut1";
             pictureBoxSoldOut1.Size = new Size(175, 47);
@@ -82,7 +83,7 @@
             // 
             pictureBoxSoldOut2.BackColor = Color.Transparent;
             pictureBoxSoldOut2.BorderStyle = BorderStyle.FixedSingle;
-            pictureBoxSoldOut2.Image = Properties.Resources.soldout;
+            pictureBoxSoldOut2.Image = WinFormsFinalProyect.Properties.Resources.soldout;
             pictureBoxSoldOut2.Location = new Point(294, 140);
             pictureBoxSoldOut2.Name = "pictureBoxSoldOut2";
             pictureBoxSoldOut2.Size = new Size(175, 47);
@@ -95,7 +96,7 @@
             // 
             pictureBoxSoldOut3.BackColor = Color.Transparent;
             pictureBoxSoldOut3.BorderStyle = BorderStyle.FixedSingle;
-            pictureBoxSoldOut3.Image = Properties.Resources.soldout;
+            pictureBoxSoldOut3.Image = WinFormsFinalProyect.Properties.Resources.soldout;
             pictureBoxSoldOut3.Location = new Point(521, 140);
             pictureBoxSoldOut3.Name = "pictureBoxSoldOut3";
             pictureBoxSoldOut3.Size = new Size(175, 47);
@@ -108,7 +109,7 @@
             // 
             pictureBoxSoldOut4.BackColor = Color.Transparent;
             pictureBoxSoldOut4.BorderStyle = BorderStyle.FixedSingle;
-            pictureBoxSoldOut4.Image = Properties.Resources.soldout;
+            pictureBoxSoldOut4.Image = WinFormsFinalProyect.Properties.Resources.soldout;
             pictureBoxSoldOut4.Location = new Point(72, 376);
             pictureBoxSoldOut4.Name = "pictureBoxSoldOut4";
             pictureBoxSoldOut4.Size = new Size(175, 47);
@@ -121,7 +122,7 @@
             // 
             pictureBoxSoldOut5.BackColor = Color.Transparent;
             pictureBoxSoldOut5.BorderStyle = BorderStyle.FixedSingle;
-            pictureBoxSoldOut5.Image = Properties.Resources.soldout;
+            pictureBoxSoldOut5.Image = WinFormsFinalProyect.Properties.Resources.soldout;
             pictureBoxSoldOut5.Location = new Point(294, 376);
             pictureBoxSoldOut5.Name = "pictureBoxSoldOut5";
             pictureBoxSoldOut5.Size = new Size(175, 47);
@@ -134,7 +135,7 @@
             // 
             pictureBoxSoldOut6.BackColor = Color.Transparent;
             pictureBoxSoldOut6.BorderStyle = BorderStyle.FixedSingle;
-            pictureBoxSoldOut6.Image = Properties.Resources.soldout;
+            pictureBoxSoldOut6.Image = WinFormsFinalProyect.Properties.Resources.soldout;
             pictureBoxSoldOut6.Location = new Point(521, 376);
             pictureBoxSoldOut6.Name = "pictureBoxSoldOut6";
             pictureBoxSoldOut6.Size = new Size(175, 47);
@@ -147,7 +148,7 @@
             // 
             pictureBoxSoldOut7.BackColor = Color.Transparent;
             pictureBoxSoldOut7.BorderStyle = BorderStyle.FixedSingle;
-            pictureBoxSoldOut7.Image = Properties.Resources.soldout;
+            pictureBoxSoldOut7.Image = WinFormsFinalProyect.Properties.Resources.soldout;
             pictureBoxSoldOut7.Location = new Point(72, 617);
             pictureBoxSoldOut7.Name = "pictureBoxSoldOut7";
             pictureBoxSoldOut7.Size = new Size(175, 47);
@@ -159,7 +160,7 @@
             // pictureBoxMovie1
             // 
             pictureBoxMovie1.Cursor = Cursors.Hand;
-            pictureBoxMovie1.Image = Properties.Resources.backToTheFuture;
+            pictureBoxMovie1.Image =  WinFormsFinalProyect.Properties.Resources.backToTheFuture;
             pictureBoxMovie1.Location = new Point(83, 57);
             pictureBoxMovie1.Name = "pictureBoxMovie1";
             pictureBoxMovie1.Size = new Size(154, 212);
@@ -171,7 +172,7 @@
             // pictureBoxMovie2
             // 
             pictureBoxMovie2.Cursor = Cursors.Hand;
-            pictureBoxMovie2.Image = Properties.Resources.emma;
+            pictureBoxMovie2.Image = WinFormsFinalProyect.Properties.Resources.emma;
             pictureBoxMovie2.Location = new Point(304, 57);
             pictureBoxMovie2.Name = "pictureBoxMovie2";
             pictureBoxMovie2.Size = new Size(154, 212);
@@ -183,7 +184,7 @@
             // pictureBoxMovie3
             // 
             pictureBoxMovie3.Cursor = Cursors.Hand;
-            pictureBoxMovie3.Image = Properties.Resources.ferris;
+            pictureBoxMovie3.Image = WinFormsFinalProyect.Properties.Resources.ferris;
             pictureBoxMovie3.Location = new Point(531, 57);
             pictureBoxMovie3.Name = "pictureBoxMovie3";
             pictureBoxMovie3.Size = new Size(154, 212);
@@ -195,7 +196,7 @@
             // pictureBoxMovie4
             // 
             pictureBoxMovie4.Cursor = Cursors.Hand;
-            pictureBoxMovie4.Image = Properties.Resources.lalaLand;
+            pictureBoxMovie4.Image =  WinFormsFinalProyect.Properties.Resources.lalaLand;
             pictureBoxMovie4.Location = new Point(83, 293);
             pictureBoxMovie4.Name = "pictureBoxMovie4";
             pictureBoxMovie4.Size = new Size(154, 212);
@@ -207,7 +208,7 @@
             // pictureBoxMovie5
             // 
             pictureBoxMovie5.Cursor = Cursors.Hand;
-            pictureBoxMovie5.Image = Properties.Resources.goneGirl;
+            pictureBoxMovie5.Image = WinFormsFinalProyect.Properties.Resources.goneGirl;
             pictureBoxMovie5.Location = new Point(304, 293);
             pictureBoxMovie5.Name = "pictureBoxMovie5";
             pictureBoxMovie5.Size = new Size(154, 212);
@@ -219,7 +220,7 @@
             // pictureBoxMovie6
             // 
             pictureBoxMovie6.Cursor = Cursors.Hand;
-            pictureBoxMovie6.Image = Properties.Resources.shreck;
+            pictureBoxMovie6.Image = WinFormsFinalProyect.Properties.Resources.shreck;
             pictureBoxMovie6.Location = new Point(531, 293);
             pictureBoxMovie6.Name = "pictureBoxMovie6";
             pictureBoxMovie6.Size = new Size(154, 212);
@@ -231,7 +232,7 @@
             // pictureBoxMovie7
             // 
             pictureBoxMovie7.Cursor = Cursors.Hand;
-            pictureBoxMovie7.Image = Properties.Resources.prideAndPrej;
+            pictureBoxMovie7.Image = WinFormsFinalProyect.Properties.Resources.prideAndPrej;
             pictureBoxMovie7.Location = new Point(83, 532);
             pictureBoxMovie7.Name = "pictureBoxMovie7";
             pictureBoxMovie7.Size = new Size(154, 212);

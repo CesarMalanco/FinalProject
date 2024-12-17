@@ -88,7 +88,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.LogoUAA;
+            pictureBox1.Image = WinFormsFinalProyect.Properties.Resources.LogoUAA;
             pictureBox1.Location = new Point(22, 12);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(162, 97);

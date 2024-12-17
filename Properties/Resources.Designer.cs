@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WinFormsFinalProject.Properties {
+namespace WinFormsFinalProyect.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace WinFormsFinalProject.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("WinFormsFinalProject.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("WinFormsFinalProyect.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -123,6 +123,26 @@ namespace WinFormsFinalProject.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_ejemplo {
+            get {
+                object obj = ResourceManager.GetObject("icon_ejemplo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_ejemplo_chico {
+            get {
+                object obj = ResourceManager.GetObject("icon_ejemplo_chico", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap lalaLand {
             get {
                 object obj = ResourceManager.GetObject("lalaLand", resourceCulture);
@@ -186,6 +206,36 @@ namespace WinFormsFinalProject.Properties {
         internal static System.Drawing.Bitmap sould_out {
             get {
                 object obj = ResourceManager.GetObject("sould-out", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap star_icon__1_ {
+            get {
+                object obj = ResourceManager.GetObject("star_icon (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap star_icon_novo {
+            get {
+                object obj = ResourceManager.GetObject("star_icon_novo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap star_icon_novo_32 {
+            get {
+                object obj = ResourceManager.GetObject("star_icon_novo_32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -109,7 +109,7 @@
             // pictureBox_Movie6
             // 
             pictureBox_Movie6.Cursor = Cursors.Hand;
-            pictureBox_Movie6.Image = Properties.Resources.shreck;
+            pictureBox_Movie6.Image =  WinFormsFinalProyect.Properties.Resources.shreck;
             pictureBox_Movie6.Location = new Point(34, 52);
             pictureBox_Movie6.Name = "pictureBox_Movie6";
             pictureBox_Movie6.Size = new Size(174, 236);

@@ -41,7 +41,7 @@
             // pictureBox_Movie1
             // 
             pictureBox_Movie1.Cursor = Cursors.Hand;
-            pictureBox_Movie1.Image = Properties.Resources.backToTheFuture;
+            pictureBox_Movie1.Image = WinFormsFinalProyect.Properties.Resources.backToTheFuture;
             pictureBox_Movie1.Location = new Point(34, 52);
             pictureBox_Movie1.Name = "pictureBox_Movie1";
             pictureBox_Movie1.Size = new Size(174, 236);

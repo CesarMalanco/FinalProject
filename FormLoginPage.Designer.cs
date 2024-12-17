@@ -139,7 +139,7 @@
             // 
             // pictureBoxLP_Username
             // 
-            pictureBoxLP_Username.Image = Properties.Resources.userIcon;
+            pictureBoxLP_Username.Image = WinFormsFinalProyect.Properties.Resources.userIcon;
             pictureBoxLP_Username.Location = new Point(460, 125);
             pictureBoxLP_Username.Name = "pictureBoxLP_Username";
             pictureBoxLP_Username.Size = new Size(41, 37);

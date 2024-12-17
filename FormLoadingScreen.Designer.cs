@@ -78,7 +78,7 @@
             // pictureBox1
             // 
             pictureBox1.BackColor = Color.Transparent;
-            pictureBox1.Image = Properties.Resources.popcorn;
+            pictureBox1.Image = WinFormsFinalProyect.Properties.Resources.popcorn;
             pictureBox1.Location = new Point(326, 148);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(72, 74);

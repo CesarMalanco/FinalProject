@@ -109,7 +109,7 @@
             // pictureBoxMovie3
             // 
             pictureBoxMovie3.Cursor = Cursors.Hand;
-            pictureBoxMovie3.Image = Properties.Resources.ferris;
+            pictureBoxMovie3.Image = WinFormsFinalProyect.Properties.Resources.ferris;
             pictureBoxMovie3.Location = new Point(32, 54);
             pictureBoxMovie3.Name = "pictureBoxMovie3";
             pictureBoxMovie3.Size = new Size(174, 236);

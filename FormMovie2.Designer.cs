@@ -41,7 +41,7 @@
             // pictureBoxMovie2
             // 
             pictureBoxMovie2.Cursor = Cursors.Hand;
-            pictureBoxMovie2.Image = Properties.Resources.emma;
+            pictureBoxMovie2.Image = WinFormsFinalProyect.Properties.Resources.emma;
             pictureBoxMovie2.Location = new Point(34, 52);
             pictureBoxMovie2.Name = "pictureBoxMovie2";
             pictureBoxMovie2.Size = new Size(174, 236);
