@@ -86,12 +86,13 @@
             IconRestaurar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             IconRestaurar.BackColor = Color.WhiteSmoke;
             IconRestaurar.Image = Properties.Resources.icon_ejemplo;
-            IconRestaurar.Location = new Point(761, 13);
+            IconRestaurar.Location = new Point(761, 12);
             IconRestaurar.Name = "IconRestaurar";
             IconRestaurar.Size = new Size(25, 25);
             IconRestaurar.SizeMode = PictureBoxSizeMode.Zoom;
             IconRestaurar.TabIndex = 6;
             IconRestaurar.TabStop = false;
+            IconRestaurar.Visible = false;
             // 
             // Btn_Minimizar
             // 
@@ -104,6 +105,7 @@
             Btn_Minimizar.SizeMode = PictureBoxSizeMode.Zoom;
             Btn_Minimizar.TabIndex = 5;
             Btn_Minimizar.TabStop = false;
+            Btn_Minimizar.Visible = false;
             // 
             // label1
             // 
@@ -112,9 +114,9 @@
             label1.ForeColor = Color.DimGray;
             label1.Location = new Point(54, 13);
             label1.Name = "label1";
-            label1.Size = new Size(244, 24);
+            label1.Size = new Size(264, 24);
             label1.TabIndex = 2;
-            label1.Text = "Page Name - Administrator";
+            label1.Text = "GrandTheatre - Administrator";
             // 
             // Btn_Maximizar
             // 
@@ -126,11 +128,12 @@
             Btn_Maximizar.SizeMode = PictureBoxSizeMode.Zoom;
             Btn_Maximizar.TabIndex = 4;
             Btn_Maximizar.TabStop = false;
+            Btn_Maximizar.Visible = false;
             // 
             // pictureBox1
             // 
             pictureBox1.BackColor = Color.WhiteSmoke;
-            pictureBox1.Image = Properties.Resources.icon_ejemplo;
+            pictureBox1.Image = Properties.Resources.loguitoxd;
             pictureBox1.Location = new Point(23, 12);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(25, 25);
@@ -149,6 +152,7 @@
             Btn_Cerrar.SizeMode = PictureBoxSizeMode.Zoom;
             Btn_Cerrar.TabIndex = 3;
             Btn_Cerrar.TabStop = false;
+            Btn_Cerrar.Visible = false;
             Btn_Cerrar.Click += Btn_Cerrar_Click;
             // 
             // panel2
@@ -242,7 +246,7 @@
             // Pic_photo
             // 
             Pic_photo.BackColor = Color.Transparent;
-            Pic_photo.Image = Properties.Resources.icon_ejemplo;
+            Pic_photo.Image = Properties.Resources.admin_logo;
             Pic_photo.Location = new Point(12, 23);
             Pic_photo.Name = "Pic_photo";
             Pic_photo.Size = new Size(72, 74);

@@ -118,7 +118,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = SystemColors.Info;
+            panel1.BackColor = SystemColors.Control;
             panel1.Location = new Point(12, 239);
             panel1.Name = "panel1";
             panel1.Size = new Size(455, 340);
@@ -126,7 +126,7 @@
             // 
             // panel2
             // 
-            panel2.BackColor = SystemColors.Info;
+            panel2.BackColor = SystemColors.Control;
             panel2.Location = new Point(479, 239);
             panel2.Name = "panel2";
             panel2.Size = new Size(331, 340);
@@ -134,7 +134,7 @@
             // 
             // panel3
             // 
-            panel3.BackColor = SystemColors.Info;
+            panel3.BackColor = Color.FromArgb(255, 128, 128);
             panel3.Controls.Add(label2);
             panel3.Controls.Add(pictureBox1);
             panel3.Controls.Add(label1);
@@ -170,6 +170,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Sitka Banner", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.Black;
             label1.Location = new Point(8, 92);
             label1.Name = "label1";
             label1.Size = new Size(114, 21);
@@ -178,7 +179,7 @@
             // 
             // panel4
             // 
-            panel4.BackColor = SystemColors.Info;
+            panel4.BackColor = Color.FromArgb(255, 192, 192);
             panel4.Controls.Add(label3);
             panel4.Controls.Add(pictureBox2);
             panel4.Controls.Add(label5);
@@ -222,7 +223,7 @@
             // 
             // panel5
             // 
-            panel5.BackColor = SystemColors.Info;
+            panel5.BackColor = Color.FromArgb(255, 128, 128);
             panel5.Controls.Add(label6);
             panel5.Controls.Add(pictureBox3);
             panel5.Controls.Add(label7);
@@ -266,7 +267,7 @@
             // 
             // panel6
             // 
-            panel6.BackColor = SystemColors.Info;
+            panel6.BackColor = Color.FromArgb(255, 128, 128);
             panel6.Controls.Add(label8);
             panel6.Controls.Add(pictureBox4);
             panel6.Controls.Add(label9);
@@ -310,7 +311,7 @@
             // 
             // panel7
             // 
-            panel7.BackColor = SystemColors.Info;
+            panel7.BackColor = Color.FromArgb(255, 192, 192);
             panel7.Controls.Add(label10);
             panel7.Controls.Add(pictureBox5);
             panel7.Controls.Add(label11);
@@ -354,7 +355,7 @@
             // 
             // panel8
             // 
-            panel8.BackColor = SystemColors.Info;
+            panel8.BackColor = Color.FromArgb(255, 192, 192);
             panel8.Controls.Add(label12);
             panel8.Controls.Add(pictureBox6);
             panel8.Controls.Add(label13);

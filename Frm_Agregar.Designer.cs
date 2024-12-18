@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             tableLayoutPanel1 = new TableLayoutPanel();
             Btn_Close_Page = new PictureBox();
             Btn_Agregar = new Button();
@@ -92,7 +95,7 @@
             // 
             Btn_Close_Page.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             Btn_Close_Page.BackColor = Color.Transparent;
-            Btn_Close_Page.Image = Properties.Resources.icon_ejemplo;
+            Btn_Close_Page.Image = Properties.Resources.cerrar;
             Btn_Close_Page.Location = new Point(774, 5);
             Btn_Close_Page.Name = "Btn_Close_Page";
             Btn_Close_Page.Size = new Size(45, 43);
@@ -325,7 +328,7 @@
             // 
             Pic_photo.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             Pic_photo.BackColor = Color.Transparent;
-            Pic_photo.Image = Properties.Resources.icon_ejemplo;
+            Pic_photo.Image = Properties.Resources.lupa2;
             Pic_photo.Location = new Point(196, 8);
             Pic_photo.Name = "Pic_photo";
             tableLayoutPanel2.SetRowSpan(Pic_photo, 3);
@@ -461,13 +464,39 @@
             // 
             // gridA
             // 
-            gridA.BackgroundColor = SystemColors.Info;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(255, 128, 128);
+            dataGridViewCellStyle1.Font = new Font("Nirmala UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(255, 128, 128);
+            dataGridViewCellStyle1.SelectionForeColor = Color.Black;
+            gridA.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            gridA.BackgroundColor = Color.White;
+            gridA.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            gridA.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.Firebrick;
+            dataGridViewCellStyle2.Font = new Font("Nirmala UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = Color.Firebrick;
+            dataGridViewCellStyle2.SelectionForeColor = Color.White;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            gridA.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             gridA.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(255, 192, 192);
+            dataGridViewCellStyle3.Font = new Font("Nirmala UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(255, 192, 192);
+            dataGridViewCellStyle3.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            gridA.DefaultCellStyle = dataGridViewCellStyle3;
+            gridA.EnableHeadersVisualStyles = false;
             gridA.Location = new Point(3, 3);
             gridA.Name = "gridA";
+            gridA.RowHeadersVisible = false;
             gridA.RowHeadersWidth = 51;
             gridA.RowTemplate.Height = 29;
-            gridA.Size = new Size(518, 516);
+            gridA.Size = new Size(515, 516);
             gridA.TabIndex = 0;
             gridA.CellContentClick += gridA_CellContentClick_1;
             // 

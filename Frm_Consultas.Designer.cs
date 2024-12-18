@@ -29,6 +29,12 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             tableLayoutPanel1 = new TableLayoutPanel();
             Btn_Close_Page = new PictureBox();
             Btn_Consultas = new Button();
@@ -77,7 +83,7 @@
             // 
             Btn_Close_Page.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             Btn_Close_Page.BackColor = Color.Transparent;
-            Btn_Close_Page.Image = Properties.Resources.icon_ejemplo;
+            Btn_Close_Page.Image = Properties.Resources.cerrar;
             Btn_Close_Page.Location = new Point(769, 5);
             Btn_Close_Page.Name = "Btn_Close_Page";
             Btn_Close_Page.Size = new Size(45, 43);
@@ -179,7 +185,7 @@
             // 
             Pic_photo.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             Pic_photo.BackColor = Color.Transparent;
-            Pic_photo.Image = Properties.Resources.icon_ejemplo;
+            Pic_photo.Image = Properties.Resources.lupa2;
             Pic_photo.Location = new Point(215, 8);
             Pic_photo.Name = "Pic_photo";
             tableLayoutPanel2.SetRowSpan(Pic_photo, 3);
@@ -263,10 +269,36 @@
             // 
             // Grid_Todos
             // 
-            Grid_Todos.BackgroundColor = SystemColors.Info;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(255, 128, 128);
+            dataGridViewCellStyle1.Font = new Font("Nirmala UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(255, 128, 128);
+            dataGridViewCellStyle1.SelectionForeColor = Color.Black;
+            Grid_Todos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            Grid_Todos.BackgroundColor = Color.White;
+            Grid_Todos.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            Grid_Todos.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.Firebrick;
+            dataGridViewCellStyle2.Font = new Font("Nirmala UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            Grid_Todos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             Grid_Todos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(255, 192, 192);
+            dataGridViewCellStyle3.Font = new Font("Nirmala UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(255, 192, 192);
+            dataGridViewCellStyle3.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            Grid_Todos.DefaultCellStyle = dataGridViewCellStyle3;
+            Grid_Todos.EnableHeadersVisualStyles = false;
             Grid_Todos.Location = new Point(5, 66);
             Grid_Todos.Name = "Grid_Todos";
+            Grid_Todos.RowHeadersVisible = false;
             Grid_Todos.RowHeadersWidth = 51;
             Grid_Todos.RowTemplate.Height = 29;
             Grid_Todos.Size = new Size(495, 522);
@@ -274,10 +306,36 @@
             // 
             // Grid_Usuarios
             // 
-            Grid_Usuarios.BackgroundColor = SystemColors.Info;
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(255, 128, 128);
+            dataGridViewCellStyle4.Font = new Font("Nirmala UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(255, 128, 128);
+            dataGridViewCellStyle4.SelectionForeColor = Color.Black;
+            Grid_Usuarios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            Grid_Usuarios.BackgroundColor = Color.White;
+            Grid_Usuarios.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            Grid_Usuarios.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.Firebrick;
+            dataGridViewCellStyle5.Font = new Font("Nirmala UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            Grid_Usuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             Grid_Usuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = Color.FromArgb(255, 192, 192);
+            dataGridViewCellStyle6.Font = new Font("Nirmala UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(255, 192, 192);
+            dataGridViewCellStyle6.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            Grid_Usuarios.DefaultCellStyle = dataGridViewCellStyle6;
+            Grid_Usuarios.EnableHeadersVisualStyles = false;
             Grid_Usuarios.Location = new Point(509, 66);
             Grid_Usuarios.Name = "Grid_Usuarios";
+            Grid_Usuarios.RowHeadersVisible = false;
             Grid_Usuarios.RowHeadersWidth = 51;
             Grid_Usuarios.RowTemplate.Height = 29;
             Grid_Usuarios.Size = new Size(315, 522);

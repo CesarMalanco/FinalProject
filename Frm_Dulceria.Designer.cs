@@ -29,7 +29,11 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             tableLayoutPanel1 = new TableLayoutPanel();
+            buttonLimpiar = new Button();
             Btn_Modificar = new Button();
             Btn_Buscar = new Button();
             Btn_Eliminar = new Button();
@@ -55,7 +59,6 @@
             Timer1 = new System.Windows.Forms.Timer(components);
             Grid_Dulceria = new DataGridView();
             gridSweets = new DataGridView();
-            buttonLimpiar = new Button();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)Btn_Close_Page).BeginInit();
             PnlAddData.SuspendLayout();
@@ -90,6 +93,22 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tableLayoutPanel1.Size = new Size(819, 60);
             tableLayoutPanel1.TabIndex = 0;
+            // 
+            // buttonLimpiar
+            // 
+            buttonLimpiar.BackColor = Color.DarkRed;
+            buttonLimpiar.Dock = DockStyle.Fill;
+            buttonLimpiar.FlatAppearance.BorderSize = 0;
+            buttonLimpiar.FlatStyle = FlatStyle.Flat;
+            buttonLimpiar.Font = new Font("Nirmala UI", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonLimpiar.ForeColor = SystemColors.Control;
+            buttonLimpiar.Location = new Point(365, 5);
+            buttonLimpiar.Name = "buttonLimpiar";
+            buttonLimpiar.Size = new Size(84, 50);
+            buttonLimpiar.TabIndex = 8;
+            buttonLimpiar.Text = "Limpiar";
+            buttonLimpiar.UseVisualStyleBackColor = false;
+            buttonLimpiar.Click += buttonLimpiar_Click;
             // 
             // Btn_Modificar
             // 
@@ -159,7 +178,7 @@
             // 
             Btn_Close_Page.BackColor = Color.WhiteSmoke;
             Btn_Close_Page.Dock = DockStyle.Right;
-            Btn_Close_Page.Image = Properties.Resources.icon_ejemplo;
+            Btn_Close_Page.Image = Properties.Resources.cerrar;
             Btn_Close_Page.Location = new Point(772, 5);
             Btn_Close_Page.Name = "Btn_Close_Page";
             Btn_Close_Page.Size = new Size(42, 50);
@@ -354,7 +373,7 @@
             // 
             Pic_photo.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             Pic_photo.BackColor = Color.Transparent;
-            Pic_photo.Image = Properties.Resources.icon_ejemplo;
+            Pic_photo.Image = Properties.Resources.lupa2;
             Pic_photo.Location = new Point(187, 8);
             Pic_photo.Name = "Pic_photo";
             tableLayoutPanel2.SetRowSpan(Pic_photo, 3);
@@ -425,31 +444,41 @@
             // 
             // gridSweets
             // 
-            gridSweets.BackgroundColor = SystemColors.Info;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(255, 128, 128);
+            dataGridViewCellStyle1.Font = new Font("Nirmala UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(255, 128, 128);
+            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(255, 128, 128);
+            gridSweets.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            gridSweets.BackgroundColor = SystemColors.Control;
+            gridSweets.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            gridSweets.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.Firebrick;
+            dataGridViewCellStyle2.Font = new Font("Nirmala UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            gridSweets.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             gridSweets.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(255, 192, 192);
+            dataGridViewCellStyle3.Font = new Font("Nirmala UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(255, 192, 192);
+            dataGridViewCellStyle3.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            gridSweets.DefaultCellStyle = dataGridViewCellStyle3;
+            gridSweets.EnableHeadersVisualStyles = false;
             gridSweets.Location = new Point(5, 66);
             gridSweets.Name = "gridSweets";
+            gridSweets.RowHeadersVisible = false;
             gridSweets.RowHeadersWidth = 51;
             gridSweets.RowTemplate.Height = 29;
             gridSweets.Size = new Size(516, 529);
             gridSweets.TabIndex = 3;
             gridSweets.CellContentClick += gridSweets_CellContentClick;
-            // 
-            // buttonLimpiar
-            // 
-            buttonLimpiar.BackColor = Color.DarkRed;
-            buttonLimpiar.Dock = DockStyle.Fill;
-            buttonLimpiar.FlatAppearance.BorderSize = 0;
-            buttonLimpiar.FlatStyle = FlatStyle.Flat;
-            buttonLimpiar.Font = new Font("Nirmala UI", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonLimpiar.ForeColor = SystemColors.Control;
-            buttonLimpiar.Location = new Point(365, 5);
-            buttonLimpiar.Name = "buttonLimpiar";
-            buttonLimpiar.Size = new Size(84, 50);
-            buttonLimpiar.TabIndex = 8;
-            buttonLimpiar.Text = "Limpiar";
-            buttonLimpiar.UseVisualStyleBackColor = false;
-            buttonLimpiar.Click += buttonLimpiar_Click;
             // 
             // Frm_Dulceria
             // 
