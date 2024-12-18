@@ -457,6 +457,8 @@
             tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Absolute, 22F));
             tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Absolute, 22F));
             tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Absolute, 15F));
+            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
             tableLayoutPanel5.Size = new Size(384, 303);
             tableLayoutPanel5.TabIndex = 0;
             // 
@@ -503,7 +505,6 @@
             textBoxName.Margin = new Padding(18, 2, 18, 2);
             textBoxName.Multiline = true;
             textBoxName.Name = "textBoxName";
-            textBoxName.ReadOnly = true;
             textBoxName.Size = new Size(289, 18);
             textBoxName.TabIndex = 12;
             // 
@@ -538,7 +539,6 @@
             textBoxCVV.Margin = new Padding(18, 2, 18, 2);
             textBoxCVV.Multiline = true;
             textBoxCVV.Name = "textBoxCVV";
-            textBoxCVV.ReadOnly = true;
             textBoxCVV.Size = new Size(128, 18);
             textBoxCVV.TabIndex = 17;
             // 
@@ -576,7 +576,6 @@
             textBoxCreditCard.Margin = new Padding(18, 2, 18, 2);
             textBoxCreditCard.Multiline = true;
             textBoxCreditCard.Name = "textBoxCreditCard";
-            textBoxCreditCard.ReadOnly = true;
             textBoxCreditCard.Size = new Size(289, 18);
             textBoxCreditCard.TabIndex = 18;
             // 

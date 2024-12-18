@@ -1,11 +1,14 @@
 ﻿using System;
-using System.Drawing;
 using System.Windows.Forms;
-using iTextSharp.Kernel.Pdf;
-using iTextSharp.Layout;
-using iTextSharp.Layout.Element;
-using iTextSharp.Kernel.Pdf.Canvas;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
 using System.IO;
+
+
+
+using iText.Layout.Properties;
+using iText.Kernel.Pdf.Canvas;
+using WinFormsFinalProyect;
 
 namespace Forms_individuales_proyecto
 {
@@ -15,7 +18,7 @@ namespace Forms_individuales_proyecto
         private bool openingID; // Controla si PnlAddData se abre o cierra
         private bool isIDPanelClosed = false; // Variable para controlar si se cierra el panel ID
         // Buy data
-        private string nameBuy;
+        private string customerName;
         private string date;
         private string creditCardNumber;
         private string CVV;
@@ -174,17 +177,74 @@ namespace Forms_individuales_proyecto
             timer2.Start();
         }
 
-        private void Btn_Buy_Click(object sender, EventArgs e)
+        private void BtnOk_Click(object sender, EventArgs e)
         {
-            nameBuy = textBoxName.Text;   
+            customerName = textBoxName.Text;
             date = dateTimePickerNote.Text;
             creditCardNumber = textBoxCreditCard.Text;
             CVV = textBoxCVV.Text;
             // obtener el total y la lista de productos !!!!!!
 
+            // Ruta de guardado (Desktop)
+            FileStream filePath = new FileStream(@"C:\Users\Usuario\Documents\Nota.pdf", FileMode.Create); // Carpeta 
+            Document doc = new Document(PageSize.LETTER, 5, 5, 7, 7); // Tipo de documento y margenes
+            
             // CREATE PDF
-            //string filePath =
+            try
+            {
+                // Verificar si la carpeta existe
+                if (!Directory.Exists(folderPath))
+                {
+                    MessageBox.Show("La carpeta especificada no existe.");
+                    return;
+                }
 
+                using (var writer = new PdfWriter(filePath))
+                {
+                    using (var pdf = new PdfDocument(writer))
+                    {
+                        var document = new Document(pdf);
+
+                        // Título del PDF
+                        document.Add(new Paragraph("Nota de Compra").SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER).SetFontSize(18));
+
+                        // Logo
+                        string imagePath = @"C:\Users\darel\source\repos\FinalProject\Properties\ticketsIcon.png";  // Ruta
+                                                                                                                    //if (File.Exists(imagePath))
+                                                                                                                    //{
+                                                                                                                    //    var image = iText.Layout.Element.ImageDataFactory.Create(imagePath);
+                                                                                                                    //   document.Add(new Image(image).SetWidth(100).SetHeight(100).SetFixedPosition(450, 750)); // Puedes cambiar las coordenadas
+                                                                                                                    //}
+
+                        string slogan = "Lo bueno del cine es que durante dos horas los problemas son de otros";
+                        document.Add(new Paragraph($"Cliente: {slogan}").SetFontSize(13)); // Eslogan
+
+                        document.Add(new Paragraph($"Cliente: {date}").SetFontSize(12)); // Nombre del cliente
+                        document.Add(new Paragraph($"Cliente: {customerName}").SetFontSize(12)); // Fecha de compra
+                        document.Add(new Paragraph($"Cliente: {creditCardNumber}").SetFontSize(12)); // Número de tarjeta
+                        document.Add(new Paragraph($"Cliente: {CVV}").SetFontSize(12));
+
+                        // Agregar lista de productos
+                        //foreach (var item in items)
+                        //{
+                        //    document.Add(new Paragraph(item.ToString()).SetFontSize(12));
+                        //}
+
+                        // Total 
+                        //document.Add(new Paragraph($"Total: {total}").SetFontSize(12).SetBold());
+
+                        //AUMENTAR 6% impuesto al total
+                        //int impuesto = (total * 0.94);
+                        //document.Add(new Paragraph($"Total con impuestos: {impuesto}").SetFontSize(12));
+                        MessageBox.Show($"PDF generado exitosamente. Guardado en: {filePath}");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Mostrar mensaje de error
+                MessageBox.Show($"Ocurrió un error al generar el PDF: {ex.Message}");
+            }       
         }
     }
 }
