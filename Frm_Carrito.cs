@@ -1,6 +1,11 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using iTextSharp.Kernel.Pdf;
+using iTextSharp.Layout;
+using iTextSharp.Layout.Element;
+using iTextSharp.Kernel.Pdf.Canvas;
+using System.IO;
 
 namespace Forms_individuales_proyecto
 {
@@ -9,6 +14,11 @@ namespace Forms_individuales_proyecto
         private bool isOpening; // Controla si Pnl_Info se abre o cierra
         private bool openingID; // Controla si PnlAddData se abre o cierra
         private bool isIDPanelClosed = false; // Variable para controlar si se cierra el panel ID
+        // Buy data
+        private string nameBuy;
+        private string date;
+        private string creditCardNumber;
+        private string CVV;
 
         public Frm_Carrito()
         {
@@ -162,6 +172,19 @@ namespace Forms_individuales_proyecto
         {
             openingID = false;
             timer2.Start();
+        }
+
+        private void Btn_Buy_Click(object sender, EventArgs e)
+        {
+            nameBuy = textBoxName.Text;   
+            date = dateTimePickerNote.Text;
+            creditCardNumber = textBoxCreditCard.Text;
+            CVV = textBoxCVV.Text;
+            // obtener el total y la lista de productos !!!!!!
+
+            // CREATE PDF
+            //string filePath =
+
         }
     }
 }

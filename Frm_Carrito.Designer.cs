@@ -31,7 +31,7 @@
             components = new System.ComponentModel.Container();
             tableLayoutPanel1 = new TableLayoutPanel();
             label9 = new Label();
-            Btn_Eliminar = new Button();
+            Btn_Buy = new Button();
             PnlAddData = new Panel();
             PnlAddPage = new Panel();
             panelContenedor = new Panel();
@@ -47,6 +47,7 @@
             tableLayoutPanel3 = new TableLayoutPanel();
             grid_productos = new DataGridView();
             tableLayoutPanel4 = new TableLayoutPanel();
+            button1 = new Button();
             BtnTarjeta = new Button();
             Pnl_Info = new Panel();
             panel3 = new Panel();
@@ -54,13 +55,13 @@
             panel4 = new Panel();
             label6 = new Label();
             pictureBox1 = new PictureBox();
-            textBox2 = new TextBox();
-            dateTimePicker1 = new DateTimePicker();
+            textBoxName = new TextBox();
+            dateTimePickerNote = new DateTimePicker();
             label7 = new Label();
-            textBox1 = new TextBox();
+            textBoxCVV = new TextBox();
             label3 = new Label();
             label5 = new Label();
-            textBox3 = new TextBox();
+            textBoxCreditCard = new TextBox();
             panel5 = new Panel();
             BtnOK = new Button();
             label4 = new Label();
@@ -128,21 +129,21 @@
             label9.Text = "Carrito";
             label9.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // Btn_Eliminar
+            // Btn_Buy
             // 
-            Btn_Eliminar.BackColor = Color.Black;
-            Btn_Eliminar.FlatAppearance.BorderSize = 0;
-            Btn_Eliminar.FlatStyle = FlatStyle.Flat;
-            Btn_Eliminar.Font = new Font("Impact", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            Btn_Eliminar.ForeColor = SystemColors.Control;
-            Btn_Eliminar.Location = new Point(5, 4);
-            Btn_Eliminar.Margin = new Padding(3, 2, 3, 2);
-            Btn_Eliminar.Name = "Btn_Eliminar";
-            Btn_Eliminar.Size = new Size(227, 60);
-            Btn_Eliminar.TabIndex = 21;
-            Btn_Eliminar.Text = "Eliminar Producto";
-            Btn_Eliminar.UseVisualStyleBackColor = false;
-            Btn_Eliminar.Click += Btn_Eliminar_Click;
+            Btn_Buy.BackColor = Color.Black;
+            Btn_Buy.FlatAppearance.BorderSize = 0;
+            Btn_Buy.FlatStyle = FlatStyle.Flat;
+            Btn_Buy.Font = new Font("Impact", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            Btn_Buy.ForeColor = SystemColors.Control;
+            Btn_Buy.Location = new Point(970, 4);
+            Btn_Buy.Margin = new Padding(3, 2, 3, 2);
+            Btn_Buy.Name = "Btn_Buy";
+            Btn_Buy.Size = new Size(73, 60);
+            Btn_Buy.TabIndex = 21;
+            Btn_Buy.Text = "Generar Compra";
+            Btn_Buy.UseVisualStyleBackColor = false;
+            Btn_Buy.Click += Btn_Eliminar_Click;
             // 
             // PnlAddData
             // 
@@ -193,7 +194,7 @@
             tableLayoutPanel2.Location = new Point(0, 0);
             tableLayoutPanel2.Margin = new Padding(0);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
-            tableLayoutPanel2.Padding = new Padding(4, 4, 4, 4);
+            tableLayoutPanel2.Padding = new Padding(4);
             tableLayoutPanel2.RowCount = 17;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 22F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 22F));
@@ -337,7 +338,7 @@
             grid_productos.BackgroundColor = SystemColors.Info;
             grid_productos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             grid_productos.Location = new Point(9, 97);
-            grid_productos.Margin = new Padding(4, 4, 4, 4);
+            grid_productos.Margin = new Padding(4);
             grid_productos.Name = "grid_productos";
             grid_productos.RowHeadersWidth = 51;
             grid_productos.RowTemplate.Height = 29;
@@ -349,7 +350,8 @@
             tableLayoutPanel4.ColumnCount = 2;
             tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 79F));
-            tableLayoutPanel4.Controls.Add(Btn_Eliminar, 0, 0);
+            tableLayoutPanel4.Controls.Add(Btn_Buy, 1, 0);
+            tableLayoutPanel4.Controls.Add(button1, 0, 0);
             tableLayoutPanel4.Dock = DockStyle.Bottom;
             tableLayoutPanel4.Location = new Point(9, 448);
             tableLayoutPanel4.Margin = new Padding(3, 2, 3, 2);
@@ -360,6 +362,21 @@
             tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Absolute, 71F));
             tableLayoutPanel4.Size = new Size(1048, 74);
             tableLayoutPanel4.TabIndex = 12;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.Black;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Impact", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            button1.ForeColor = SystemColors.Control;
+            button1.Location = new Point(5, 4);
+            button1.Margin = new Padding(3, 2, 3, 2);
+            button1.Name = "button1";
+            button1.Size = new Size(227, 60);
+            button1.TabIndex = 22;
+            button1.Text = "Eliminar Producto";
+            button1.UseVisualStyleBackColor = false;
             // 
             // BtnTarjeta
             // 
@@ -414,18 +431,18 @@
             tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
             tableLayoutPanel5.Controls.Add(panel4, 2, 3);
             tableLayoutPanel5.Controls.Add(pictureBox1, 0, 0);
-            tableLayoutPanel5.Controls.Add(textBox2, 0, 5);
-            tableLayoutPanel5.Controls.Add(dateTimePicker1, 0, 11);
+            tableLayoutPanel5.Controls.Add(textBoxName, 0, 5);
+            tableLayoutPanel5.Controls.Add(dateTimePickerNote, 0, 11);
             tableLayoutPanel5.Controls.Add(label7, 0, 10);
-            tableLayoutPanel5.Controls.Add(textBox1, 2, 11);
+            tableLayoutPanel5.Controls.Add(textBoxCVV, 2, 11);
             tableLayoutPanel5.Controls.Add(label3, 2, 10);
             tableLayoutPanel5.Controls.Add(label5, 0, 7);
-            tableLayoutPanel5.Controls.Add(textBox3, 0, 8);
+            tableLayoutPanel5.Controls.Add(textBoxCreditCard, 0, 8);
             tableLayoutPanel5.Dock = DockStyle.Fill;
             tableLayoutPanel5.Location = new Point(9, 4);
             tableLayoutPanel5.Margin = new Padding(0);
             tableLayoutPanel5.Name = "tableLayoutPanel5";
-            tableLayoutPanel5.Padding = new Padding(4, 4, 4, 4);
+            tableLayoutPanel5.Padding = new Padding(4);
             tableLayoutPanel5.RowCount = 13;
             tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Absolute, 22F));
             tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Absolute, 22F));
@@ -478,27 +495,27 @@
             pictureBox1.TabIndex = 7;
             pictureBox1.TabStop = false;
             // 
-            // textBox2
+            // textBoxName
             // 
-            textBox2.BorderStyle = BorderStyle.None;
-            tableLayoutPanel5.SetColumnSpan(textBox2, 4);
-            textBox2.Location = new Point(22, 116);
-            textBox2.Margin = new Padding(18, 2, 18, 2);
-            textBox2.Multiline = true;
-            textBox2.Name = "textBox2";
-            textBox2.ReadOnly = true;
-            textBox2.Size = new Size(289, 18);
-            textBox2.TabIndex = 12;
+            textBoxName.BorderStyle = BorderStyle.None;
+            tableLayoutPanel5.SetColumnSpan(textBoxName, 4);
+            textBoxName.Location = new Point(22, 116);
+            textBoxName.Margin = new Padding(18, 2, 18, 2);
+            textBoxName.Multiline = true;
+            textBoxName.Name = "textBoxName";
+            textBoxName.ReadOnly = true;
+            textBoxName.Size = new Size(289, 18);
+            textBoxName.TabIndex = 12;
             // 
-            // dateTimePicker1
+            // dateTimePickerNote
             // 
-            tableLayoutPanel5.SetColumnSpan(dateTimePicker1, 2);
-            dateTimePicker1.Format = DateTimePickerFormat.Short;
-            dateTimePicker1.Location = new Point(22, 248);
-            dateTimePicker1.Margin = new Padding(18, 2, 3, 2);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(141, 23);
-            dateTimePicker1.TabIndex = 15;
+            tableLayoutPanel5.SetColumnSpan(dateTimePickerNote, 2);
+            dateTimePickerNote.Format = DateTimePickerFormat.Short;
+            dateTimePickerNote.Location = new Point(22, 248);
+            dateTimePickerNote.Margin = new Padding(18, 2, 3, 2);
+            dateTimePickerNote.Name = "dateTimePickerNote";
+            dateTimePickerNote.Size = new Size(141, 23);
+            dateTimePickerNote.TabIndex = 15;
             // 
             // label7
             // 
@@ -513,17 +530,17 @@
             label7.Text = "Vencimiento:";
             label7.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // textBox1
+            // textBoxCVV
             // 
-            textBox1.BorderStyle = BorderStyle.None;
-            tableLayoutPanel5.SetColumnSpan(textBox1, 2);
-            textBox1.Location = new Point(210, 248);
-            textBox1.Margin = new Padding(18, 2, 18, 2);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.ReadOnly = true;
-            textBox1.Size = new Size(128, 18);
-            textBox1.TabIndex = 17;
+            textBoxCVV.BorderStyle = BorderStyle.None;
+            tableLayoutPanel5.SetColumnSpan(textBoxCVV, 2);
+            textBoxCVV.Location = new Point(210, 248);
+            textBoxCVV.Margin = new Padding(18, 2, 18, 2);
+            textBoxCVV.Multiline = true;
+            textBoxCVV.Name = "textBoxCVV";
+            textBoxCVV.ReadOnly = true;
+            textBoxCVV.Size = new Size(128, 18);
+            textBoxCVV.TabIndex = 17;
             // 
             // label3
             // 
@@ -551,17 +568,17 @@
             label5.Text = "No. de Tarjeta:";
             label5.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // textBox3
+            // textBoxCreditCard
             // 
-            textBox3.BorderStyle = BorderStyle.None;
-            tableLayoutPanel5.SetColumnSpan(textBox3, 4);
-            textBox3.Location = new Point(22, 182);
-            textBox3.Margin = new Padding(18, 2, 18, 2);
-            textBox3.Multiline = true;
-            textBox3.Name = "textBox3";
-            textBox3.ReadOnly = true;
-            textBox3.Size = new Size(289, 18);
-            textBox3.TabIndex = 18;
+            textBoxCreditCard.BorderStyle = BorderStyle.None;
+            tableLayoutPanel5.SetColumnSpan(textBoxCreditCard, 4);
+            textBoxCreditCard.Location = new Point(22, 182);
+            textBoxCreditCard.Margin = new Padding(18, 2, 18, 2);
+            textBoxCreditCard.Multiline = true;
+            textBoxCreditCard.Name = "textBoxCreditCard";
+            textBoxCreditCard.ReadOnly = true;
+            textBoxCreditCard.Size = new Size(289, 18);
+            textBoxCreditCard.TabIndex = 18;
             // 
             // panel5
             // 
@@ -804,7 +821,7 @@
         #endregion
 
         private TableLayoutPanel tableLayoutPanel1;
-        private Button Btn_Eliminar;
+        private Button Btn_Buy;
         private Panel PnlAddData;
         private Panel PnlAddPage;
         private TableLayoutPanel tableLayoutPanel2;
@@ -822,7 +839,7 @@
         private Panel panel3;
         private TableLayoutPanel tableLayoutPanel5;
         private Label label7;
-        private TextBox textBox2;
+        private TextBox textBoxName;
         private PictureBox pictureBox1;
         private Panel panel4;
         private Label label6;
@@ -835,10 +852,10 @@
         private System.Windows.Forms.Timer timer3;
         private Button BtnTarjeta;
         private Panel panelContenedor;
-        private TextBox textBox1;
-        private DateTimePicker dateTimePicker1;
+        private TextBox textBoxCVV;
+        private DateTimePicker dateTimePickerNote;
         private Label label3;
-        private TextBox textBox3;
+        private TextBox textBoxCreditCard;
         private Button btn_cancel_id;
         private Button BtnOK;
         private TableLayoutPanel Pnl_Total;
@@ -851,5 +868,6 @@
         private Button button2;
         private Label lbl_iva;
         private Label label9;
+        private Button button1;
     }
 }
