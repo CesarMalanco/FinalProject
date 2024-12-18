@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-using iTextSharp.Kernel.Pdf;
-using iTextSharp.Layout;
-using iTextSharp.Layout.Element;
-using iTextSharp.Kernel.Pdf.Canvas;
-using System.IO;
+
 
 namespace Forms_individuales_proyecto
 {
