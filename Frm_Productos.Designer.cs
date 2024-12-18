@@ -88,7 +88,7 @@
             // 
             Btn_Close_Page.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             Btn_Close_Page.BackColor = Color.Transparent;
-            Btn_Close_Page.Image = Properties.Resources.icon_ejemplo;
+            Btn_Close_Page.Image = Properties.Resources.cerrar;
             Btn_Close_Page.Location = new Point(779, 5);
             Btn_Close_Page.Name = "Btn_Close_Page";
             Btn_Close_Page.Size = new Size(45, 43);
@@ -99,7 +99,7 @@
             // 
             // Contenedor_Peliculas
             // 
-            Contenedor_Peliculas.BackColor = SystemColors.Info;
+            Contenedor_Peliculas.BackColor = SystemColors.Control;
             Contenedor_Peliculas.Controls.Add(tableLayoutPanel2);
             Contenedor_Peliculas.FlowDirection = FlowDirection.TopDown;
             Contenedor_Peliculas.Location = new Point(56, 77);

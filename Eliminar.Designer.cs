@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             Contenedor_Peliculas = new FlowLayoutPanel();
             gridB = new DataGridView();
             Pnl_Info = new Panel();
@@ -94,10 +97,35 @@
             // 
             // gridB
             // 
-            gridB.BackgroundColor = SystemColors.Info;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(255, 128, 128);
+            dataGridViewCellStyle1.Font = new Font("Nirmala UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(255, 128, 128);
+            dataGridViewCellStyle1.SelectionForeColor = Color.Black;
+            gridB.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            gridB.BackgroundColor = Color.White;
+            gridB.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            gridB.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.Firebrick;
+            dataGridViewCellStyle2.Font = new Font("Nirmala UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = Color.Firebrick;
+            dataGridViewCellStyle2.SelectionForeColor = Color.White;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            gridB.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             gridB.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(255, 192, 192);
+            dataGridViewCellStyle3.Font = new Font("Nirmala UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(255, 192, 192);
+            dataGridViewCellStyle3.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            gridB.DefaultCellStyle = dataGridViewCellStyle3;
             gridB.Location = new Point(3, 3);
             gridB.Name = "gridB";
+            gridB.RowHeadersVisible = false;
             gridB.RowHeadersWidth = 51;
             gridB.RowTemplate.Height = 29;
             gridB.Size = new Size(493, 518);
@@ -232,7 +260,7 @@
             // 
             pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pictureBox1.BackColor = Color.Transparent;
-            pictureBox1.Image = Properties.Resources.icon_ejemplo;
+            pictureBox1.Image = Properties.Resources.lupa2;
             pictureBox1.Location = new Point(221, 8);
             pictureBox1.Name = "pictureBox1";
             tableLayoutPanel3.SetRowSpan(pictureBox1, 4);
@@ -376,7 +404,7 @@
             // 
             Btn_Close_Page.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             Btn_Close_Page.BackColor = Color.Transparent;
-            Btn_Close_Page.Image = Properties.Resources.icon_ejemplo;
+            Btn_Close_Page.Image = Properties.Resources.cerrar;
             Btn_Close_Page.Location = new Point(774, 5);
             Btn_Close_Page.Name = "Btn_Close_Page";
             Btn_Close_Page.Size = new Size(45, 43);
@@ -461,7 +489,7 @@
             // 
             Pic_photo.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             Pic_photo.BackColor = Color.Transparent;
-            Pic_photo.Image = Properties.Resources.icon_ejemplo;
+            Pic_photo.Image = Properties.Resources.lupa2;
             Pic_photo.Location = new Point(215, 8);
             Pic_photo.Name = "Pic_photo";
             tableLayoutPanel2.SetRowSpan(Pic_photo, 3);
