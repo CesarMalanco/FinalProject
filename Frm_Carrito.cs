@@ -1,6 +1,14 @@
 ﻿using System;
-using System.Drawing;
 using System.Windows.Forms;
+//using iTextSharp.text;
+//using iTextSharp.text.pdf;
+using System.IO;
+using System;
+using System.IO;
+using iText.Kernel.Pdf;
+using iText.Layout;
+using iText.Layout.Element;
+
 
 
 namespace Forms_individuales_proyecto
@@ -11,7 +19,7 @@ namespace Forms_individuales_proyecto
         private bool openingID; // Controla si PnlAddData se abre o cierra
         private bool isIDPanelClosed = false; // Variable para controlar si se cierra el panel ID
         // Buy data
-        private string nameBuy;
+        private string customerName;
         private string date;
         private string creditCardNumber;
         private string CVV;
@@ -170,17 +178,137 @@ namespace Forms_individuales_proyecto
             timer2.Start();
         }
 
-        private void Btn_Buy_Click(object sender, EventArgs e)
+        private void BtnOk_Click(object sender, EventArgs e)
         {
-            nameBuy = textBoxName.Text;   
+            string customerName = textBoxName.Text;
+            string date = dateTimePickerNote.Text;
+            string creditCardNumber = textBoxCreditCard.Text;
+            string CVV = textBoxCVV.Text;
+
+            // Ruta de guardado (Escritorio)
+            string filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "Nota.pdf");
+
+            try
+            {
+                // Crear el escritor de PDF
+                using (PdfWriter writer = new PdfWriter(filePath))
+                {
+                    // Crear el documento PDF
+                    using (PdfDocument pdfDoc = new PdfDocument(writer))
+                    {
+                        Document doc = new Document(pdfDoc);
+
+                        // Agregar contenido al documento
+                        doc.Add(new Paragraph("Nombre del cliente: " + customerName));
+                        doc.Add(new Paragraph("Fecha: " + date));
+                        doc.Add(new Paragraph("Número de tarjeta de crédito: " + creditCardNumber));
+                        doc.Add(new Paragraph("CVV: " + CVV));
+                        doc.Add(new Paragraph("Total: $XXX.XX")); // Ajusta según tu lógica para obtener el total
+                        doc.Add(new Paragraph("Lista de productos:")); // Ajusta según tu lógica para obtener los productos
+                    }
+                }
+
+                MessageBox.Show("PDF creado exitosamente en: " + filePath);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error al generar el PDF: " + ex.Message);
+            }
+            /*
+            customerName = textBoxName.Text;
             date = dateTimePickerNote.Text;
             creditCardNumber = textBoxCreditCard.Text;
             CVV = textBoxCVV.Text;
             // obtener el total y la lista de productos !!!!!!
 
-            // CREATE PDF
-            //string filePath =
+            // Ruta de guardado (Desktop)
+            FileStream fs = new FileStream(@"C:\Users\Usuario\Documents\Nota.pdf", FileMode.Create); // Carpeta 
+            Document doc = new Document(PageSize.LETTER, 5, 5, 7, 7); // Tipo de documento y margenes
+            PdfWriter pw = new PdfWriter.getInstance(doc, fs);
 
+            doc.Open();
+
+            // CREATE PDF
+            
+            // Definir fuente
+            iTextSharp.text.Font standarFont = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 8, iTextSharp.text.Font.NORMAL, BaseColor.BLACK);
+            
+            //LOGOTIPO
+            // Eslogan
+            string slogan = "Lo bueno del cine es que durante dos horas los problemas son de otros";
+            doc.Add(new Paragraph(slogan));
+            doc.Add(Chunk.NEWLINE);
+
+            // Título
+            doc.Add(new Paragraph("NOTA DE COMPRA"));
+            doc.Add(Chunk.NEWLINE);
+
+            // Fecha
+            doc.Add(new Paragraph($"Fecha: {date}"));
+            doc.Add(Chunk.NEWLINE);
+            
+            // Nombre
+            doc.Add(new Paragraph($"Cliente: {customerName}"));
+            doc.Add(Chunk.NEWLINE);
+
+            // Tabla
+            doc.Add(new Paragraph("Productos adquiridos"));
+            doc.Add(Chunk.NEWLINE);
+
+            // Agregar lista de productos
+
+            //TABLA EJEMPLO
+
+            //ENcabezado de columnas
+            
+            PdfPTable table = new PdfPTable(3); // NUMERO DE COLUMNAS
+            table.WidthPercentage = 100;
+
+            //Columnas
+            PdfPCell nameCell = new PdfPCell(new Phrase("Nombre", standarFont);
+            nameCell.BorderWidth = 0;
+            nameCell.BorderWidthBottom = 0.75f;
+
+            PdfPCell Grado = new PdfPCell(new Phrase("Grado", standarFont));
+            nameCell.BorderWidth = 0;
+            nameCell.BorderWidthBottom = 0.75f;
+
+            PdfPCell Age = new PdfPCell(new Phrase("Edad", standarFont));
+            nameCell.BorderWidth = 0;
+            nameCell.BorderWidthBottom = 0.75f;
+
+            //Agregar datos en una TABLA
+            //foreach (var estudiante in lista)
+            {
+                nameCell = new PdfPCell(new Phrase(estudiante.nombre, standarFont));
+                nameCell.BorderWidth = 0;
+
+                Grado = new PdfPCell(new Phrase(estudiante.grado.ToString(), standarFont));
+                Grado.BorderWidth = 0;
+
+                Age = new PdfPCell(new Phrase(estudiante.edad, standarFont));
+                nameCell.BorderWidth = 0;
+
+                table.AddCell(nameCell);
+                table.AddCell(Grado);
+                table.AddCell(Age); 
+            }
+            //doc.Add(table);
+            //doc.Add(Chunk.NEWLINE);
+
+            // Total
+            //doc.Add(new Paragraph($"Total sin IVA: {total}"));
+            
+
+            // Iva
+            //string impuesto = ToString(total * 0.94);
+            //doc.Add(new Paragraph($"Total con IVA: {impuesto})";
+            
+            doc.Close();
+            pw.Close();
+
+            MessageBox.Show($"PDF generado exitosamente. Guardado en: {fs}");
+             */
         }
     }
 }
