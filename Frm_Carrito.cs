@@ -1,8 +1,13 @@
 ﻿using System;
 using System.Windows.Forms;
-using iTextSharp.text;
-using iTextSharp.text.pdf;
+//using iTextSharp.text;
+//using iTextSharp.text.pdf;
 using System.IO;
+using System;
+using System.IO;
+using iText.Kernel.Pdf;
+using iText.Layout;
+using iText.Layout.Element;
 
 
 
@@ -175,6 +180,41 @@ namespace Forms_individuales_proyecto
 
         private void BtnOk_Click(object sender, EventArgs e)
         {
+            string customerName = textBoxName.Text;
+            string date = dateTimePickerNote.Text;
+            string creditCardNumber = textBoxCreditCard.Text;
+            string CVV = textBoxCVV.Text;
+
+            // Ruta de guardado (Escritorio)
+            string filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "Nota.pdf");
+
+            try
+            {
+                // Crear el escritor de PDF
+                using (PdfWriter writer = new PdfWriter(filePath))
+                {
+                    // Crear el documento PDF
+                    using (PdfDocument pdfDoc = new PdfDocument(writer))
+                    {
+                        Document doc = new Document(pdfDoc);
+
+                        // Agregar contenido al documento
+                        doc.Add(new Paragraph("Nombre del cliente: " + customerName));
+                        doc.Add(new Paragraph("Fecha: " + date));
+                        doc.Add(new Paragraph("Número de tarjeta de crédito: " + creditCardNumber));
+                        doc.Add(new Paragraph("CVV: " + CVV));
+                        doc.Add(new Paragraph("Total: $XXX.XX")); // Ajusta según tu lógica para obtener el total
+                        doc.Add(new Paragraph("Lista de productos:")); // Ajusta según tu lógica para obtener los productos
+                    }
+                }
+
+                MessageBox.Show("PDF creado exitosamente en: " + filePath);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error al generar el PDF: " + ex.Message);
+            }
+            /*
             customerName = textBoxName.Text;
             date = dateTimePickerNote.Text;
             creditCardNumber = textBoxCreditCard.Text;
@@ -184,7 +224,7 @@ namespace Forms_individuales_proyecto
             // Ruta de guardado (Desktop)
             FileStream fs = new FileStream(@"C:\Users\Usuario\Documents\Nota.pdf", FileMode.Create); // Carpeta 
             Document doc = new Document(PageSize.LETTER, 5, 5, 7, 7); // Tipo de documento y margenes
-            PdfWriter pw = new PdfWriter.GetInstance(doc, fs);
+            PdfWriter pw = new PdfWriter.getInstance(doc, fs);
 
             doc.Open();
 
@@ -220,7 +260,7 @@ namespace Forms_individuales_proyecto
             //TABLA EJEMPLO
 
             //ENcabezado de columnas
-            /*
+            
             PdfPTable table = new PdfPTable(3); // NUMERO DE COLUMNAS
             table.WidthPercentage = 100;
 
@@ -252,7 +292,7 @@ namespace Forms_individuales_proyecto
                 table.AddCell(nameCell);
                 table.AddCell(Grado);
                 table.AddCell(Age); 
-            }*/
+            }
             //doc.Add(table);
             //doc.Add(Chunk.NEWLINE);
 
@@ -268,7 +308,7 @@ namespace Forms_individuales_proyecto
             pw.Close();
 
             MessageBox.Show($"PDF generado exitosamente. Guardado en: {fs}");
-                   
+             */
         }
     }
 }
