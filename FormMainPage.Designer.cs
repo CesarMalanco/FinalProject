@@ -28,8 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             panelHead = new Panel();
+            date = new Label();
             btnLogOut = new Button();
+            hours = new Label();
             txtMP_User = new TextBox();
             btnMP_Movies = new Button();
             btnMP_Food = new Button();
@@ -37,6 +40,7 @@
             panelMP = new Panel();
             panelCartButton = new Panel();
             btnSeeCart = new Button();
+            timer1 = new System.Windows.Forms.Timer(components);
             panelHead.SuspendLayout();
             panelMP.SuspendLayout();
             panelCartButton.SuspendLayout();
@@ -45,7 +49,9 @@
             // panelHead
             // 
             panelHead.BackColor = Color.FromArgb(205, 10, 29);
+            panelHead.Controls.Add(date);
             panelHead.Controls.Add(btnLogOut);
+            panelHead.Controls.Add(hours);
             panelHead.Controls.Add(txtMP_User);
             panelHead.Controls.Add(btnMP_Movies);
             panelHead.Controls.Add(btnMP_Food);
@@ -54,6 +60,16 @@
             panelHead.Name = "panelHead";
             panelHead.Size = new Size(800, 79);
             panelHead.TabIndex = 0;
+            // 
+            // date
+            // 
+            date.AutoSize = true;
+            date.ForeColor = SystemColors.ButtonHighlight;
+            date.Location = new Point(479, 9);
+            date.Name = "date";
+            date.Size = new Size(31, 15);
+            date.TabIndex = 11;
+            date.Text = "Date";
             // 
             // btnLogOut
             // 
@@ -65,17 +81,28 @@
             btnLogOut.UseVisualStyleBackColor = true;
             btnLogOut.Click += btnLogOut_Click;
             // 
+            // hours
+            // 
+            hours.AutoSize = true;
+            hours.ForeColor = SystemColors.ButtonHighlight;
+            hours.Location = new Point(690, 9);
+            hours.Name = "hours";
+            hours.Size = new Size(33, 15);
+            hours.TabIndex = 10;
+            hours.Text = "Time";
+            // 
             // txtMP_User
             // 
             txtMP_User.BackColor = Color.Brown;
             txtMP_User.BorderStyle = BorderStyle.None;
             txtMP_User.Enabled = false;
-            txtMP_User.ForeColor = SystemColors.WindowText;
+            txtMP_User.ForeColor = SystemColors.ButtonHighlight;
             txtMP_User.Location = new Point(654, 34);
             txtMP_User.Name = "txtMP_User";
             txtMP_User.ReadOnly = true;
             txtMP_User.Size = new Size(69, 16);
             txtMP_User.TabIndex = 4;
+            txtMP_User.TextChanged += txtMP_User_TextChanged;
             // 
             // btnMP_Movies
             // 
@@ -142,6 +169,11 @@
             btnSeeCart.UseVisualStyleBackColor = true;
             btnSeeCart.Click += btnSeeCart_Click;
             // 
+            // timer1
+            // 
+            timer1.Enabled = true;
+            timer1.Tick += timer1_Tick;
+            // 
             // FormMainPage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -171,5 +203,8 @@
         private Button btnLogOut;
         private Panel panelCartButton;
         private Button btnSeeCart;
+        private Label date;
+        private Label hours;
+        private System.Windows.Forms.Timer timer1;
     }
 }

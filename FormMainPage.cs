@@ -18,7 +18,7 @@ namespace WinFormsFinalProject
         public FormMainPage()
         {
             InitializeComponent();
-
+            timer1.Start();
         }
 
         public FormMainPage(string user)
@@ -209,6 +209,17 @@ namespace WinFormsFinalProject
             Frm_Carrito cart = new Frm_Carrito();
             this.Hide();
             cart.ShowDialog();
+        }
+
+        private void txtMP_User_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            hours.Text = DateTime.Now.ToLongTimeString();
+            date.Text = DateTime.Now.ToLongDateString();
         }
     }
 }
