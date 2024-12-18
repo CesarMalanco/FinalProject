@@ -30,6 +30,8 @@
         {
             components = new System.ComponentModel.Container();
             panel1 = new Panel();
+            date = new Label();
+            hours = new Label();
             IconRestaurar = new PictureBox();
             Btn_Minimizar = new PictureBox();
             label1 = new Label();
@@ -54,6 +56,7 @@
             PanelPrincipal = new Panel();
             Timer_Hora = new System.Windows.Forms.Timer(components);
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            timer1 = new System.Windows.Forms.Timer(components);
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)IconRestaurar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Btn_Minimizar).BeginInit();
@@ -69,6 +72,8 @@
             // panel1
             // 
             panel1.BackColor = Color.Gainsboro;
+            panel1.Controls.Add(date);
+            panel1.Controls.Add(hours);
             panel1.Controls.Add(IconRestaurar);
             panel1.Controls.Add(Btn_Minimizar);
             panel1.Controls.Add(label1);
@@ -76,19 +81,39 @@
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(Btn_Cerrar);
             panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(221, 0);
+            panel1.Location = new Point(193, 0);
+            panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(829, 50);
+            panel1.Size = new Size(726, 38);
             panel1.TabIndex = 0;
+            // 
+            // date
+            // 
+            date.AutoSize = true;
+            date.Location = new Point(331, 14);
+            date.Name = "date";
+            date.Size = new Size(31, 15);
+            date.TabIndex = 9;
+            date.Text = "Date";
+            // 
+            // hours
+            // 
+            hours.AutoSize = true;
+            hours.Location = new Point(542, 14);
+            hours.Name = "hours";
+            hours.Size = new Size(33, 15);
+            hours.TabIndex = 7;
+            hours.Text = "Time";
             // 
             // IconRestaurar
             // 
             IconRestaurar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             IconRestaurar.BackColor = Color.WhiteSmoke;
             IconRestaurar.Image = Properties.Resources.icon_ejemplo;
-            IconRestaurar.Location = new Point(761, 13);
+            IconRestaurar.Location = new Point(667, 10);
+            IconRestaurar.Margin = new Padding(3, 2, 3, 2);
             IconRestaurar.Name = "IconRestaurar";
-            IconRestaurar.Size = new Size(25, 25);
+            IconRestaurar.Size = new Size(22, 19);
             IconRestaurar.SizeMode = PictureBoxSizeMode.Zoom;
             IconRestaurar.TabIndex = 6;
             IconRestaurar.TabStop = false;
@@ -98,9 +123,10 @@
             Btn_Minimizar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             Btn_Minimizar.BackColor = Color.WhiteSmoke;
             Btn_Minimizar.Image = Properties.Resources.icon_ejemplo;
-            Btn_Minimizar.Location = new Point(730, 12);
+            Btn_Minimizar.Location = new Point(640, 9);
+            Btn_Minimizar.Margin = new Padding(3, 2, 3, 2);
             Btn_Minimizar.Name = "Btn_Minimizar";
-            Btn_Minimizar.Size = new Size(25, 25);
+            Btn_Minimizar.Size = new Size(22, 19);
             Btn_Minimizar.SizeMode = PictureBoxSizeMode.Zoom;
             Btn_Minimizar.TabIndex = 5;
             Btn_Minimizar.TabStop = false;
@@ -110,9 +136,9 @@
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft YaHei UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = Color.DimGray;
-            label1.Location = new Point(54, 13);
+            label1.Location = new Point(47, 10);
             label1.Name = "label1";
-            label1.Size = new Size(244, 24);
+            label1.Size = new Size(202, 19);
             label1.TabIndex = 2;
             label1.Text = "Page Name - Administrator";
             // 
@@ -120,9 +146,10 @@
             // 
             Btn_Maximizar.BackColor = Color.WhiteSmoke;
             Btn_Maximizar.Image = Properties.Resources.icon_ejemplo;
-            Btn_Maximizar.Location = new Point(761, 13);
+            Btn_Maximizar.Location = new Point(666, 10);
+            Btn_Maximizar.Margin = new Padding(3, 2, 3, 2);
             Btn_Maximizar.Name = "Btn_Maximizar";
-            Btn_Maximizar.Size = new Size(25, 25);
+            Btn_Maximizar.Size = new Size(22, 19);
             Btn_Maximizar.SizeMode = PictureBoxSizeMode.Zoom;
             Btn_Maximizar.TabIndex = 4;
             Btn_Maximizar.TabStop = false;
@@ -131,9 +158,10 @@
             // 
             pictureBox1.BackColor = Color.WhiteSmoke;
             pictureBox1.Image = Properties.Resources.icon_ejemplo;
-            pictureBox1.Location = new Point(23, 12);
+            pictureBox1.Location = new Point(20, 9);
+            pictureBox1.Margin = new Padding(3, 2, 3, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(25, 25);
+            pictureBox1.Size = new Size(22, 19);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
@@ -143,9 +171,10 @@
             Btn_Cerrar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             Btn_Cerrar.BackColor = Color.WhiteSmoke;
             Btn_Cerrar.Image = Properties.Resources.icon_ejemplo;
-            Btn_Cerrar.Location = new Point(792, 13);
+            Btn_Cerrar.Location = new Point(694, 10);
+            Btn_Cerrar.Margin = new Padding(3, 2, 3, 2);
             Btn_Cerrar.Name = "Btn_Cerrar";
-            Btn_Cerrar.Size = new Size(25, 25);
+            Btn_Cerrar.Size = new Size(22, 19);
             Btn_Cerrar.SizeMode = PictureBoxSizeMode.Zoom;
             Btn_Cerrar.TabIndex = 3;
             Btn_Cerrar.TabStop = false;
@@ -163,8 +192,9 @@
             panel2.Controls.Add(panel3);
             panel2.Dock = DockStyle.Left;
             panel2.Location = new Point(0, 0);
+            panel2.Margin = new Padding(3, 2, 3, 2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(221, 650);
+            panel2.Size = new Size(193, 488);
             panel2.TabIndex = 1;
             // 
             // button6
@@ -177,14 +207,15 @@
             button6.FlatAppearance.MouseDownBackColor = SystemColors.ActiveCaptionText;
             button6.FlatAppearance.MouseOverBackColor = Color.Crimson;
             button6.FlatStyle = FlatStyle.Flat;
-            button6.Font = new Font("Franklin Gothic Demi", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            button6.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             button6.ForeColor = Color.White;
             button6.Image = Properties.Resources.star_icon_novo_32;
             button6.ImageAlign = ContentAlignment.MiddleLeft;
-            button6.Location = new Point(0, 595);
+            button6.Location = new Point(0, 446);
+            button6.Margin = new Padding(3, 2, 3, 2);
             button6.Name = "button6";
-            button6.Padding = new Padding(20, 0, 0, 0);
-            button6.Size = new Size(220, 52);
+            button6.Padding = new Padding(18, 0, 0, 0);
+            button6.Size = new Size(192, 39);
             button6.TabIndex = 8;
             button6.Text = "           Salir";
             button6.TextAlign = ContentAlignment.MiddleLeft;
@@ -196,9 +227,9 @@
             label5.AutoSize = true;
             label5.Font = new Font("Microsoft YaHei UI", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
             label5.ForeColor = Color.LightPink;
-            label5.Location = new Point(90, 64);
+            label5.Location = new Point(79, 48);
             label5.Name = "label5";
-            label5.Size = new Size(102, 19);
+            label5.Size = new Size(84, 16);
             label5.TabIndex = 8;
             label5.Text = "Administrator";
             // 
@@ -207,9 +238,9 @@
             label4.AutoSize = true;
             label4.Font = new Font("Microsoft YaHei UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(90, 40);
+            label4.Location = new Point(79, 30);
             label4.Name = "label4";
-            label4.Size = new Size(48, 24);
+            label4.Size = new Size(41, 19);
             label4.TabIndex = 6;
             label4.Text = "User";
             // 
@@ -220,9 +251,9 @@
             label3.BorderStyle = BorderStyle.Fixed3D;
             label3.Font = new Font("Microsoft YaHei UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label3.ForeColor = Color.RosyBrown;
-            label3.Location = new Point(12, 579);
+            label3.Location = new Point(10, 434);
             label3.Name = "label3";
-            label3.Size = new Size(200, 2);
+            label3.Size = new Size(175, 2);
             label3.TabIndex = 7;
             label3.Text = "LLLLLLLLL";
             // 
@@ -233,9 +264,9 @@
             label2.BorderStyle = BorderStyle.Fixed3D;
             label2.Font = new Font("Microsoft YaHei UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = Color.RosyBrown;
-            label2.Location = new Point(12, 115);
+            label2.Location = new Point(10, 86);
             label2.Name = "label2";
-            label2.Size = new Size(200, 2);
+            label2.Size = new Size(175, 2);
             label2.TabIndex = 6;
             label2.Text = "LLLLLLLLL";
             // 
@@ -243,9 +274,10 @@
             // 
             Pic_photo.BackColor = Color.Transparent;
             Pic_photo.Image = Properties.Resources.icon_ejemplo;
-            Pic_photo.Location = new Point(12, 23);
+            Pic_photo.Location = new Point(10, 17);
+            Pic_photo.Margin = new Padding(3, 2, 3, 2);
             Pic_photo.Name = "Pic_photo";
-            Pic_photo.Size = new Size(72, 74);
+            Pic_photo.Size = new Size(63, 56);
             Pic_photo.SizeMode = PictureBoxSizeMode.Zoom;
             Pic_photo.TabIndex = 6;
             Pic_photo.TabStop = false;
@@ -258,9 +290,10 @@
             panel3.Controls.Add(button2);
             panel3.Controls.Add(Btn_Dulceria);
             panel3.Controls.Add(Btn_Productos);
-            panel3.Location = new Point(3, 129);
+            panel3.Location = new Point(3, 97);
+            panel3.Margin = new Padding(3, 2, 3, 2);
             panel3.Name = "panel3";
-            panel3.Size = new Size(214, 437);
+            panel3.Size = new Size(187, 328);
             panel3.TabIndex = 9;
             // 
             // button5
@@ -272,14 +305,15 @@
             button5.FlatAppearance.MouseDownBackColor = SystemColors.ActiveCaptionText;
             button5.FlatAppearance.MouseOverBackColor = Color.Crimson;
             button5.FlatStyle = FlatStyle.Flat;
-            button5.Font = new Font("Franklin Gothic Demi", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            button5.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             button5.ForeColor = Color.White;
             button5.Image = Properties.Resources.star_icon_novo_32;
             button5.ImageAlign = ContentAlignment.MiddleLeft;
-            button5.Location = new Point(-3, 350);
+            button5.Location = new Point(-3, 262);
+            button5.Margin = new Padding(3, 2, 3, 2);
             button5.Name = "button5";
-            button5.Padding = new Padding(20, 0, 0, 0);
-            button5.Size = new Size(220, 73);
+            button5.Padding = new Padding(18, 0, 0, 0);
+            button5.Size = new Size(192, 55);
             button5.TabIndex = 7;
             button5.Text = "           Gráfica";
             button5.TextAlign = ContentAlignment.MiddleLeft;
@@ -295,14 +329,15 @@
             button4.FlatAppearance.MouseDownBackColor = SystemColors.ActiveCaptionText;
             button4.FlatAppearance.MouseOverBackColor = Color.Crimson;
             button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Franklin Gothic Demi", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            button4.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             button4.ForeColor = Color.White;
             button4.Image = Properties.Resources.star_icon_novo_32;
             button4.ImageAlign = ContentAlignment.MiddleLeft;
-            button4.Location = new Point(-3, 281);
+            button4.Location = new Point(-3, 211);
+            button4.Margin = new Padding(3, 2, 3, 2);
             button4.Name = "button4";
-            button4.Padding = new Padding(20, 0, 0, 0);
-            button4.Size = new Size(220, 73);
+            button4.Padding = new Padding(18, 0, 0, 0);
+            button4.Size = new Size(192, 55);
             button4.TabIndex = 6;
             button4.Text = "           Consultas";
             button4.TextAlign = ContentAlignment.MiddleLeft;
@@ -318,14 +353,15 @@
             button3.FlatAppearance.MouseDownBackColor = SystemColors.ActiveCaptionText;
             button3.FlatAppearance.MouseOverBackColor = Color.Crimson;
             button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Franklin Gothic Demi", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            button3.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             button3.ForeColor = Color.White;
             button3.Image = Properties.Resources.star_icon_novo_32;
             button3.ImageAlign = ContentAlignment.MiddleLeft;
-            button3.Location = new Point(-3, 212);
+            button3.Location = new Point(-3, 159);
+            button3.Margin = new Padding(3, 2, 3, 2);
             button3.Name = "button3";
-            button3.Padding = new Padding(20, 0, 0, 0);
-            button3.Size = new Size(220, 73);
+            button3.Padding = new Padding(18, 0, 0, 0);
+            button3.Size = new Size(192, 55);
             button3.TabIndex = 5;
             button3.Text = "           Bajas";
             button3.TextAlign = ContentAlignment.MiddleLeft;
@@ -341,14 +377,15 @@
             button2.FlatAppearance.MouseDownBackColor = SystemColors.ActiveCaptionText;
             button2.FlatAppearance.MouseOverBackColor = Color.Crimson;
             button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Franklin Gothic Demi", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            button2.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             button2.ForeColor = Color.White;
             button2.Image = Properties.Resources.star_icon_novo_32;
             button2.ImageAlign = ContentAlignment.MiddleLeft;
-            button2.Location = new Point(-3, 143);
+            button2.Location = new Point(-3, 107);
+            button2.Margin = new Padding(3, 2, 3, 2);
             button2.Name = "button2";
-            button2.Padding = new Padding(20, 0, 0, 0);
-            button2.Size = new Size(220, 73);
+            button2.Padding = new Padding(18, 0, 0, 0);
+            button2.Size = new Size(192, 55);
             button2.TabIndex = 4;
             button2.Text = "           Altas";
             button2.TextAlign = ContentAlignment.MiddleLeft;
@@ -364,14 +401,15 @@
             Btn_Dulceria.FlatAppearance.MouseDownBackColor = SystemColors.ActiveCaptionText;
             Btn_Dulceria.FlatAppearance.MouseOverBackColor = Color.Crimson;
             Btn_Dulceria.FlatStyle = FlatStyle.Flat;
-            Btn_Dulceria.Font = new Font("Franklin Gothic Demi", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            Btn_Dulceria.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             Btn_Dulceria.ForeColor = Color.White;
             Btn_Dulceria.Image = Properties.Resources.star_icon_novo_32;
             Btn_Dulceria.ImageAlign = ContentAlignment.MiddleLeft;
-            Btn_Dulceria.Location = new Point(-3, 73);
+            Btn_Dulceria.Location = new Point(-3, 55);
+            Btn_Dulceria.Margin = new Padding(3, 2, 3, 2);
             Btn_Dulceria.Name = "Btn_Dulceria";
-            Btn_Dulceria.Padding = new Padding(20, 0, 0, 0);
-            Btn_Dulceria.Size = new Size(220, 73);
+            Btn_Dulceria.Padding = new Padding(18, 0, 0, 0);
+            Btn_Dulceria.Size = new Size(192, 55);
             Btn_Dulceria.TabIndex = 3;
             Btn_Dulceria.Text = "           Dulcería";
             Btn_Dulceria.TextAlign = ContentAlignment.MiddleLeft;
@@ -387,14 +425,15 @@
             Btn_Productos.FlatAppearance.MouseDownBackColor = SystemColors.ActiveCaptionText;
             Btn_Productos.FlatAppearance.MouseOverBackColor = Color.Crimson;
             Btn_Productos.FlatStyle = FlatStyle.Flat;
-            Btn_Productos.Font = new Font("Franklin Gothic Demi", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            Btn_Productos.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             Btn_Productos.ForeColor = Color.White;
             Btn_Productos.Image = Properties.Resources.star_icon_novo_32;
             Btn_Productos.ImageAlign = ContentAlignment.MiddleLeft;
-            Btn_Productos.Location = new Point(-3, 3);
+            Btn_Productos.Location = new Point(-3, 2);
+            Btn_Productos.Margin = new Padding(3, 2, 3, 2);
             Btn_Productos.Name = "Btn_Productos";
-            Btn_Productos.Padding = new Padding(20, 0, 0, 0);
-            Btn_Productos.Size = new Size(224, 73);
+            Btn_Productos.Padding = new Padding(18, 0, 0, 0);
+            Btn_Productos.Size = new Size(196, 55);
             Btn_Productos.TabIndex = 2;
             Btn_Productos.Text = "          Productos";
             Btn_Productos.TextAlign = ContentAlignment.MiddleLeft;
@@ -405,17 +444,19 @@
             // 
             PanelContenedor.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             PanelContenedor.Controls.Add(PanelPrincipal);
-            PanelContenedor.Location = new Point(221, 50);
+            PanelContenedor.Location = new Point(193, 38);
+            PanelContenedor.Margin = new Padding(3, 2, 3, 2);
             PanelContenedor.Name = "PanelContenedor";
-            PanelContenedor.Size = new Size(829, 600);
+            PanelContenedor.Size = new Size(725, 450);
             PanelContenedor.TabIndex = 2;
             // 
             // PanelPrincipal
             // 
             PanelPrincipal.Dock = DockStyle.Fill;
             PanelPrincipal.Location = new Point(0, 0);
+            PanelPrincipal.Margin = new Padding(3, 2, 3, 2);
             PanelPrincipal.Name = "PanelPrincipal";
-            PanelPrincipal.Size = new Size(829, 600);
+            PanelPrincipal.Size = new Size(725, 450);
             PanelPrincipal.TabIndex = 13;
             PanelPrincipal.Paint += PanelPrincipal_Paint;
             // 
@@ -424,15 +465,21 @@
             Timer_Hora.Enabled = true;
             Timer_Hora.Interval = 1000;
             // 
+            // timer1
+            // 
+            timer1.Enabled = true;
+            timer1.Tick += timer1_Tick;
+            // 
             // Frm_Main
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1050, 650);
+            ClientSize = new Size(919, 488);
             Controls.Add(PanelContenedor);
             Controls.Add(panel1);
             Controls.Add(panel2);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 2, 3, 2);
             Name = "Frm_Main";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
@@ -478,5 +525,8 @@
         private Panel PanelPrincipal;
         private PictureBox IconRestaurar;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private Label hours;
+        private Label date;
+        private System.Windows.Forms.Timer timer1;
     }
     }

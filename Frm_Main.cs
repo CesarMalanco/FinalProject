@@ -16,6 +16,7 @@ namespace WinFormsFinalProyect
         {
             Timer_Hora.Enabled = true;
             PanelPrincipal.Visible = true;
+            timer1.Start();
         }
 
 
@@ -41,9 +42,9 @@ namespace WinFormsFinalProyect
 
         private void button6_Click(object sender, EventArgs e)
         {
-            FormLoginPage mainPage = new FormLoginPage(); 
-            this.Hide(); 
-            mainPage.ShowDialog(); 
+            FormLoginPage mainPage = new FormLoginPage();
+            this.Hide();
+            mainPage.ShowDialog();
         }
 
         private void Btn_Cerrar_Click(object sender, EventArgs e)
@@ -105,6 +106,12 @@ namespace WinFormsFinalProyect
         private void PanelPrincipal_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            hours.Text = DateTime.Now.ToLongTimeString();
+            date.Text = DateTime.Now.ToLongDateString();
         }
     }
 }
